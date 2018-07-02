@@ -24,19 +24,5 @@ class AjaxController extends CommonController
             
             $this->renderError(Yii::t('common','no_login'), 4);
         }        
-        else{
-            if( !isset(Yii::app()->session['expire']) || Yii::app()->session['expire'] < time()){
-                if( isset(Yii::app()->session['id'] )){
-                    unset(Yii::app()->session['id']);
-                }
-                if( isset(Yii::app()->session['phone'] )){
-                    unset(Yii::app()->session['phone']);
-                }
-                if( isset(Yii::app()->session['expire'] )){
-                    unset(Yii::app()->session['expire']);
-                }
-                $this->renderError(Yii::t('common','no_login'), 4);
-            }        
-        }
     }
 }
