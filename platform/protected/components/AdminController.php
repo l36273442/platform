@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__).'/CommonController.php');
-class AjaxController extends CommonController
+class AdminController extends CommonController
 {
     public function init()
     {
