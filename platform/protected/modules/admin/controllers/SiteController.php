@@ -3,7 +3,7 @@
 /**
  * SiteController is the default controller to handle user requests.
  */
-class SiteController extends CommonController
+class SiteController extends AdminController
 {
 	/**
 	 * Index action is the default action in a controller.
@@ -32,7 +32,5 @@ class SiteController extends CommonController
         echo 'error';
     }
     public function actionHello(){
-        $detail = PowerContractModel::model()->find( 'id=:id' , array(':id'=>1) );
-        print_r($detail);
     }
 }
