@@ -23,19 +23,5 @@ class Controller extends CommonController
         if( !isset($_SESSION['id']) || empty($_SESSION['id'])) {
             Yii::app()->controller->redirect('/login/login');
         }
-        else{
-            if( !isset(Yii::app()->session['expire']) || Yii::app()->session['expire'] < time()){
-                if( isset(Yii::app()->session['id'] )){
-                    unset(Yii::app()->session['id']);
-                }
-                if( isset(Yii::app()->session['phone'] )){
-                    unset(Yii::app()->session['phone']);
-                }
-                if( isset(Yii::app()->session['expire'] )){
-                    unset(Yii::app()->session['expire']);
-                }
-                Yii::app()->controller->redirect('/login/login');
-            }        
-        }
     }
 }
