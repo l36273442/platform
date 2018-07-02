@@ -1,0 +1,233 @@
+2018/06/07 00:07:23 [error] [php] Undefined index: code (/Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/RegisterController.php:27)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/CommonController.php(420): RegisterController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(286): RegisterController->runAction()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(265): RegisterController->runActionWithFilters()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): RegisterController->run()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/register/doregister
+2018/06/07 00:07:39 [error] [php] Undefined index: code (/Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/RegisterController.php:27)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/CommonController.php(420): RegisterController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(286): RegisterController->runAction()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(265): RegisterController->runActionWithFilters()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): RegisterController->run()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/register/doregister
+2018/06/07 00:29:09 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmstradecode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmstradecod...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmstradecod...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmstrad...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmstradecode?_=1528302548570
+HTTP_REFERER=http://localhost/user/uptpass
+---
+2018/06/07 00:29:17 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmstradecode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmstradecod...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmstradecod...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmstrad...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmstradecode?_=1528302548571
+HTTP_REFERER=http://localhost/user/uptpass
+---
+2018/06/07 10:36:32 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost/site/index
+---
+2018/06/07 10:36:58 [error] [php] Undefined variable: ch (/Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/service/HeySkyApi.php:52)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/CommonController.php(420): SmsController->runAction()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(286): SmsController->runAction()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(265): SmsController->runActionWithFilters()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): SmsController->run()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/sms/sendsmscode
+2018/06/07 10:42:36 [error] [php] Undefined index: id (/Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/SiteController.php:15)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(286): SiteController->runAction()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/site/index
+2018/06/07 11:26:47 [error] [exception.CException] CException: UserViewController 无法找到请求的视图 "uptpass". in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:881
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(785): CController->renderPartial('uptpass', NULL, true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/UserviewController.php(5): CController->render('uptpass')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/actions/CInlineAction.php(49): UserViewController->actionUpTpass()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/protected/components/CommonController.php(420): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(286): CommonController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('uptpass')
+#8 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('userview/uptpas...')
+#9 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/userview/uptpass
+HTTP_REFERER=http://localhost/
+---
+2018/06/07 11:29:06 [error] [system_error] heyshy send sms to 8618600233433 message 您的修改交易密码验证码是492215，10分钟内有效。 fail name lookup timed out(6) 
+2018/06/07 14:23:38 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmsforgetcode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmsforgetco...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmsforgetco...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmsforg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmsforgetcode
+HTTP_REFERER=http://localhost/login/forgetpassword
+---
+2018/06/07 14:24:47 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmsforgetcode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmsforgetco...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmsforgetco...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmsforg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmsforgetcode
+HTTP_REFERER=http://localhost/login/forgetpassword
+---
+2018/06/07 14:25:22 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmsforgetcode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmsforgetco...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmsforgetco...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmsforg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmsforgetcode
+HTTP_REFERER=http://localhost/login/forgetpassword
+---
+2018/06/07 14:39:19 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "log/doforgetpassword"。 in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('log/doforgetpas...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/log/doforgetpassword
+HTTP_REFERER=http://localhost/login/forgetpassword
+---
+2018/06/07 14:39:43 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "log/doforgetpassword"。 in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('log/doforgetpas...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/log/doforgetpassword
+HTTP_REFERER=http://localhost/login/forgetpassword
+---
+2018/06/07 14:39:54 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 14:39:55 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 14:40:29 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 14:42:32 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:15:25 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:17:14 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:17:50 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:18:08 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:18:47 [error] [exception.ParseError] ParseError: syntax error, unexpected '=', expecting ')' in /Applications/XAMPP/xamppfiles/htdocs/platform/protected/controllers/LoginController.php:79
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(276): CWebApplication->createController('forgetpassword/')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('login/forgetpas...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/login/forgetpassword
+---
+2018/06/07 15:47:15 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "sendsmsupcode" 动作. in /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php:486
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CController.php(270): CController->missingAction('sendsmsupcode')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(282): CController->run('sendsmsupcode')
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('sms/sendsmsupco...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/platform/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/sms/sendsmsupcode?_=1528357614065
+HTTP_REFERER=http://localhost/userview/uppass
+---

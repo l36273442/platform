@@ -1,0 +1,458 @@
+2018/07/02 10:23:56 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost/
+---
+2018/07/02 10:45:12 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:45:14 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:46:51 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:48:06 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:48:07 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:48:08 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:48:10 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:49:36 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:49:38 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:50:36 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:50:39 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:50:41 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:50:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 10:54:36 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:06:28 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:06:57 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:06:58 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:10:17 [error] [exception.CException] CException: SiteController 无法找到请求的视图 "index". in /Applications/XAMPP/platform/framework/web/CController.php:881
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CController.php(785): CController->renderPartial('index', NULL, true)
+#1 /Applications/XAMPP/platform/platform/admin/controllers/SiteController.php(14): CController->render('index')
+#2 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/platform/framework/web/CController.php(286): CommonController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/platform/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): CController->run('')
+#8 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#9 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /Applications/XAMPP/platform/platform/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/
+---
+2018/07/02 11:11:16 [error] [exception.CException] CException: SiteController 无法找到请求的视图 "index". in /Applications/XAMPP/platform/framework/web/CController.php:881
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CController.php(785): CController->renderPartial('index', NULL, true)
+#1 /Applications/XAMPP/platform/platform/admin/controllers/SiteController.php(14): CController->render('index')
+#2 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/platform/framework/web/CController.php(286): CommonController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/platform/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): CController->run('')
+#8 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#9 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /Applications/XAMPP/platform/platform/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/
+---
+2018/07/02 11:15:55 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "ammin"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('ammin')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/ammin
+---
+2018/07/02 11:16:07 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site./hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site./hel...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site./hello
+---
+2018/07/02 11:16:11 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:16:11 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:16:13 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:16:14 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:17:22 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:17:24 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:26:46 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/index"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/inde...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/index
+---
+2018/07/02 11:26:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/index"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/inde...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/index
+---
+2018/07/02 11:27:24 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 11:27:27 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 11:27:32 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/admin/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/site/hello
+---
+2018/07/02 11:27:48 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 11:32:29 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 11:37:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:37:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:38:50 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:38:53 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:38:54 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:39:03 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:43:15 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 11:52:50 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 11:56:09 [error] [php] include(HeySkyApi.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/controllers/SiteController.php(35): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/web/actions/CInlineAction.php(49): SiteController->actionHello()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): SiteController->runAction()
+#4 /Applications/XAMPP/platform/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/platform/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /Applications/XAMPP/platform/platform/admin/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php/site/hello
+2018/07/02 13:57:00 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 13:57:00 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "admin/site/hello"。 in /Applications/XAMPP/platform/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/hell...')
+#1 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /Applications/XAMPP/platform/platform/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/site/hello
+---
+2018/07/02 14:00:01 [error] [php] include(WebModule.php): failed to open stream: No such file or directory (/Applications/XAMPP/platform/framework/YiiBase.php:432)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/modules/admin/AdminModule.php(4): spl_autoload_call()
+#1 /Applications/XAMPP/platform/framework/YiiBase.php(321): require()
+#2 /Applications/XAMPP/platform/framework/YiiBase.php(197): import()
+#3 /Applications/XAMPP/platform/framework/base/CModule.php(282): createComponent()
+#4 /Applications/XAMPP/platform/framework/web/CWebApplication.php(337): CWebApplication->getModule()
+#5 /Applications/XAMPP/platform/framework/web/CWebApplication.php(276): CWebApplication->createController()
+#6 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /Applications/XAMPP/platform/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/admin/site/hello
+2018/07/02 14:02:11 [error] [system_error] heyshy send sms to 8615201358840 message 您的验证码短信是44r343，10分钟内有效。 fail command=MT_RESPONSE&cpid=f79m7g&mtstat=REJECTD&mterrcode=0107
+2018/07/02 14:07:54 [error] [php] Undefined index: machine_id (/Applications/XAMPP/platform/platform/protected/controllers/PowerContractController.php:33)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): PowerContractController->runAction()
+#1 /Applications/XAMPP/platform/framework/web/CController.php(286): PowerContractController->runAction()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(265): PowerContractController->runActionWithFilters()
+#3 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): PowerContractController->run()
+#4 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/platform/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/powerContract/getlist?size=20&page=1&_=1530511674764
+2018/07/02 14:08:18 [error] [php] Undefined index: machine_id (/Applications/XAMPP/platform/platform/protected/controllers/PowerContractController.php:33)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): PowerContractController->runAction()
+#1 /Applications/XAMPP/platform/framework/web/CController.php(286): PowerContractController->runAction()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(265): PowerContractController->runActionWithFilters()
+#3 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): PowerContractController->run()
+#4 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/platform/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/powerContract/getlist?size=20&page=1&_=1530511698037
+2018/07/02 14:08:28 [error] [php] Undefined index: machine_id (/Applications/XAMPP/platform/platform/protected/controllers/PowerContractController.php:33)
+Stack trace:
+#0 /Applications/XAMPP/platform/platform/protected/components/CommonController.php(420): PowerContractController->runAction()
+#1 /Applications/XAMPP/platform/framework/web/CController.php(286): PowerContractController->runAction()
+#2 /Applications/XAMPP/platform/framework/web/CController.php(265): PowerContractController->runActionWithFilters()
+#3 /Applications/XAMPP/platform/framework/web/CWebApplication.php(282): PowerContractController->run()
+#4 /Applications/XAMPP/platform/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/XAMPP/platform/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /Applications/XAMPP/platform/platform/index.php(14): CWebApplication->run()
+REQUEST_URI=/powerContract/getlist?size=20&page=1&_=1530511708322
