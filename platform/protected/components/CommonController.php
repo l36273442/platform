@@ -4,6 +4,7 @@ class CommonController extends CController
 	protected $params;
     
     public $user;
+    public $admin_user;
     /*
     *url 目录
     *例 /platform/test/test
