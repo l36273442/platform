@@ -1,5 +1,5 @@
 <?php
-class UserController extends AdminController
+class UserController extends CommonController
 {
     public function actionGetList(){
         $p = $this->getParams('REQUEST');
@@ -9,21 +9,33 @@ class UserController extends AdminController
         else{
             $size = $p['size'];
         }
-        if(!isset($p['page']) || !is_numeric($p['page'])){
+        if(!isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
             $page = 1 ;
         }
         else{
             $page = $p['page'];
         }
+        $where = 'where 1';
         $data['page'] = $page;
         $data['size'] = $size;
-        $total = UserModel::model()->countBySql('select count(id) from platform_user');
+        if( isset($p['phone']) && !empty($p['phone']) ){
+            $total = UserModel::model()->countBySql('select count(id) from platform_user where phone=:phone' , array(':phone'=>$p['phone']));
+        }
+        else{
+            $total = UserModel::model()->countBySql('select count(id) from platform_user');
+        }
         $data['total'] = $total;
         $data['pages'] = ceil($total/$size);
         $date['list'] = array();
 
         if( $data['total'] > 0 && $data['page'] <= $data['pages'] ){
-            $users = UserModel::model()->findAllBySql('select * from platform_user order by id desc limit '.(($page-1)*$size).','.$size );
+            if(isset($p['phone']) && !empty($p['phone'])){
+                $users = UserModel::model()->findAllBySql('select * from platform_user where phone=:phone order by id desc limit '.(($page-1)*$size).','.$size , array(':phone'=> $p['phone']) );
+            }
+            else{
+                $users = UserModel::model()->findAllBySql('select * from platform_user order by id desc limit '.(($page-1)*$size).','.$size );
+            }    
+            
             if( $users ){
                 foreach( $users as $v ){
                     $row = array();
