@@ -77,7 +77,7 @@ class UserController extends AdminController
         if( empty($coins) ){
             $this->renderJson(Yii::t('common','success'));
         } 
-        $usercoins = UserCoinPowerModel::model()->findAll('uid=:uid' , array(':uid' => $p['uid']));
+        $usercoins = UserCoinModel::model()->findAll('uid=:uid' , array(':uid' => $p['uid']));
         $user_key = array();
         if( $usercoins ){
             foreach( $usercoins as $v ){
@@ -91,7 +91,9 @@ class UserController extends AdminController
                 $unit_key[$v->id] = $v->attributes;
             }
         }
+
         $data = array();
+
         foreach( $coins as $v ){
             $row = array();
             $row = $v->attributes;
@@ -102,15 +104,39 @@ class UserController extends AdminController
                 $row['coin_name'] = '';
             }
             if( isset($user_key[$v->id])){
-                $row['total'] = $user_key[$v->id]['total'];
-                $row['power_total'] = $user_key[$v->id]['power_total'];
+                $row['current_total'] = $user_key[$v->id]['current_total'];
+                $row['power_total_income'] = $user_key[$v->id]['power_total_income'];
+                $row['power_total_investment'] = $user_key[$v->id]['power_total_investment'];
+                $row['total_power'] = $user_key[$v->id]['total_power'];
+                $row['total_machine'] = $user_key[$v->id]['total_machine'];
+                $row['machine_total_investment'] = $user_key[$v->id]['machine_total_investment'];
+                $row['machine_total_income'] = $user_key[$v->id]['machine_total_income'];
+                $row['total_investment'] = $user_key[$v->id]['total_investment'];
+                $row['total_income'] = $user_key[$v->id]['total_income'];
             }
             else{
-                $row['total'] = 0;
-                $row['power_total'] = 0;
+                $row['current_total'] = 0;
+                $row['power_total_income'] = 0;
+                $row['power_total_investment'] = 0;
+                $row['total_power'] = 0;
+                $row['total_machine'] = 0;
+                $row['machine_total_investment'] = 0;
+                $row['machine_total_income'] = 0;
+                $row['total_investment'] = 0;
+                $row['total_income'] = 0;
 
             }
-            $data[] = $row;    
+            $data['coins'][] = $row;    
+        }
+        $legal = UserLegalCoinModel::model()->find('uid=:uid' , array(':uid' => $p['uid']));
+        if( $legal ){
+            $data['usd'] = $legal->usd;
+            $data['usd_recharge_total'] = $legal->usd_recharge_total;
+        }    
+        else{
+            $data['usd'] = 0;
+            $data['usd_recharge_total'] = 0;
+            
         }
         $this->renderJson(Yii::t('common','success'),$data);
 
