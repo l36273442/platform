@@ -1,5 +1,5 @@
 <?php
-class UserCoinPowerModel extends CActiveRecord{
+class UserCoinModel extends CActiveRecord{
     public static function model($className=__CLASS__){
         return parent::model($className);
     }
