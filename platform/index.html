@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="dist/css/layui.css">
+    <style>
+        .carousel div:nth-child(1){
+            position: relative;
+        }
+        .slider-one{
+            width: 1200px;
+            position: absolute;
+            color: #fff;
+            left: 5%;
+            top: 0;
+        }
+        .slider-one p{
+            line-height: 100px;
+            font-size: 60px;
+        }
+        .slider-one span{
+            display: block;
+            line-height: 78px;
+            font-size: 22px;
+        }
+        .slider-one button{
+            width: 238px;
+            height: 78px;
+            line-height: 80px;
+            margin-top: 32px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #fff;
+            background: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .type_area{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .ks_top1 P{
+            line-height: 60px;
+            font-size: 34px;
+            color: #696969;
+        }
+        .ks_top1 span{
+            display: inline-block;
+            line-height: 35px;
+            color: #9c9c9c;
+            margin: 25px 0;
+        }
+        .ks_top2{
+            overflow: hidden;
+        }
+        .ks_top2 ul{
+            margin: 88px 0 100px 0;
+            overflow: auto;
+        }
+        .ks_top2 ul li{
+            float: left;
+            width: 255px;
+            padding-left: 25px;
+            height: 168px;
+            background: url("images/背景@2x.png") no-repeat;
+            background-size: 100% 100%;
+            margin-right: 26px;
+            cursor: pointer;
+        }
+        .power{
+            line-height: 50px;
+            font-weight: 600;
+            color: #009dea;
+            font-size: 32px;
+            margin-top: 26px;
+        }
+        .describe{
+            line-height: 42px;
+            font-size: 22px;
+            color: #fff;
+        }
+        .ks_top3{
+            background: #1c192e;
+            color: #fff;
+            padding-top: 76px;
+        }
+        .shop{
+            line-height: 98px;
+            font-size: 46px;
+        }
+        .store p{
+            line-height: 76px;
+            font-size: 32px;
+        }
+        .bg{
+            width: 280px;
+            height: 8px;
+            background: url("images/商店-分割装饰1@2x.png") no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-carousel" id="test1">
+    <div carousel-item class="carousel">
+        <div style="background: greenyellow;"></div>
+        <div style="background: pink;"></div>
+        <div style="background: palevioletred;"></div>
+        <div style="background: orange;"></div>
+        <div style="background: brown;"></div>
+    </div>
+</div>
+<div class="slider-one">
+    <p style="margin-top: 60px;">MINES CAPITAL</p>
+    <p>CONSTRUCTION CONTRACT</p>
+    <span>LOW COST'HIGH PROFIT MORE SECURE</span>
+    <button>CLICK FOR DETALS&nbsp;&nbsp;&nbsp;&nbsp;> </button>
+</div>
+<!--  版心 -->
+<div class="type_area"></div>
+    <div class="ks_top1 type_area">
+        <p style="margin-top: 65px;">ACCESSIBLE AND SUPERIOR CLOUD</p>
+        <p>HASH RENT SERVICE PLATFORM</p>
+        <span>MCC.TOP aims to povide accessible and qualified cloud hash service,<br/>
+             through which clients can easily experience mining fun based on<br/>
+             professional and comprehensive cloud hash maintenance by way of<br/>
+             cluster equipment deployment.
+       </span>
+    </div>
+    <div class="ks_top2 type_area">
+        <ul>
+            <li>
+                <p class="power">35744.96 PH/S</p>
+                <p class="describe">Whole Network Hash</p>
+            </li>
+            <li>
+                <p class="power">299 H</p>
+                <p class="describe">Next Difficulty Remain Time</p>
+            </li>
+            <li>
+                <p class="power">1792</p>
+                <p class="describe">Next Difficulty Remain Block</p>
+            </li>
+            <li style="margin-right: 0;">
+                <p class="power">1.04 M</p>
+                <p class="describe">Block Median in Seven Day</p>
+            </li>
+        </ul>
+    </div>
+
+<div class="ks_top3">
+    <div class="type_area">
+        <p class="shop">HASH SHOP</p>
+        <div class="store">
+            <p>ANTMINER S9</p>
+            <div class="bg"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="dist/layui.all.js"></script>
+<script>
+
+    // 轮播图
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1',
+            width: '100%', //设置容器宽度
+            height:'560px',
+            arrow: 'hover' //悬停显示箭头
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+2018/07/04 13:16:34 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost:8888/index.html
+---
+2018/07/04 13:20:39 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "usercoin/getranklist"。 in C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('usercoin/getran...')
+#1 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/usercoin/getranklist
+HTTP_REFERER=http://localhost:8888/cms/index.html
+---
