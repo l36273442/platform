@@ -18,7 +18,7 @@ class LoginController extends CommonController{
 
     }
     public function actionDoLogin(){
-        $p = $this->getParams('REQUEST');
+        $p = $this->getParams('POST');
         if( !isset($p['name']) || empty($p['name']) ){
             $this->renderError('用户名不能为空', ErrorCode::PARAM_EMPTY); 
         }
