@@ -23,5 +23,31 @@ class Controller extends CommonController
         if( !isset($_SESSION['id']) || empty($_SESSION['id'])) {
             Yii::app()->controller->redirect('/login/login');
         }
+        $p = PartnerModel::model()->findAll('status=:status' , array(':status'=> 0));
+        $this->data['partner'] = array();
+        $this->data['link'] = array();
+        if($p){
+            foreach($p as $v ){
+                if($v->type == 1){
+                    $this->data['partner'][] = $v->attributes;
+                }
+                else if($v->type == 0){
+                    $this->data['link'][] = $v->attributes;
+                }
+            }
+        }
+        $info = InfoModel::model()->find();
+        if($info ){
+            $this->data['info']=$info->attributes;
+        }
+        else{
+            $this->data['info']['wechat1'] ='';
+            $this->data['info']['wechat2'] ='';
+            $this->data['info']['phone'] ='';
+            $this->data['info']['mobile'] ='';
+            $this->data['info']['email'] ='';
+            $this->data['info']['about_zh_cn'] ='';
+            $this->data['info']['about_en_us'] ='';
+        }
     }
 }
