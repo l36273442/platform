@@ -9,9 +9,7 @@ class SiteController extends CommonController
 	 * Index action is the default action in a controller.
 	 */
 	public function actionIndex()
-	{
-        
-        $this->render('index');
+    {
     }
     public function actionTest(){
         
@@ -32,7 +30,7 @@ class SiteController extends CommonController
         echo 'error';
     }
     public function actionHello(){
-        $sms = new HeySkyApi();
-        $sms->send('8615201358840','您的验证码短信是44r343，10分钟内有效。');
+    
+        echo 34343;
     }
 }

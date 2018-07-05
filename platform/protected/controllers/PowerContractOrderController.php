@@ -1,6 +1,5 @@
 <?php
 class PowerContractOrderController extends AjaxController{
-    public $pay_time_out = 1800;//订单支付默认超时时间
     const CANCEL = 5;
     public function actiongetUserOrderList(){
         $p = $this->getParams('REQUEST');
@@ -84,40 +83,27 @@ class PowerContractOrderController extends AjaxController{
         if( !preg_match('/^[0-9]+(.[0-9]{1,2})?$/', $p['count']) ){
             $this->renderError(Yii::t('common','count_point_two'), ErrorCode::PARAM_EMPTY); 
         } 
-        $contract_info = PowerContractModel::model()->getById($p['id']);
-        if( $contract_info['status'] == 1  ){
-            $this->renderError(Yii::t('common','contract_forbid'), ErrorCode::PARAM_EMPTY); 
-        }
-        if( $contract_info['status'] == 2  ){
-            $this->renderError(Yii::t('common','contract_stop'), ErrorCode::PARAM_EMPTY); 
-        }
-        if(  $contract_info['total'] <= $contract_info['deal_total'] ){
-            $this->renderError(Yii::t('common','contract_sold_out'), ErrorCode::PARAM_EMPTY); 
-        }
-        if( $contract_info['status'] == 0 ){
-            $re = $this->createOrder($p['id'] , $p['count']); 
-            if( !$re ){
-                $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
-            }
-            $this->renderJson(Yii::t('common','success'));
-        }
-        else{
-            $this->renderError(Yii::t('common','contract_unusual'), ErrorCode::PARAM_EMPTY); 
-        }
-
-    }
-    public function createOrder( $cid , $count ){
-        if( !$cid || !$count ){
-            return false;
-        }
         $transaction = Yii::app()->db->beginTransaction();
         try{
             $c_sql = "select * from ".PowerContractModel::model()->tableName().' where  id = :id limit 1 for update';
-            $c_info = PowerContractModel::model()->findBySql( $c_sql , array( ':id' => $cid ) );
+            $c_info = PowerContractModel::model()->findBySql( $c_sql , array( ':id' => $p['id'] ) );
+            $u_sql = "select * from ".UserLegalCoinModel::model()->tableName()." where uid = :uid for update";
+            $user_coin = UserLegalCoinModel::model()->findBySql($u_sql , array(':uid' => Yii::app()->session['id'] ));
+            $total = round( $c_info['price'] * $count , 2 );
+            if( $total > $user_coin->usd ){
+                $transaction->rollback();
+                $this->renderError(Yii::t('common','account_not_enough'), ErrorCode::PARAM_EMPTY); 
+            }
             if( $c_info ){
+                if( $c_info['status'] == 1  ){
+                    $this->renderError(Yii::t('common','contract_forbid'), ErrorCode::PARAM_EMPTY); 
+                }
+                if( $c_info['status'] == 2  ){
+                    $this->renderError(Yii::t('common','contract_stop'), ErrorCode::PARAM_EMPTY); 
+                }
                 if( $c_info['status'] != 0 || $c_info['total'] <= $c_info['deal_total'] ){
                     $transaction->rollback();
-                    return false;
+                    $this->renderError(Yii::t('common','contract_sold_out'), ErrorCode::PARAM_EMPTY); 
                 }
                 else{
                     $t = time();
@@ -126,116 +112,42 @@ class PowerContractOrderController extends AjaxController{
                     $order->uid = Yii::app()->session['id'];
                     $order->price = $c_info['price'];
                     $order->ctime = $t;
-                    $order->pay_time = $t + $this->pay_time_out;
-                    $order->order_price = round( $c_info['price'] * $count , 2 );
-                    $order->random_code = rand(100000,999999);
+                    $order->order_price = $total;
                     $order->count = $count;
                     $re1 = $order->save();
                     $re2 = PowerContractModel::model()->updateCounters(array('deal_total'=>$count),'id=:id',array(':id'=>$cid));
-                    $l = new PowerContractOrderLogModel();
-                    $l->oid = $cid;
-                    $l->type = self::ADD;
-                    $l->uid = Yii::app()->session['id'];
-                    $l->name = PowerContractOrderModel::model()->tableName();
-                    $l->ctime = $t;
-                    $l->content = json_encode( $order->attributes , JSON_UNESCAPED_UNICODE );
-                    $re3 = $l->save(); 
-                    if( !$re1 || !$re2 || !$re3){
+                    $re3 = UserLegalCoinModel::model()->updateCounters(array('usd'=>-$total) , 'uid=:uid',array('uid'=>Yii::app()->session['id']));
+                    $re4 = UserCoinModel::model()->updateCounters( array('total_power'=>$count) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $c_info->coin_id ));
+                    if( !$re1 || !$re2 || !$re3 || !$re4 ){
                         $transaction->rollback();
-                        return false;
+                        $this->renderError(Yii::t('common','order_fail'), ErrorCode::PARAM_EMPTY); 
                     }
-                    $transaction->commit(); 
-                    return true;
+                    $olog = new UserLegalCoinModel();
+                    $olog->name = Yii::t('common','power_buy');
+                    $olog->coin_id = $c_info->coin_id;
+                    $olog->o_id = $order->id;
+                    $olog->uid = Yii::app()->session['id'];
+                    $olog->type = 1;
+                    $olog->vol = $total;
+                    $olog->ctime= $t;
+                    $re5 = $olog->save();
+                    if( !$re5 ){
+                        $transaction->rollback();
+                        $this->renderError(Yii::t('common','order_fail2'), ErrorCode::PARAM_EMPTY); 
+                    }
+                    $this->renderJson(Yii::t('common','success'));
                 }
             }
             else{
                 $transaction->rollback();
-                return false;
+                $this->renderError(Yii::t('common','contract_unusual'), ErrorCode::PARAM_EMPTY); 
             }
-            
+            $transaction->commit(); 
+
         }catch(Exception $e){
             $transaction->rollback();
-            return false;
+            $this->renderError(Yii::t('common','system_error'), ErrorCode::SYSTEM_ERROR); 
         }
+
     }
-    public function cancelOrder( $id ){
-        if(empty($id)){
-            return false;
-        }
-        $transaction = Yii::app()->db->beginTransaction();
-        try{
-            $o_sql = "select * from ".PowerContractOrderModel::model()->tableName().' where  id = :id limit 1 for update ';
-            $o_info = PowerContractOrderModel::model()->findBySql( $o_sql , array( ':id' => $id ) );
-            if( !$o_info ){
-                $transaction->rollback();
-                return false;
-            }
-            $cid = $o_info->cid;
-            $c_sql = "select * from ".PowerContractModel::model()->tableName().' where  id = :id limit 1 for update';
-            $c_info = PowerContractModel::model()->findBySql( $c_sql , array( ':id' => $cid ) );
-            if( $c_info ){
-                $t = time();
-                
-                $re1 = PowerContractOrderModel::model()->updateByPk( $id , array('status'=>self::CANCEL , 'uptime' => $t , 'uuid' => Yii::app()->session['id'] ));
-                $re2 = PowerContractModel::model()->updateCounters(array('deal_total'=>-$o_info['count']),'id=:id',array(':id'=>$cid));
-                $l = new PowerContractOrderLogModel();
-                $l->oid = $id;
-                $l->type = self::DEL;
-                $l->uid = Yii::app()->session['id'];
-                $l->name = PowerContractOrderModel::model()->tableName();
-                $l->ctime = $t;
-                $l->content = json_encode( $o_info->attributes , JSON_UNESCAPED_UNICODE );
-                $re3 = $l->save(); 
-                if( !$re1 || !$re2 || !$re3 ){
-                    $transaction->rollback();
-                    return false;
-                }
-                $transaction->commit(); 
-                return true;
-            }
-            else{
-                $transaction->rollback();
-                return false;
-            }
-            
-        }catch(Exception $e){
-            $re['operate'] = 'PowerContractOrder cancel ';
-            $re['id'] = $id;
-            $re['uid'] = Yii::app()->session['id'];
-            $re['operator'] = 'self';
-            $re['message'] = $e->getMessage();
-            $log = json_encode( $re , JSON_UNESCAPED_UNICODE );
-
-
-            Yii::log($log, CLogger::LEVEL_ERROR , 'system_error');
-            $transaction->rollback();
-            return false;
-        }
-
-
-    }   
-    public function actionOrderCancel(){
-        $p = $this->getParams('REQUEST');
-        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0){
-            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_EMPTY); 
-        }
-        $id = $p['id'];
-        $uid  =  Yii::app()->session['id'];
-        $info = PowerContractOrderModel::model()->find( 'id=:id' , array( ':id' => $id ) );
-        if( !$info ){
-            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_EMPTY);
-        }
-        $order_info  = $info->attributes;
-        if( $order_info['uid'] != $uid ){
-            $this->renderError(Yii::t('common','not_your_order'), ErrorCode::PARAM_EMPTY);
-        }
-        if( $order_info['status'] != 0 ){
-            $this->renderError(Yii::t('common','no_cancel'), ErrorCode::PARAM_EMPTY);
-        }
-        $re = $this->cancelOrder( $id , $order_info['cid']);
-        if( !$re ){
-            $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
-        }
-        $this->renderJson(Yii::t('common','success'));
-    } 
 }

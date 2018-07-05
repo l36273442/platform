@@ -21,26 +21,19 @@ class RegisterController extends CommonController{
         if( !isset($p['country_code']) || empty($p['country_code']) ){
             $this->renderError(Yii::t('common','country_code_empty'), ErrorCode::PARAM_EMPTY); 
         }
-        if( !isset($p['img_code']) || empty($p['img_code']) ){
-            $this->renderError(Yii::t('common','img_code_empty'), ErrorCode::PARAM_EMPTY); 
-        }
-        if( $p['img_code'] != $_SESSION['code'] ){
-            $this->renderError(Yii::t('common','img_code_err'), ErrorCode::PARAM_ERROR); 
-        }
-        if( $_SESSION['code_timeout'] < time() ){
-            unset(Yii::app()->session['code']);
-            unset(Yii::app()->session['code_timeout']);
-            $this->renderError(Yii::t('common','img_code_timeout'), ErrorCode::PARAM_ERROR); 
-        }
         if( !isset($p['sms_code']) || empty($p['sms_code']) ){
             $this->renderError(Yii::t('common','sms_code_empty'), ErrorCode::PARAM_EMPTY); 
         }
-        if( $p['sms_code'] != $_SESSION['sms_register_code'] ){
+        if( $p['sms_code'] != $_SESSION['sms_code'] ){
             $this->renderError(Yii::t('common','sms_code_err'), ErrorCode::PARAM_ERROR); 
         }
-        if( $_SESSION['sms_register_code_expire'] < time() ){
-            unset(Yii::app()->session['sms_register_code']);
-            unset(Yii::app()->session['sms_register_code_expire']);
+        if( !isset($_SESSION['sms_code_time']) || $_SESSION['sms_code_time'] + SMS_EXPIRE*60 < time() ){
+            if(isset($_SESSION['sms_code_time']) ){
+                unset(Yii::app()->session['sms_code_time']);
+            }
+            if(isset($_SESSION['sms_code'])){
+                unset(Yii::app()->session['sms_code']);
+            }
             $this->renderError(Yii::t('common','sms_code_timeout'), ErrorCode::PARAM_ERROR); 
         }
         if( !isset($p['mobile']) || empty($p['mobile']) ){
@@ -62,7 +55,7 @@ class RegisterController extends CommonController{
         if( !empty($re) ){
             $this->renderError(Yii::t('common','account_exists'), ErrorCode::USERS_ERROR);
         }
-        
+        $transaction = Yii::app()->db->beginTransaction();
         $user = new UserModel();
         $user->phone = $p['mobile'];
         $user->country_code = $p['country_code'];
@@ -78,10 +71,18 @@ class RegisterController extends CommonController{
         }
         $re = $user->save();
         if( $re ){
+            $uc = new UserLegalCoinModel();
+            $uc->uid = $user->id;
+            $uc->ctime = $t;
+            $re4 = $uc->save();
+            if( !$re4 ){
+                $transaction->rollback();
+                $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
+            }
             unset(Yii::app()->session['code']);
             unset(Yii::app()->session['code_timeout']);
-            unset(Yii::app()->session['sms_register_code']);
-            unset(Yii::app()->session['sms_register_code_expire']);
+            unset(Yii::app()->session['sms_code']);
+            unset(Yii::app()->session['sms_code_time']);
             if( $user->invite_uid ){
                 UserInviteModel::model()->updateCounters(array('sum'=>1),'uid=:uid',array(':uid'=>$user->invite_uid));
             }
@@ -101,8 +102,10 @@ class RegisterController extends CommonController{
             $this->renderJson(Yii::t('common','success'));
         }
         else{
+            $transaction->rollback();
             $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
         }
+        $transaction->commit(); 
     }
 
 }

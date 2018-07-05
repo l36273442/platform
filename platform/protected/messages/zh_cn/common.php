@@ -50,7 +50,8 @@ return array(
     'order_pending_pay'     => '待支付',
     'pay'                   => '支付',
     'order_cancel'          => '取消订单',
-    'order_fail'            => '订单失败',
+    'order_fail'            => '下单失败',
+    'order_fail2'           => '下单失败2',
     'order_pay'             => '已付款',
     'order_deal'            => '已完成',
     'order_unknown'         => '未知状态',
@@ -71,4 +72,6 @@ return array(
     'sms_uppass_code'       => '您的验证码是{{{sms_code}}}，{{{sms_expire}}}分钟内有效。',
     'old_password'          => '旧密码',
     'old_password_err'      => '旧密码错误',
+    'account_not_enough'    => '账户余额不足',
+    'system_error'          => '系统错误',
 );

@@ -51,6 +51,7 @@ return array(
     'pay'                   => 'pay',
     'order_cancel'          => 'cancel order',
     'order_fail'            => 'order fail',
+    'order_fail2'           => 'order fail 2',
     'order_pay'             => 'already paid',
     'order_deal'            => 'completed',
     'order_unknown'         => 'order unknown',
@@ -71,4 +72,6 @@ return array(
     'sms_uppass_code'       => 'Your verification code is {{{sms_code}}}, valid for {{{sms_expire}}} minutes.',
     'old_password'          => 'old password',
     'old_password_err'      => 'old password error',
+    'account_not_enough'    => 'Account Balance not enough',
+    'system_error'          => 'system error',
 );

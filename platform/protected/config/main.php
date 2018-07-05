@@ -41,7 +41,8 @@ return array(
 			'errorAction'=>'site/error',
 		),
 		'urlManager'=>array(
-			'urlFormat'=>'path',
+            'urlFormat'=>'path',
+            //'urlSuffix'=>'.html',
 			'rules'=>array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
