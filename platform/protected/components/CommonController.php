@@ -14,6 +14,7 @@ class CommonController extends CController
      * Controller need login
      * @var
      */
+    public $data = array();
     public $needLogin=true;
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
