@@ -357,12 +357,22 @@
             data: {page: page, size: size,phone:phone},
             dataType: 'json',
             success: function (data) {
-                console.log(1111);
-                console.log(data.data);
+                console.log(data);
                 if (data.ret == '1') { // 成功
-                    if (data.data) {
-
-                    }
+                  /*  if (data.data) {
+                        let html = data.data.list.map((item, index) => {
+                            return ` <tr class="collapse">
+                                 <td>${item.phone}</td>
+                                 <td>${item.ctime}</td>
+                                 <td>${item.uptime}</td>
+                                 <td>
+                                    <button class="layui-btn layui-btn-sm disable">禁用</button>
+                                    <button class="layui-btn layui-btn-sm compile">编辑</button>
+                                 </td>
+                            </tr>`
+                        });
+                        $('.layui-table tbody').html(html.join(' '));
+                    }*/
                 }
             },
             error: function (data) {

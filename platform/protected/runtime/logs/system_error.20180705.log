@@ -46,3 +46,36 @@ Stack trace:
 REQUEST_URI=/admin/login/dologin
 HTTP_REFERER=http://localhost:8888/cms/login.html
 ---
+2018/07/05 09:21:48 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\protected\modules\admin\controllers\LoginController.php:21
+Stack trace:
+#0 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(338): CWebApplication->createController('dologin/', Object(AdminModule))
+#1 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(276): CWebApplication->createController('login/dologin/')
+#2 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/dol...')
+#3 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/login/dologin
+HTTP_REFERER=http://localhost:8888/cms/login.html
+---
+2018/07/05 09:22:00 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\protected\modules\admin\controllers\LoginController.php:21
+Stack trace:
+#0 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(338): CWebApplication->createController('dologin/', Object(AdminModule))
+#1 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(276): CWebApplication->createController('login/dologin/')
+#2 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/dol...')
+#3 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/login/dologin
+HTTP_REFERER=http://localhost:8888/cms/login.html
+---
+2018/07/05 09:24:05 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\protected\modules\admin\controllers\LoginController.php:21
+Stack trace:
+#0 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(338): CWebApplication->createController('dologin/', Object(AdminModule))
+#1 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(276): CWebApplication->createController('login/dologin/')
+#2 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/dol...')
+#3 C:\Users\Administrator\Desktop\planet_2018\planet\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Administrator\Desktop\planet_2018\planet\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/login/dologin
+HTTP_REFERER=http://localhost:8888/cms/login.html
+---
