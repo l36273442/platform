@@ -1,6 +1,51 @@
 <?php
 class PowerContractOrderController extends AjaxController{
     const CANCEL = 5;
+    public function actiongetUserList(){
+        $p = $this->getParams('REQUEST');
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        //$uid =1;
+        $uid = Yii::app()->session['id']; 
+        if( isset($p['status']) && is_numeric($p['status'])){
+            $status = $p['status'];
+        }
+        else{
+            $status = '';
+        }
+        $where = ' where uid=:uid';
+        $arr = array(':uid'=>$uid);
+        if( $status !== '' ){
+            $where .= ' and status=:status';
+            $arr[':status'] = $status;          
+        }
+        if( isset($p['coin_id']) && is_numeric($p['coin_id']) && $p['coin_id']>=0 ){
+            $where .=' and coin_id=:coin_id';
+            $arr[':coin_id'] = $p['coin_id'];
+        }
+        $s = 'select * from '.PowerContractOrderModel::model()->tableName().$where.' limit '.($page-1)*$size.','.$size;
+        $r = PowerContractOrderModel::model()->findAllBySql( $s , $arr );
+        $data = array();
+        if( $r ){ 
+            foreach( $r as $v ){
+                $data[] = $v->attributes;
+            }
+        }
+        $this->renderJson(Yii::t('common','success') , $data);
+    }
     public function actiongetUserOrderList(){
         $p = $this->getParams('REQUEST');
         if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
@@ -18,6 +63,7 @@ class PowerContractOrderController extends AjaxController{
         else{
             $page = $p['page'];
         }
+        //$uid =1;
         $uid = Yii::app()->session['id']; 
         if( isset($p['status']) && is_numeric($p['status'])){
             $status = $p['status'];
@@ -36,37 +82,28 @@ class PowerContractOrderController extends AjaxController{
             }
             $contract  = PowerContractModel::model()->getContractsByIds($c_id );
             $contract_key = $this->RowsToArr($contract);
-
             foreach( $contract as $v ){
                 if( !in_array( $v['coin_id'] , $coin_id ) ){
                     $coin_id[] = $v['coin_id'];
                 }
-                if( !in_array( $v['unit_id'] , $unit_id ) ){
-                    $unit_id[] = $v['unit_id'];
-                }
-                if( !in_array( $v['machine_id'] , $machine_id ) ){
-                    $machine_id[] = $v['machine_id'];
-                }   
             }
             $coins = CoinModel::model()->getCoinsByIds($coin_id );
             $coins_key = $this->RowsToArr($coins);
             $machine = MiningMachineModel::model()->getMachinesByIds($machine_id );
             $machine_key = $this->RowsToArr($machine);
-            $unit = ComputingPowerUnitModel::model()->getUnitsByIds($unit_id );
+            
+            $unit = ComputingPowerUnitModel::model()->findAll();
             $unit_key = $this->RowsToArr($unit);
 
             foreach( $list['list'] as &$v ){
-                $v['pay_time'] = ($v['pay_time']-time() > 0 )? ($v['pay_time']-time()):0;
                 $v['contract_name'] = $contract_key[$v['cid']]['name'];
-                $v['start_time']  = $contract_key[$v['cid']]['start_time'];
                 $v['manage_fee']  = $contract_key[$v['cid']]['manage_fee'];
                 $v['electricity_fee']  = $contract_key[$v['cid']]['electricity_fee'];
                 $v['coin_id'] = $contract_key[$v['cid']]['coin_id'];
                 $v['coin_name'] = $coins_key[$contract_key[$v['cid']]['coin_id']]['name'];
-                $v['machine_id'] = $contract_key[$v['cid']]['machine_id'];
-                $v['machine_name'] = $machine_key[$contract_key[$v['cid']]['machine_id']]['name'];
-                $v['unit_id'] = $contract_key[$v['cid']]['unit_id'];
-                $v['unit_name'] = $unit_key[$contract_key[$v['cid']]['unit_id']]['name'];
+                $v['unit_id'] = $coins_key[$v['coin_id']]['unit_id'];
+                $v['unit_name'] = $unit_key[$coins_key[$v['coin_id']]['unit_id']]['name'];
+                $v['ctime'] = date('Y-m-d H:i:s' , $v['ctime']);
             }
         }
         $this->renderJson(Yii::t('common','success'), $list);
@@ -83,27 +120,30 @@ class PowerContractOrderController extends AjaxController{
         if( !preg_match('/^[0-9]+(.[0-9]{1,2})?$/', $p['count']) ){
             $this->renderError(Yii::t('common','count_point_two'), ErrorCode::PARAM_EMPTY); 
         } 
+        $cid = $p['id'];
         $transaction = Yii::app()->db->beginTransaction();
         try{
             $c_sql = "select * from ".PowerContractModel::model()->tableName().' where  id = :id limit 1 for update';
             $c_info = PowerContractModel::model()->findBySql( $c_sql , array( ':id' => $p['id'] ) );
             $u_sql = "select * from ".UserLegalCoinModel::model()->tableName()." where uid = :uid for update";
             $user_coin = UserLegalCoinModel::model()->findBySql($u_sql , array(':uid' => Yii::app()->session['id'] ));
-            $total = round( $c_info['price'] * $count , 2 );
+            $total = round( $c_info['price'] * $count , 8 );
             if( $total > $user_coin->usd ){
                 $transaction->rollback();
                 $this->renderError(Yii::t('common','account_not_enough'), ErrorCode::PARAM_EMPTY); 
             }
             if( $c_info ){
                 if( $c_info['status'] == 1  ){
+                    $transaction->rollback();
                     $this->renderError(Yii::t('common','contract_forbid'), ErrorCode::PARAM_EMPTY); 
                 }
                 if( $c_info['status'] == 2  ){
+                    $transaction->rollback();
                     $this->renderError(Yii::t('common','contract_stop'), ErrorCode::PARAM_EMPTY); 
                 }
-                if( $c_info['status'] != 0 || $c_info['total'] <= $c_info['deal_total'] ){
+                if( $c_info['status'] != 0 || $c_info['total'] <= $c_info['deal_total']+$p['count'] ){
                     $transaction->rollback();
-                    $this->renderError(Yii::t('common','contract_sold_out'), ErrorCode::PARAM_EMPTY); 
+                    $this->renderError(Yii::t('common','contract_not_enough'), ErrorCode::PARAM_EMPTY); 
                 }
                 else{
                     $t = time();
@@ -117,17 +157,18 @@ class PowerContractOrderController extends AjaxController{
                     $re1 = $order->save();
                     $re2 = PowerContractModel::model()->updateCounters(array('deal_total'=>$count),'id=:id',array(':id'=>$cid));
                     $re3 = UserLegalCoinModel::model()->updateCounters(array('usd'=>-$total) , 'uid=:uid',array('uid'=>Yii::app()->session['id']));
-                    $re4 = UserCoinModel::model()->updateCounters( array('total_power'=>$count) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $c_info->coin_id ));
+                    $re4 = UserCoinModel::model()->updateCounters( array('total_power'=>$count , 'power_total_investment' => $total , 'total_investment' => $total ) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $c_info->coin_id ));
                     if( !$re1 || !$re2 || !$re3 || !$re4 ){
                         $transaction->rollback();
                         $this->renderError(Yii::t('common','order_fail'), ErrorCode::PARAM_EMPTY); 
                     }
-                    $olog = new UserLegalCoinModel();
+                    $olog = new UserLegalCoinLogModel();
                     $olog->name = Yii::t('common','power_buy');
                     $olog->coin_id = $c_info->coin_id;
                     $olog->o_id = $order->id;
                     $olog->uid = Yii::app()->session['id'];
                     $olog->type = 1;
+                    $olog->mining_type = 0;
                     $olog->vol = $total;
                     $olog->ctime= $t;
                     $re5 = $olog->save();
@@ -135,14 +176,14 @@ class PowerContractOrderController extends AjaxController{
                         $transaction->rollback();
                         $this->renderError(Yii::t('common','order_fail2'), ErrorCode::PARAM_EMPTY); 
                     }
-                    $this->renderJson(Yii::t('common','success'));
                 }
+                $transaction->commit(); 
+                $this->renderJson(Yii::t('common','success'));
             }
             else{
                 $transaction->rollback();
                 $this->renderError(Yii::t('common','contract_unusual'), ErrorCode::PARAM_EMPTY); 
             }
-            $transaction->commit(); 
 
         }catch(Exception $e){
             $transaction->rollback();

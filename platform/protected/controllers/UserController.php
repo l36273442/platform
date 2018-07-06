@@ -89,4 +89,71 @@ class UserController extends AjaxController{
         }
 
     }
+    public function actionGetPowerRecord(){
+        $p = $this->getParams('REQUEST');
+        //$uid = 1;
+        $uid = Yii::app()->session['id']; 
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
+            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
+        }
+        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid limit '.($page-1)*$size.','.$size;
+        $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>0,':coin_id'=>$p['id']));
+        $data = array();
+        if($l){
+            foreach( $l as $v ){
+                $data[] = $v->attributes;
+            }
+        }
+        $this->renderJson(Yii::t('common','success') , $data);
+
+    }
+    public function actionGetMachineRecord(){
+        $p = $this->getParams('REQUEST');
+        //$uid = 1;
+        $uid = Yii::app()->session['id']; 
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
+            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
+        }
+        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid limit '.($page-1)*$size.','.$size;
+        $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>1,':coin_id'=>$p['id']));
+        $data = array();
+        if($l){
+            foreach( $l as $v ){
+                $data[] = $v->attributes;
+            }
+        }
+        $this->renderJson(Yii::t('common','success') , $data);
+
+    }
+
 }
