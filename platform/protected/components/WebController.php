@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__).'/CommonController.php');
-class Controller extends CommonController
+class WebController extends CommonController
 {
     public function init()
     {
@@ -19,9 +19,6 @@ class Controller extends CommonController
         else
         {
             Yii::app()->language = Yii::app()->sourceLanguage;
-        }
-        if( !isset($_SESSION['id']) || empty($_SESSION['id'])) {
-            Yii::app()->controller->redirect('/login/login');
         }
         $p = PartnerModel::model()->findAll('status=:status' , array(':status'=> 0));
         $this->data['partner'] = array();
