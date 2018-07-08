@@ -74,4 +74,7 @@ return array(
     'old_password_err'      => 'old password error',
     'account_not_enough'    => 'Account Balance not enough',
     'system_error'          => 'system error',
+    'contract_status_error' => 'Contract cannot place an order',
+    'contract_not_enough'   => 'contract_not enough',
+    'machine_buy'           => 'machine buy',
 );

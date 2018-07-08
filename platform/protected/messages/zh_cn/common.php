@@ -74,4 +74,7 @@ return array(
     'old_password_err'      => '旧密码错误',
     'account_not_enough'    => '账户余额不足',
     'system_error'          => '系统错误',
+    'contract_status_error' => '该合约暂不能下单',
+    'contract_not_enough'   => '合约数量不足',
+    'machine_buy'           => '矿机购买',
 );

@@ -80,6 +80,12 @@ class SiteController extends WebController
             $this->data['detail']['coin_name'] = $coin->name;
         
         }
+        $f = FaqModel::model()->findAll('coin_id=:coin_id and machine_id=:machine_id and type=:type' , array( ':type'=> 0,':coin_id' => $d->coin_id , ':machine_id' => $d->machine_id));
+        if($f){
+            foreach( $f as $v ){
+                $this->data['faq'][] = $v->attributes;
+            }
+        }
         print_r($this->data);
 
     }
@@ -115,8 +121,50 @@ class SiteController extends WebController
             $this->data['detail']['coin_name'] = '';
         
         }
+        $f = FaqModel::model()->findAll('coin_id=:coin_id and machine_id=:machine_id and type=:type' , array( ':type'=> 1 , ':coin_id' => $d->coin_id , ':machine_id' => $d->machine_id));
+        if($f){
+            foreach( $f as $v ){
+                $this->data['faq'][] = $v->attributes;
+            }
+        }
         print_r($this->data);
 
+    }
+    public function actionHelp(){
+        $h = HelpModel::model()->findAll('status=:status' ,array(':status'=>0));
+        if($h){
+            foreach($h as $v ){
+                $this->data[$v->type][] = $v->attributes;
+            }
+        }
+        print_r($this->data);
+    }
+    public function actionAbout(){
+        $a = InfoModel::model()->find();
+        $e = EmployeeModel::model()->findAll('status=:status' ,array(':status'=>0));
+        
+        if($a){
+            $this->data['about'] = $a->attributes;
+        }
+        else{
+            $this->data['about'] = array();
+        }
+        if($e){
+            foreach($e as $v){
+                $this->data['employee'][] = $v->attributes;
+            }
+        }
+        print_r($this->data);
+
+    }
+    public function actionUserProtocol(){
+        //$p = $this->getParams('GET');
+        $pc = UserProtocolModel::model()->find();
+        if( $pc ){
+            $this->data['protocol']= $pc->attributes;
+        }else{
+            $this->data['protocol']= array();;
+        } 
     }
     public function actionError(){
         echo 'error';
