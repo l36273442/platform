@@ -14,13 +14,15 @@
             width: 200px;
             height: 32px;
             position: relative;
-            margin:10px 0 0 20px;
+            margin:10px 0 10px 20px;
             border: 1px solid #ccc;
         }
         .search input{
-           height: 100%;
-           width: 175px;
-            border: none;
+            height: 100%;
+            width: 165px;
+            padding-left: 10px;
+            color: #999;
+            border:none;
         }
         .layui-icon-search{
             font-size: 26px;
@@ -30,19 +32,8 @@
             color: #ccc;
             cursor: pointer;
         }
-        .layui-table th, .layui-table tr {
-            text-align: center;
-        }
-        .collapse{
-            position: relative;
-        }
-
-        .layui-col-md12{
-            max-height: 450px;
-            overflow: auto;
-        }
-        .add {
-
+        .layui-nav-tree .layui-nav-child dd{
+            padding-left: 30px;
         }
         #page {
             float: right;
@@ -117,10 +108,63 @@
             border: 1px solid #ccc;
             cursor: pointer;
         }
-
         .floor .cancel {
             background: none;
             color: #333;
+        }
+        .add_title{
+            border-bottom: 1px solid #ccc;
+        }
+        .data_title{
+            width: 100%;
+            overflow: auto;
+            max-height: 400px;
+        }
+        .data_thead{
+            overflow: auto;
+            background: #ddd;
+        }
+        .data_thead span, .collapse span{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            width: 25%;
+            text-align: center;
+        }
+        .collapse{
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        .details{
+            width: 80%;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            overflow: auto;
+        }
+        .head{
+            float: left;
+            width: 50%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .details .list:last-child{
+            border-bottom: none;
+        }
+        .list{
+            width: 100%;
+            background: #dede;
+            overflow: auto;
+            border-bottom: 1px dashed #333
+        }
+        .list li{
+            float: left;
+            width: 46%;
+            line-height: 30px;
+            margin: 0 2%;
         }
     </style>
 </head>
@@ -187,122 +231,46 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="search">
-                <input type="text" class="phone">
+                <input type="text" class="phone" placeholder="请输入查询条件">
                 <i class="layui-icon layui-icon-search"></i>
         </div>
-        <div class="layui-col-md12">
-            <table class="layui-table" lay-skin="line">
-                <thead>
-                <tr>
-                    <th>昵称</th>
-                    <th>加入时间</th>
-                    <th>签名</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!--<tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
+            <p class="data_thead">
+                <span>昵称</span>
+                <span>加入时间</span>
+                <span>签名</span>
+                <span>操作</span>
+            </p>
+            <ul class="data_title">
+             <!--   <li class="collapse">
+                    <span>贤心</span>
+                    <span>2016-11-29</span>
+                    <span>人生就像是一场修行</span>
+                    <span>
                         <button class="layui-btn layui-btn-sm disable">禁用</button>
                         <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>
-                <tr class="collapse">
-                    <td>贤心</td>
-                    <td>2016-11-29</td>
-                    <td>人生就像是一场修行</td>
-                    <td>
-                        <button class="layui-btn layui-btn-sm disable">禁用</button>
-                        <button class="layui-btn layui-btn-sm compile">编辑</button>
-                    </td>
-                </tr>-->
-                </tbody>
-            </table>
-        </div>
+                    </span>
+                </li>
+                <li class="add_title">
+                     <div class="details">
+                         <p class="head">usd:XXXXXX</p>
+                         <p class="head">usdcdhsjweq:DDDDDDD</p>
+                         <ul class="list">
+                             <li>111</li>
+                             <li>222</li>
+                             <li>333</li>
+                             <li>444</li>
+                             <li>555</li>
+                         </ul>
+                         <ul class="list">
+                             <li>666</li>
+                             <li>777</li>
+                             <li>888</li>
+                             <li>999</li>
+                             <li>101010</li>
+                         </ul>
+                     </div>
+                 </li>-->
+            </ul>
         <div id="page"></div>
     </div>
 
@@ -357,22 +325,37 @@
             data: {page: page, size: size,phone:phone},
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data.data);
                 if (data.ret == '1') { // 成功
-                  /*  if (data.data) {
+                    if (data.data) {
                         let html = data.data.list.map((item, index) => {
-                            return ` <tr class="collapse">
-                                 <td>${item.phone}</td>
-                                 <td>${item.ctime}</td>
-                                 <td>${item.uptime}</td>
-                                 <td>
+                            return ` <li class="collapse">
+                                 <span>${item.phone}</span>
+                                 <span>${item.ctime}</span>
+                                 <span>${item.uptime}</span>
+                                 <span>
                                     <button class="layui-btn layui-btn-sm disable">禁用</button>
                                     <button class="layui-btn layui-btn-sm compile">编辑</button>
-                                 </td>
-                            </tr>`
+                                 </span>
+                            </li>`
                         });
-                        $('.layui-table tbody').html(html.join(' '));
-                    }*/
+                        $('.data_title').html(html.join(' '));
+                        if(window.flag) {
+                            var laypage = layui.laypage;
+                            laypage.render({
+                                elem:'page',
+                                count:data.data.total,
+                                limit:5,
+                                jump: function (obj,first) {
+                                    window.flag = true;
+                                    if(!first){
+                                        //console.log(obj);
+                                        run(obj.curr, obj.limit);
+                                    }
+                                }
+                            });
+                        }
+                    }
                 }
             },
             error: function (data) {
@@ -393,17 +376,17 @@
                 if (data.ret == '1') { // 成功
                     if (data.data) {
                         let html = data.data.list.map((item, index) => {
-                            return ` <tr class="collapse">
-                                 <td>${item.phone}</td>
-                                 <td>${item.ctime}</td>
-                                 <td>${item.uptime}</td>
-                                 <td>
+                            return ` <li class="collapse" id=${item.id}>
+                                 <span>${item.phone}</span>
+                                 <span>${item.ctime}</span>
+                                 <span>${item.uptime}</span>
+                                 <span>
                                     <button class="layui-btn layui-btn-sm disable">禁用</button>
                                     <button class="layui-btn layui-btn-sm compile">编辑</button>
-                                 </td>
-                            </tr>`
+                                 </span>
+                            </li>`
                         });
-                        $('.layui-table tbody').html(html.join(' '));
+                        $('.data_title').html(html.join(' '));
                         if(window.flag) return;
 
                         var laypage = layui.laypage;
@@ -430,24 +413,89 @@
     run();
 
     // 显示详情
-    $('.layui-table').on('click','.collapse', function (e) {
-        if (!this.flag) {
-            $(this).after(`
-         <tr class="add">
-         <td colspan="4">aaaaaaaa</td>
-        </tr>
-       `);
+    $('.layui-body').on('click','.collapse', function (e) {
+        let id = $(this).attr('id');
+        let _this = this;
+        $.ajax({
+            type: 'POST',
+            url: '/admin/user/getusercoin',
+            data: {uid:id},
+            dataType: 'json',
+            success: function (data) {
+                 //console.log(data);
+                if (data.ret == '1') { // 成功
+                    if (data.data) {
+                        if (!_this.flag) {
+                            $(_this).after(` <li class="add_title">
+                                 <div class="details">
+                                    <p class="head">usd:${data.data.usd}</p>
+                                    <p class="head">usd_recharge_total:${data.data.usd_recharge_total}</p>                                         </div>
+                          </li>`);
+                            let html = data.data.coins.map((item, index) => {
+                                //console.log(item);
+                                return ` <ul class="list">
+                                         <li>coin_name:${item.coin_name}</li>
+                                         <li>content:${item.content}</li>
+                                         <li>electricity_fee:${item.electricity_fee}</li>
+                                         <li>extract_fee:${item.extract_fee}</li>
+                                         <li>id:${item.id}</li>
+                                         <li>machine_total_income:${item.machine_total_income}</li>
+                                         <li>machine_total_investment:${item.machine_total_investment}</li>
+                                         <li>status:${item.status}</li>
+                                         <li>total_income:${item.total_income}</li>
+                                 </ul>`
+                            });
+                            $('.details').append(html.join(' '));
+                            _this.flag = true;
+                        } else {
+                            $(_this).next().hide();
+                            _this.flag=false;
+                        }
+                    }
+                }
+            },
+            error: function (data) {
+                alert('接口发送失败！')
+            }
+        });
+/*        if (!this.flag) {
+            $(this).after(` <li class="add_title">
+                     <div class="details">
+                         <p class="head">usd:XXXXXX</p>
+                         <p class="head">usdcdhsjweq:DDDDDDD</p>
+                         <ul class="list">
+                             <li>111</li>
+                             <li>222</li>
+                             <li>333</li>
+                             <li>444</li>
+                             <li>555</li>
+                         </ul>
+                         <ul class="list">
+                             <li>666</li>
+                             <li>777</li>
+                             <li>888</li>
+                             <li>999</li>
+                             <li>101010</li>
+                         </ul>
+                     </div>
+                 </li>`);
             this.flag = true;
         } else {
-            $(this).next().hide()
+            $(this).next().hide();
             this.flag=false;
-        }
-
+        }*/
     });
 
     // 编辑
-    $('.layui-table').on('click','.compile', function (e) {
+    $('.layui-body').on('click','.compile', function (e) {
         $('.mask').show();
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+    });
+
+    // 禁用
+    $('.layui-body').on('click','.disable', function (e) {
+        alert('这是禁用按钮！');
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
     });
 
     // 取消
