@@ -128,7 +128,7 @@
             float: left;
             height: 40px;
             line-height: 40px;
-            width: 25%;
+            width: 17%;
             text-align: center;
         }
         .collapse{
