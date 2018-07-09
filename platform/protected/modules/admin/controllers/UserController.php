@@ -110,10 +110,10 @@ class UserController extends CommonController
             $row = array();
             $row = $v->attributes;
             if( isset($unit_key[$v->unit_id]) ){
-                $row['coin_name'] = $unit_key[$v->unit_id]['name'];
+                $row['unit_name'] = $unit_key[$v->unit_id]['name'];
             }
             else{
-                $row['coin_name'] = '';
+                $row['unit_name'] = '';
             }
             if( isset($user_key[$v->id])){
                 $row['current_total'] = $user_key[$v->id]['current_total'];
