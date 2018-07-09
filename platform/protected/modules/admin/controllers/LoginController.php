@@ -1,10 +1,7 @@
 <?php
 class LoginController extends CommonController{
-    
+ 
 	public function actionLogin(){
-        if( isset(Yii::app()->session['admin_id']) && !empty( Yii::app()->session['admin_id'] ) ){
-            $this->redirect(Yii::app()->getBaseUrl().'/site/index');
-        }    
         $this->render('login');
     }
     public function actionLoginOut(){

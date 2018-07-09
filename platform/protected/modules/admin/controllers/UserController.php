@@ -40,8 +40,8 @@ class UserController extends CommonController
                 foreach( $users as $v ){
                     $row = array();
                     $row = $v->attributes;
-                    $row['ctime'] = date('Y-m-d H:i:s' ,$row['ctime']);
-                    $row['login_time'] = date('Y-m-d H:i:s' ,$row['login_time']);
+                    $row['ctime'] = ($row['ctime']>0)?date('Y-m-d H:i:s' ,$row['ctime']):'';
+                    $row['login_time'] = ($row['login_time']>0)?date('Y-m-d H:i:s' ,$row['login_time']):'';
                     $data['list'][] = $row;
                 } 
             }

@@ -3,15 +3,14 @@
 /**
  * SiteController is the default controller to handle user requests.
  */
-class SiteController extends AdminController
+class SiteController extends CommonController
 {
 	/**
 	 * Index action is the default action in a controller.
 	 */
 	public function actionIndex()
 	{
-        echo 4343434;        
-        //$this->render('index');
+        $this->render('index');
     }
     public function actionTest(){
         
