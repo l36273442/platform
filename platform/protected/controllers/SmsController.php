@@ -64,7 +64,7 @@ class SmsController extends CommonController{
         $mobile = trim($country_code.$mobile , '+');
         $sms = new HeySkyApi();
         $content = Yii::t('common','sms_uptpass_code');
-        $content = str_replace('{{{sms_expire}}}' , SMS_REGISTER_EXPIRE , $content );
+        $content = str_replace('{{{sms_expire}}}' , SMS_EXPIRE , $content );
         $sms_code = rand(100000,999999);
         $content = str_replace('{{{sms_code}}}' , $sms_code , $content);
         $re = $sms->send( $mobile ,$content);
