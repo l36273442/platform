@@ -50,8 +50,8 @@ class SiteController extends WebController
             $this->data['machine'] = $c->attributes;
                
         }
-        print_r($this->data);   
-        //$this->render('index',$data);
+        //print_r($this->data);   
+        $this->render('index',$this->data);
     }
     public function actionPowerContractDetail(){
         $p = $this->getParams('GET');
