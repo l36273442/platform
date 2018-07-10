@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>RETRIEVE PASSWORD</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/intlTelInput.css">
-    <link rel="stylesheet" href="dist/css/layui.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/intlTelInput.css">
+    <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
         html,body{
             width: 100%;
@@ -27,7 +27,7 @@
             width: 130px;
             float: left;
             height: 100%;
-            background: url("images/左侧背景@2x.png")no-repeat;
+            background: url("/images/左侧背景@2x.png")no-repeat;
             background-size: 100% 100%;
             position: relative;
         }
@@ -188,13 +188,13 @@
             <button class="login">Find back</button>
         </li>
     </ul>
-    <div class="close"><img src="images/icon_close@2x.png"></div>
+    <div class="close"><img src="/images/icon_close@2x.png"></div>
 </div>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/intlTelInput.js"></script>
-<script src="dist/layui.all.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/intlTelInput.js"></script>
+<script src="/dist/layui.all.js"></script>
 <script>
     let layer = layui.layer;
 
