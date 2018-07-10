@@ -101,15 +101,15 @@
             <p>CUSTOMER SERVICE</p>
             <ul class="relation">
                 <li>
-                    <div class="circle"><img src="images/wechat@2x.png"></div>
+                    <div class="circle"><img src="/images/wechat@2x.png"></div>
                     <span>Wechat : MINEBIT</span>
                 </li>
                 <li>
-                    <div class="circle"><img src="images/Phone@2x.png"></div>
+                    <div class="circle"><img src="/images/Phone@2x.png"></div>
                     <span>Service tell : 010-21212121</span>
                 </li>
                 <li>
-                    <div class="circle"><img src="images/business@2x.png"></div>
+                    <div class="circle"><img src="/images/business@2x.png"></div>
                     <span>Business : MINEBIT@GMAIL.COM</span>
                 </li>
             </ul>
