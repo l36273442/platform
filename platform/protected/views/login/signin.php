@@ -156,31 +156,31 @@
     <div class="left">
         <div class="wrap">
             <p>M I N B I T</p>
-            <span>WELCOME</span>
+            <span><?php echo Yii::t('common','welcome');?></span>
         </div>
     </div>
     <ul class="right">
-        <li class="reg-title">SIGH IN</li>
+        <li class="reg-title"><?php echo Yii::t('common','login');?></li>
         <li class="reg-center">
             <div>
                 <input type="text" id="country_code">
-                <input type="text" class="tel" placeholder="Mailbox number">
+                <input type="text" class="tel" placeholder="<?php echo Yii::t('common','phone_number');?>">
             </div>
 
         </li>
         <li class="reg-center">
-            <input type="password" class="password" placeholder="Password (6-8 bits)">
+            <input type="password" class="password" placeholder="<?php echo Yii::t('common','password_len');?>">
         </li>
         <li class="reg-center">
-            <input type="text" class="code" placeholder="Verification code">
-            <span class="security">Send</span>
+            <input type="text" class="code" placeholder="<?php echo Yii::t('common','sms_code');?>">
+            <span class="security"><?php echo Yii::t('common','send');?></span>
         </li>
-        <li class="text"><a href="resetpassword.html">Forgot Password</a></li>
+        <li class="text"><a href="resetpassword.html"><?php echo Yii::t('common','forgot_password');?></a></li>
         <li class="up">
-            <button class="login">Sign In</button>
+            <button class="login"><?php echo Yii::t('common','signin');?></button>
         </li>
         <li class="already">
-            <a href="signup.html">sign Up</a>
+            <a href="signup.html"><?php echo Yii::t('common','signup');?></a>
         </li>
     </ul>
     <div class="close"><img src="/images/icon_close@2x.png"></div>
