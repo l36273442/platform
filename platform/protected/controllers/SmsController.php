@@ -15,7 +15,7 @@ class SmsController extends CommonController{
         if( $re ){
             $this->renderError(Yii::t('common','account_exists'), ErrorCode::USERS_ERROR);
         }
-        if( md5($p['password']) != $re->password ){
+        if( md5($p['password']) != $re['password'] ){
             $this->renderError(Yii::t('common','user_password_err'), ErrorCode::USERS_ERROR);
         }
 
