@@ -1,5 +1,9 @@
 <?php
 return array(
+    'forgot_password'       => '忘记密码',
+    'login'                 => '登录',
+    'signin'                => '登录',
+    'signup'                => '注册',
     'account_empty'         => '账户不为空',
     'user_deny'             => '账户被封禁，请联系管理员.',
     'user_password_err'     => '密码错误',
@@ -77,4 +81,6 @@ return array(
     'contract_status_error' => '该合约暂不能下单',
     'contract_not_enough'   => '合约数量不足',
     'machine_buy'           => '矿机购买',
+    'welcome'               => '欢迎',
+    'send'                  => '发送',
 );
