@@ -23,7 +23,7 @@ class SmsController extends CommonController{
         $mobile = trim($p['mobile']);
         $mobile = trim($country_code.$mobile , '+');
         $sms = new HeySkyApi();
-        $content = Yii::t('common','sms_uptpass_code');
+        $content = Yii::t('common','sms_uppass_code');
         $content = str_replace('{{{sms_expire}}}' , SMS_EXPIRE , $content );
         $sms_code = rand(100000,999999);
         $content = str_replace('{{{sms_code}}}' , $sms_code , $content);
@@ -50,20 +50,24 @@ class SmsController extends CommonController{
     }
     public function actionSendSmsCode(){
         $p = $this->getParams('POST');
+        $p['country_code'] = '86';
+        $p['mobile'] = '18600233433';
         if( !isset($p['country_code']) || empty($p['country_code']) ){
             $this->renderError(Yii::t('common','country_code_empty'), ErrorCode::PARAM_EMPTY); 
         }
         if( !isset($p['mobile']) || empty($p['mobile']) ){
             $this->renderError(Yii::t('common','account_empty'), ErrorCode::PARAM_EMPTY); 
         }
+        /*
         if( !isset($p['code']) || $p['code'] != $_SESSION['code'] ){
             $this->renderError(Yii::t('common','img_code_err'), ErrorCode::PARAM_ERROR);  
         }
+         */
         $country_code = trim($p['country_code']);
         $mobile = trim($p['mobile']);
         $mobile = trim($country_code.$mobile , '+');
         $sms = new HeySkyApi();
-        $content = Yii::t('common','sms_uptpass_code');
+        $content = Yii::t('common','sms_uppass_code');
         $content = str_replace('{{{sms_expire}}}' , SMS_EXPIRE , $content );
         $sms_code = rand(100000,999999);
         $content = str_replace('{{{sms_code}}}' , $sms_code , $content);
@@ -88,5 +92,5 @@ class SmsController extends CommonController{
         $this->renderJson(Yii::t('common','success'));
 
     }
-}
+
     
