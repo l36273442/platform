@@ -97,13 +97,13 @@ class RegisterController extends CommonController{
             else{
                 Yii::error('用户id'.$user->primaryKey.'生成邀请码失败');
             }
-            $this->renderJson(Yii::t('common','success'));
         }
         else{
             $transaction->rollback();
             $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
         }
         $transaction->commit(); 
+        $this->renderJson(Yii::t('common','success'));
     }
 
 }
