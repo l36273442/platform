@@ -69,7 +69,7 @@ return array(
     'sms_uptpass_code'      => '您的修改交易密码验证码是{{{sms_code}}}，{{{sms_expire}}}分钟内有效。',
     'sms_interval'          => '短信发送时间间隔(秒)',
     'account_not_exists'    => '账户不存在',
-    'sms_uppass_code'       => '您的验证码是{{{sms_code}}}，{{{sms_expire}}}分钟内有效。',
+    'sms_uppass_code'       => '您的验证码是{{{sms_code}}}，{{{sms_expire}}}分钟内有效。请勿告诉他人。',
     'old_password'          => '旧密码',
     'old_password_err'      => '旧密码错误',
     'account_not_enough'    => '账户余额不足',
