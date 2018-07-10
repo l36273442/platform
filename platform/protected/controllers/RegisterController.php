@@ -91,11 +91,13 @@ class RegisterController extends CommonController{
                 $in->invite_code = $invit_code;
                 $re_in = $in->save();
                 if( !$re_in ){
-                    Yii::error('用户id'.$user->primaryKey.'写入邀请码失败');
+                    $transaction->rollback();
+                    $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
                 }
             }
             else{
-                Yii::error('用户id'.$user->primaryKey.'生成邀请码失败');
+                $transaction->rollback();
+                $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
             }
         }
         else{
