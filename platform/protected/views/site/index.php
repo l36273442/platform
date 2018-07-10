@@ -340,8 +340,8 @@
             overflow: auto;
             position: absolute;
             z-index: 1;
-            width: 970px;
-            left: 305px;
+            width: 72%;
+            right: 0;
             top: 88px;
         }
         .printright li{
@@ -645,7 +645,7 @@
     </ul>
 </div>
 <div class="ks_top5">
-    <div class="type_area">
+    <div class="type_area location">
         <div class="printleft">
             <p>MINE LIST</p>
             <div class="bgmine"></div>
