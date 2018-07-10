@@ -50,8 +50,6 @@ class SmsController extends CommonController{
     }
     public function actionSendSmsCode(){
         $p = $this->getParams('POST');
-        $p['country_code'] = '86';
-        $p['mobile'] = '18600233433';
         if( !isset($p['country_code']) || empty($p['country_code']) ){
             $this->renderError(Yii::t('common','country_code_empty'), ErrorCode::PARAM_EMPTY); 
         }
