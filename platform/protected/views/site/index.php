@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="dist/css/layui.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
         .carousel div:nth-child(1){
             position: relative;
         }
+         .carousel a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
         .slider-one{
             width: 1200px;
             position: absolute;
@@ -66,7 +71,7 @@
             width: 255px;
             padding-left: 25px;
             height: 168px;
-            background: url("images/背景@2x.png") no-repeat;
+            background: url("/images/背景@2x.png") no-repeat;
             background-size: 100% 100%;
             margin-right: 26px;
             cursor: pointer;
@@ -104,7 +109,7 @@
         .bg{
             width: 280px;
             height: 8px;
-            background: url("images/商店-分割装饰1@2x.png") no-repeat;
+            background: url("/images/商店-分割装饰1@2x.png") no-repeat;
             background-size: 100% 100%;
             margin-bottom: 12px;
         }
@@ -117,7 +122,7 @@
             display: inline-block;
             width: 10px;
             height: 10px;
-            background: url("images/商店圆点@2x.png") no-repeat;
+            background: url("/images/商店圆点@2x.png") no-repeat;
             margin: 23px 10px 0 0;
         }
         .situation li  p{
@@ -128,7 +133,7 @@
         .situation li h5{
             width: 280px;
             height: 2px;
-            background: url("images/商店-分割装饰2@2x.png") no-repeat;
+            background: url("/images/商店-分割装饰2@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .store .bigtext{
@@ -170,7 +175,7 @@
             width: 56px;
             height: 48px;
             z-index: -1;
-            background: url("images/组-1@2x.png") no-repeat;
+            background: url("/images/组-1@2x.png") no-repeat;
             background-size: 100% 100%;
             margin:100px 0 28px 0;
         }
@@ -180,7 +185,7 @@
             left: 390px;
             width: 300px;
             height: 300px;
-            background: url("images/商品背景装饰-园@2x.png") no-repeat;
+            background: url("/images/商品背景装饰-园@2x.png") no-repeat;
         }
         .commodity{
             font-size: 32px;
@@ -190,7 +195,7 @@
         .linebg{
             width: 540px;
             height: 2px;
-            background: url("images/商品分割装饰@2x.png") no-repeat;
+            background: url("/images/商品分割装饰@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .introduction{
@@ -225,7 +230,7 @@
             float: left;
             width: 6px;
             height: 6px;
-            background: url("images/菱形@2x.png") no-repeat;
+            background: url("/images/菱形@2x.png") no-repeat;
             background-size: 100% 100%;
             margin: 15px 10px 0 0;
         }
@@ -254,15 +259,15 @@
             left: 20px;
         }
         .cardleft1{
-            background: url("images/卡片1左侧-icon@2x.png") no-repeat;
+            background: url("/images/卡片1左侧-icon@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .cardleft2{
-            background: url("images/卡片2-左侧icon@2x.png") no-repeat;
+            background: url("/images/卡片2-左侧icon@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .cardleft3{
-            background: url("images/卡片3-左侧icon@2x.png") no-repeat;
+            background: url("/images/卡片3-左侧icon@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .cardright{
@@ -271,7 +276,7 @@
             top: 0;
             width: 57px;
             height: 41px;
-            background: url("images/卡片右侧@2x.png") no-repeat;
+            background: url("/images/卡片右侧@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .carline{
@@ -324,7 +329,7 @@
         .bgmine{
             width: 315px;
             height: 145px;
-            background: url("images/MINE@2x.png") no-repeat;
+            background: url("/images/MINE@2x.png") no-repeat;
             background-size: 100% 100%;
             position: absolute;
             top: 155px;
@@ -375,6 +380,8 @@
     </style>
 </head>
 <body>
+<?php require(dirname(__FILE__).'/../header.php'); ?>
+
 <div class="layui-carousel" id="test1">
     <div carousel-item class="carousel">
         <div style="background: greenyellow;"></div>
@@ -384,12 +391,13 @@
         <div style="background: brown;"></div>
     </div>
 </div>
-<div class="slider-one">
+
+<!-- <div class="slider-one">
     <p style="margin-top: 60px;">MINES CAPITAL</p>
     <p>CONSTRUCTION CONTRACT</p>
     <span>LOW COST'HIGH PROFIT MORE SECURE</span>
     <button>CLICK FOR DETALS&nbsp;&nbsp;&nbsp;&nbsp;> </button>
-</div>
+</div> -->
 <!--  版心 -->
 <div class="type_area"></div>
 <div class="ks_top1 type_area">
@@ -660,24 +668,43 @@
         </ul>
     </div>
 </div>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 
 
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="dist/layui.all.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/dist/layui.all.js"></script>
 <script>
-
-    // 轮播图
-    layui.use('carousel', function(){
+ // 轮播图
         var carousel = layui.carousel;
-        //建造实例
-        carousel.render({
-            elem: '#test1',
-            width: '100%', //设置容器宽度
-            height:'700px',
-            arrow: 'hover' //悬停显示箭头
-        });
-    });
+
+
+    function fn() {
+        $.ajax({
+            type: 'GET',
+            url: '/ads/getimgads',
+            data:{},
+            dataType: 'json',
+            success: function(data){
+               // console.log(data);
+                if(data.ret =='1') {  // 成功
+                    if(data.data.length>0){
+                        $.each(data.data, function (index, item) {
+                            //console.log(item);
+                            $('.carousel').append(`<div><a href=${item.url}><img src=${item.img_url}></a></div>`);
+                        });
+                        //建造实例
+                        carousel.render({
+                            elem: '#test1',
+                            width: '100%', //设置容器宽度
+                            height:'700px',
+                            arrow: 'hover' //悬停显示箭头
+                        });
+                    }
+                }
+            }
+        })
+    }
+    fn();
 
 </script>
 </body>
