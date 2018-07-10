@@ -340,6 +340,7 @@
             overflow: auto;
             position: absolute;
             z-index: 1;
+            width: 970px;
             left: 305px;
             top: 88px;
         }
@@ -384,11 +385,11 @@
 
 <div class="layui-carousel" id="test1">
     <div carousel-item class="carousel">
-        <div style="background: greenyellow;"></div>
+      <!--  <div style="background: greenyellow;"></div>
         <div style="background: pink;"></div>
         <div style="background: palevioletred;"></div>
         <div style="background: orange;"></div>
-        <div style="background: brown;"></div>
+        <div style="background: brown;"></div> -->
     </div>
 </div>
 
@@ -675,8 +676,7 @@
 <script src="/dist/layui.all.js"></script>
 <script>
  // 轮播图
-        var carousel = layui.carousel;
-
+      var carousel = layui.carousel;
 
     function fn() {
         $.ajax({
