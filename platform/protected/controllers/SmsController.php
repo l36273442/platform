@@ -84,6 +84,7 @@ class SmsController extends CommonController{
         $re_sms = $sms_log->save();
         Yii::app()->session['sms_code'] = $sms_code;
         Yii::app()->session['sms_code_time'] = time();
+        unset($_SESSION['code']);
         if( !$re_sms ){
             Yii::log( '写入SmSLog fail '.json_encode( $re , JSON_UNESCAPED_UNICODE ) , CLogger::LEVEL_ERROR , 'system_error'); 
         }
