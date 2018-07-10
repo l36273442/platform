@@ -69,7 +69,7 @@ return array(
     'sms_uptpass_code'      => 'Your modified transaction password verification code text message is {{{sms_code}}}, valid for {{{sms_expire}}} minutes',
     'sms_interval'          => 'sms sending interval (seconds)',
     'account_not_exists'    => 'account not exists',
-    'sms_uppass_code'       => 'Your verification code is {{{sms_code}}}, valid for {{{sms_expire}}} minutes.',
+    'sms_uppass_code'       => 'Your verification code is {{{sms_code}}}, valid for {{{sms_expire}}} minutes.Please do not tell others.',
     'old_password'          => 'old password',
     'old_password_err'      => 'old password error',
     'account_not_enough'    => 'Account Balance not enough',
