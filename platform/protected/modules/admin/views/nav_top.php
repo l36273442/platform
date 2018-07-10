@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>后台大布局</title>
-    <link rel="stylesheet" href="/dist/css/layui.css">
-    <style>
 
-    </style>
-</head>
-<body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">后台布局</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
@@ -41,14 +29,3 @@
             <li class="layui-nav-item"><a href="">退出</a></li>
         </ul>
     </div>
-</div>
-
-
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/dist/layui.all.js"></script>
-<script>
-
-
-</script>
-</body>
-</html>
