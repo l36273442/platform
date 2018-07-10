@@ -1,11 +1,11 @@
 <?php
 class LoginController extends CommonController{
     
-	public function actionLogin(){
+	public function actionSignin(){
         if( isset(Yii::app()->session['id']) && !empty( Yii::app()->session['id'] ) && Yii::app()->session['expire'] > time() ){
             $this->redirect(Yii::app()->getBaseUrl().'/site/index');
         }    
-        $this->render('login');
+        $this->render('signin');
     }
     public function actionLoginOut(){
         if( isset(Yii::app()->session['id'] )){
@@ -20,11 +20,11 @@ class LoginController extends CommonController{
         $this->renderJson(Yii::t('common','success'));
 
     }
-    public function actionForgetPassword(){
+    public function actionResetPassword(){
         if( isset(Yii::app()->session['id']) && !empty( Yii::app()->session['id'] ) && Yii::app()->session['expire'] > time() ){
             $this->redirect(Yii::app()->getBaseUrl().'/site/index');
         }    
-        $this->render('forgetpassword');
+        $this->render('resetpassword');
     }
     public function actionDoForgetPassword(){
         $p = $this->getParams('POST');
