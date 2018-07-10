@@ -1,5 +1,9 @@
 <?php
 return array(
+    'forgot_password'       => 'Forgot Password',
+    'login'                 => 'SIGN IN',
+    'signin'                => 'Sign In',
+    'signup'                => 'Sign Up',
     'account_empty'         => 'Account no exist',
     'user_deny'             => 'The account was banned. Please contact the administrator',
     'user_password_err'     => 'wrong password',
@@ -7,7 +11,7 @@ return array(
     'create_err'            => 'create account failed',
     'enter_password'        => 'Please enter your password',
     'password'              => 'password',
-    'phone_number'          => 'phone number',
+    'phone_number'          => 'Mailbox number',
     'repeat_password'       => 'repeat password',
     'enter_phone'           => 'Please enter phone number',
     'request_err'           => 'Request failed',
@@ -60,7 +64,7 @@ return array(
     'no_login'              => 'no login',
     'sms_register_code'     => 'Your login verification code is {{{sms_code}}}, valid for {{{sms_expire}}} minutes.',
     'sms_send_fail'         => 'sms send fail',
-    'sms_code'              => 'sms code',
+    'sms_code'              => 'Verification code',
     'get'                   => 'get',
     'resend'                => 'resend',
     'img_code_timeout'      => 'img code timeout',
@@ -77,4 +81,6 @@ return array(
     'contract_status_error' => 'Contract cannot place an order',
     'contract_not_enough'   => 'contract_not enough',
     'machine_buy'           => 'machine buy',
+    'welcome'               => 'WELCOME',
+    'send'                  => 'send',
 );
