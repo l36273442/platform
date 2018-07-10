@@ -12,9 +12,6 @@ class SmsController extends CommonController{
             $this->renderError(Yii::t('common','img_code_err'), ErrorCode::PARAM_ERROR);  
         }
         $re = UserModel::model()->getUserByPhone( $p['country_code'] , $p['mobile']) ;
-        if( $re ){
-            $this->renderError(Yii::t('common','account_exists'), ErrorCode::USERS_ERROR);
-        }
         if( md5($p['password']) != $re['password'] ){
             $this->renderError(Yii::t('common','user_password_err'), ErrorCode::USERS_ERROR);
         }
