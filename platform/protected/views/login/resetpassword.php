@@ -159,33 +159,33 @@
     <div class="left">
         <div class="wrap">
             <p>M I N B I T</p>
-            <span>WELCOME</span>
+            <span><?php echo Yii::t('common','welcome');?></span>
         </div>
     </div>
     <ul class="right">
-        <li class="reg-title">RETRIEVE PASSWORD</li>
+        <li class="reg-title"><?php echo Yii::t('common','retrieve_password');?></li>
         <li class="reg-center">
             <div>
                 <input type="text" id="country_code">
-                <input type="text" class="tel" placeholder="Mailbox number">
+                <input type="text" class="tel" placeholder="<?php echo Yii::t('common','phone_number');?>">
             </div>
 
         </li>
         <li class="reg-center">
-            <input type="text" class="random" placeholder="Graphic code">
+            <input type="text" class="random" placeholder="<?php echo Yii::t('common','img_code');?>">
             <span class="auth"><img src="/code.php" onClick="this.src='/code.php?' + new Date().getTime();"></span>
         <li class="reg-center">
-            <input type="text" class="code" placeholder="Verification code">
+            <input type="text" class="code" placeholder="<?php echo Yii::t('common','sms_code');?>">
             <span class="security">Send</span>
         </li>
         <li class="reg-center">
-            <input type="password" class="password" placeholder="Password (6-8 bits)">
+            <input type="password" class="password" placeholder="<?php echo Yii::t('common','password_len');?>">
         </li>
         <li class="reg-center">
-            <input type="password" class="repetition" placeholder="Repeat password">
+            <input type="password" class="repetition" placeholder="<?php echo Yii::t('common','repeat_password');?>">
         </li>
         <li class="up">
-            <button class="login">Find back</button>
+            <button class="login"><?php echo Yii::t('common','find_back');?></button>
         </li>
     </ul>
     <div class="close"><img src="/images/icon_close@2x.png"></div>
@@ -238,7 +238,7 @@
                 success: function(data){
                     // console.log(data);
                     if(data.ret =='1') {  // 成功
-                        $('.security').html('60秒');
+                        $('.security').html('60');
 
                     }else{
                         layer.msg(data.msg);
@@ -246,17 +246,17 @@
                 }
             })
         }else{
-            layer.msg('接口调用失败！');
+            layer.msg('fail！');
         }
     });
 
     // 修改密码
     $('.login').on('click',function () {
-        if(!obj.phone) return layer.msg('电话号码不能为空!');
-        if(!obj.random) return layer.msg('图像验证码不能为空！');
-        if(!obj.code) return layer.msg('验证码不能为空！');
-        if(!obj.password) return layer.msg('密码不能为空！');
-        if(!obj.repetition) return layer.msg('重置密码不能为空！');
+        if(!obj.phone) return layer.msg('<?php echo Yii::t('common','phone_empty');?>');
+        if(!obj.random) return layer.msg('<?php echo Yii::t('common','img_empty');?>');
+        if(!obj.code) return layer.msg('<?php echo Yii::t('common','sms_code_empty');?>');
+        if(!obj.password) return layer.msg('<?php echo Yii::t('common','password_empty');?>');
+        if(!obj.repetition) return layer.msg('<?php echo Yii::t('common','repeat_password_empty');?>');
        if(obj.password === obj.repetition){
            // 密码 和 重置密码一致
            $.ajax({
@@ -271,7 +271,7 @@
                dataType: 'json',
                success: function(data){
                    if(data.ret =='1') {  // 成功
-                       window.location.href = "signin.html";
+                       window.location.href = "/login/signin";
                    }else{
                        layer.msg(data.msg);
                    }

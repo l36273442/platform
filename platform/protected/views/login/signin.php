@@ -180,7 +180,7 @@
             <button class="login"><?php echo Yii::t('common','signin');?></button>
         </li>
         <li class="already">
-            <a href="signup.html"><?php echo Yii::t('common','signup');?></a>
+            <a href="/register/signup"><?php echo Yii::t('common','signup');?></a>
         </li>
     </ul>
     <div class="close"><img src="/images/icon_close@2x.png"></div>
@@ -228,7 +228,7 @@
                 success: function(data){
                      console.log(data);
                     if(data.ret =='1') {  // 成功
-                        $('.security').html('60秒');
+                        $('.security').html('60');
 
                     }else{
                         layer.msg(data.msg);
@@ -236,7 +236,7 @@
                 }
             })
         }else{
-            layer.msg('接口调用失败！');
+            layer.msg('fail!');
             /* layer.open({
                  title: '',
                  content: '接口调用失败！'
@@ -246,9 +246,9 @@
 
     //logn in
     $('.login').on('click',function () {
-        if(!obj.phone) return layer.msg('电话号码不能为空!');
-        if(!obj.code) return layer.msg('验证码不能为空！');
-        if(!obj.password) return layer.msg('密码不能为空！');
+        if(!obj.phone) return layer.msg('<?php echo Yii::t('common','phone_empty');?>');
+        if(!obj.code) return layer.msg('<?php echo Yii::t('common','sms_code_empty');?>');
+        if(!obj.password) return layer.msg('<?php echo Yii::t('common','password_empty');?>');
         $.ajax({
             type: 'POST',
             url: '/login/dologin',
@@ -263,7 +263,7 @@
                 //console.log(data);
                 if(data.ret =='1') {  // 成功
                    // alert('登录成功！');
-                    window.location.href = "index.html";
+                    window.location.href = "/";
                 }else{
                     layer.msg(data.msg);
                 }
