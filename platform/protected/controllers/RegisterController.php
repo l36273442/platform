@@ -1,7 +1,7 @@
 <?php
 class RegisterController extends CommonController{
     
-    public function actionRegister(){
+    public function actionSignup(){
         if( isset($_SESSION['id']) && !empty( $_SESSION['id'] ) ){
             $this->redirect(Yii::app()->getBaseUrl().'/site/index');
         }    
@@ -13,7 +13,7 @@ class RegisterController extends CommonController{
         else{
             $arr['invite'] = '';
         } 
-        $this->render('register',$arr);
+        $this->render('signup',$arr);
     }
 
 	public function actionDoRegister(){
