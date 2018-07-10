@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>首页</title>
-    <link rel="stylesheet" href="css/reset.css">
+
     <style>
         .footer{
             width: 100%;
@@ -86,8 +80,7 @@
             background-size: 100% 100%;
         }
     </style>
-</head>
-<body>
+
 
 <footer class="footer">
     <div class="center">
@@ -123,11 +116,3 @@
         </div>
     </div>
 </footer>
-
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script>
-
-</script>
-</body>
-</html>
