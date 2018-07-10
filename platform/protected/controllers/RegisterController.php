@@ -79,8 +79,6 @@ class RegisterController extends CommonController{
                 $transaction->rollback();
                 $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
             }
-            unset(Yii::app()->session['code']);
-            unset(Yii::app()->session['code_timeout']);
             unset(Yii::app()->session['sms_code']);
             unset(Yii::app()->session['sms_code_time']);
             if( $user->invite_uid ){
