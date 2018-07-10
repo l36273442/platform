@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>首页</title>
-    <link rel="stylesheet" href="css/reset.css">
+
     <style>
         html,body{
             width: 100%;
@@ -141,10 +135,8 @@
                 width: 83.33333333%;
             }
         }
+      </style>
 
-    </style>
-</head>
-<body>
 <div class="row nav">
     <div class="area">
         <p class="nav_logo col-lg-2 col-md-2 col-sm-3 col-xs-10">M I N E B I T</p>
@@ -156,8 +148,8 @@
             <li class="ind_lef"><a href="#">帮助中心</a></li>
             <li class="ind_lef"><a href="#">关于我们</a></li>
 
-            <li class="ind_ri ind_ri1"><a href="signup.html">SIGN UP</a></li>
-            <li class="ind_ri ind_ri2"><a href="signin.html">SIGN IN</a>
+            <li class="ind_ri ind_ri1"><a href="/signup.html">SIGN UP</a></li>
+            <li class="ind_ri ind_ri2"><a href="/signin.html">SIGN IN</a>
         </ul>
         <div class="ind_right">
             <a href="#">中文</a>
@@ -170,9 +162,4 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script>
 
-</script>
-</body>
-</html>
