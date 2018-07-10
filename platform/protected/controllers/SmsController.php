@@ -58,11 +58,11 @@ class SmsController extends CommonController{
         if( !isset($p['mobile']) || empty($p['mobile']) ){
             $this->renderError(Yii::t('common','account_empty'), ErrorCode::PARAM_EMPTY); 
         }
-        /*
+        
         if( !isset($p['code']) || $p['code'] != $_SESSION['code'] ){
             $this->renderError(Yii::t('common','img_code_err'), ErrorCode::PARAM_ERROR);  
         }
-         */
+        
         $country_code = trim($p['country_code']);
         $mobile = trim($p['mobile']);
         $mobile = trim($country_code.$mobile , '+');
