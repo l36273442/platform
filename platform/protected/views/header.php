@@ -184,24 +184,28 @@
     <div class="area">
         <p class="nav_logo col-lg-2 col-md-2 col-sm-3 col-xs-10">M I N E B I T</p>
         <ul class="nav_tab col-lg-10 col-md-10 col-sm-9">
-            <li class="ind_lef"><a href="#">首页</a></li>
-            <li class="ind_lef"><a href="#">算力商店</a></li>
-            <li class="ind_lef"><a href="#">矿机商店</a></li>
-            <li class="ind_lef"><a href="#">矿场基建</a></li>
-            <li class="ind_lef"><a href="#">帮助中心</a></li>
-            <li class="ind_lef"><a href="#">关于我们</a></li>
-
-            <li class="ind_ri ind_ri1"><a href="/signup.html">SIGN UP</a></li>
-            <li class="ind_ri ind_ri2"><a href="/signin.html">SIGN IN</a>
-
+            <li class="ind_lef"><a href="/"><?php echo Yii::t('common','home');?></a></li>
+            <li class="ind_lef"><a href="/powercontractview/list"><?php echo Yii::t('common','power_shop');?></a></li>
+            <li class="ind_lef"><a href="/machinecontractview/list"><?php echo Yii::t('common','machine_shop');?></a></li>
+            <li class="ind_lef"><a href="/site/mines"><?php echo Yii::t('common','mines');?></a></li>
+            <li class="ind_lef"><a href="/site/help"><?php echo Yii::t('common','help');?></a></li>
+            <li class="ind_lef"><a href="/site/about"><?php echo Yii::t('common','about');?></a></li>
+            <?php if( !isset($_SESSION['id']) ){?>
+            <li class="ind_ri ind_ri1"><a href="/register/signup"><?php echo Yii::t('common','signup');?></a></li>
+            <li class="ind_ri ind_ri2"><a href="/login/signin"><?php echo Yii::t('common','signin');?></a>
+            <?php 
+            }
+            else{
+            ?>
              <div class="user">
-                 <a href="#">186****1111</a>
+             <a href="#"><?php echo substr($_SESSION['phone'],0,3).'****'.substr($_SESSION['phone'],7,4); ?></a>
                  <span class="triangle_border_down"></span>
 
                  <ul class="user_list">
-                    <li><a href="#">安全退出</a></li>
+                    <li><a href="/site/logout"><?php echo Yii::t('common','logout');?></a></li>
                  </ul>
              </div>
+            <?php }?>
         </ul>
         <div class="ind_right">
             <a href="#">中文</a>
