@@ -107,6 +107,7 @@
             display: inline-block;
             width: 40px;
             height: 18px;
+            border: none;
             line-height: 18px;
             text-align: center;
             position: absolute;
@@ -143,19 +144,6 @@
             right: 48px;
             line-height: 20px;
         }
-        .close{
-            position: absolute;
-            right: 10px;
-            top: 8px;
-            width: 14px;
-            height: 14px;
-            cursor: pointer;
-        }
-        .close img{
-            width: 100%;
-            height: 100%;
-            background-size: 100% 100%;
-        }
     </style>
 </head>
 <body>
@@ -181,7 +169,7 @@
         </li>
         <li class="reg-center">
             <input type="text" class="code" placeholder="<?php echo Yii::t('common','sms_code');?>">
-            <span class="security"><?php echo Yii::t('common','send');?></span>
+            <button class="security"><?php echo Yii::t('common','send');?></button>
         </li>
         <li class="reg-center">
             <input type="password" class="password" placeholder="<?php echo Yii::t('common','password_len');?>">
@@ -197,7 +185,6 @@
             <a href="/login/signin"><?php echo Yii::t('common','exists_accound');?></a>
         </li>
     </ul>
-    <div class="close"><img src="/images/icon_close@2x.png"></div>
 </div>
 
 
@@ -234,6 +221,22 @@
         obj.repetition = $(this).val();
     });
 
+    // 倒计时
+        var num=60;
+        function setNum(){
+            clearInterval(Countdown);
+            //$('.security').html(num+'S');
+           var Countdown = setInterval(function () {
+                num--;
+               $('.security').html(num+'S');
+               if(num<=0){
+                   clearInterval( Countdown);
+                   $('.security').html('send');
+                   $('.security').attr('disabled','false');
+               }
+            },1000);
+        }
+
 
     // 发送验证码
     $('.security').on('click',function () {
@@ -250,8 +253,9 @@
                 success: function(data){
                    // console.log(data);
                     if(data.ret =='1') {  // 成功
-                        $('.security').html('60');
-
+                       layer.msg('验证码发送成功！');
+                       setNum();
+                       $('.security').attr('disabled','true');
                     }else{
                         layer.msg(data.msg);
                     }
