@@ -12,7 +12,7 @@ class SiteController extends WebController
     {
         $data = $c = $c_id = array();
         $b = CoinBlockModel::model()->find('coin_id=:coin_id' ,array(':coin_id'=>1));
-        $data['block'] = $b->attributes;
+        $this->data['block'] = $b->attributes;
         $p = PowerContractModel::model()->findAll('is_index=:is_index' , array(':is_index' => 1));
         if( empty($p) ){
             $this->data['power'] = array();
