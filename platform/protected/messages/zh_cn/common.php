@@ -92,4 +92,5 @@ return array(
     'img_empty'             => '图像验证码不能为空！',
     'password_empty'        => '密码不能为空！',
     'repeat_password_empty' => '重复密码不能为空！',
+    'partner'               => '合作伙伴',
 );
