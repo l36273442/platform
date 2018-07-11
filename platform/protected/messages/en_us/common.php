@@ -93,4 +93,12 @@ return array(
     'password_empty'        => 'Password cannot be empty!',
     'repeat_password_empty' => 'Repeat password cannot be empty!',
     'partner'               => 'PARTNER',
+    'about'                 => 'ABOUT',
+    'faqs'                  => 'FAQS',
+    'power_shop'            => 'POWER SHOP',
+    'machine_shop'          => 'MACHINE SHOP',
+    'business'              => 'Business',
+    'service_tell'          => 'Service tell',
+    'wechat'                => 'Wechat',
+    'customer_sercvice'     => 'CUSTOMER SERVICE',
 );

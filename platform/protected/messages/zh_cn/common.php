@@ -93,4 +93,12 @@ return array(
     'password_empty'        => '密码不能为空！',
     'repeat_password_empty' => '重复密码不能为空！',
     'partner'               => '合作伙伴',
+    'about'                 => '关于我们',
+    'faqs'                  => '常见问题',
+    'power_shop'            => '算力商店',
+    'machine_shop'          => '矿机商店',
+    'business'              => '商务合作',
+    'service_tell'          => '服务电话',
+    'wechat'                => '微信',
+    'customer_sercvice'     => '客户服务',
 );
