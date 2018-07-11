@@ -52,12 +52,14 @@
             line-height: 60px;
             font-size: 34px;
             color: #696969;
+            width: 620px;
         }
         .ks_top1 span{
             display: inline-block;
             line-height: 35px;
             color: #9c9c9c;
             margin: 25px 0;
+             width: 450px;
         }
         .ks_top2{
             overflow: hidden;
@@ -202,6 +204,7 @@
             display: block;
             font-size: 22px;
             color: #696969;
+            width: 700px;
             line-height: 30px;
             margin: 43px 0 8px 0;
         }
@@ -400,12 +403,8 @@
 <!--  版心 -->
 <div class="type_area"></div>
 <div class="ks_top1 type_area">
-        <p style="margin-top: 65px;">ACCESSIBLE AND SUPERIOR CLOUD</p>
-        <p>HASH RENT SERVICE PLATFORM</p>
-        <span>MCC.TOP aims to povide accessible and qualified cloud hash service,<br/>
-             through which clients can easily experience mining fun based on<br/>
-             professional and comprehensive cloud hash maintenance by way of<br/>
-             cluster equipment deployment.
+        <p style="margin-top: 65px;">ACCESSIBLE AND SUPERIOR CLOUD HASH RENT SERVICE PLATFORM</p>
+        <span>MCC.TOP aims to povide accessible and qualified cloud hash service,through which clients can easily experience mining fun based on professional and comprehensive cloud hash maintenance by way of cluster equipment deployment.
        </span>
     </div>
 <div class="ks_top2 type_area">
@@ -572,10 +571,10 @@
         <p class="commodity">ANTMINER S9 WORLD'S MOST EFFICIENT MINER</p>
         <h5 class="linebg"></h5>
         <span class="introduction">
-        The Antminer S9 follows the same form factor as that of the hugely <br/>
-        popular Antminer S7 and the size is nearly the same as Antminter S7 . <br/>
-        Yet it has more than thrice the power and twice the efficiency of the <br/>
-        S7 .Each Antminter S9 employs 189 such chips to deliver more <br/>
+        The Antminer S9 follows the same form factor as that of the hugely
+        popular Antminer S7 and the size is nearly the same as Antminter S7 .
+        Yet it has more than thrice the power and twice the efficiency of the
+        S7 .Each Antminter S9 employs 189 such chips to deliver more
         hashrate and efficiency than any bitcoin miner ever made.
     </span>
         <ul class="productlist">
