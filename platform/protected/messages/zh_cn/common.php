@@ -101,4 +101,8 @@ return array(
     'service_tell'          => '服务电话',
     'wechat'                => '微信',
     'customer_sercvice'     => '客户服务',
+    'home'                  => '首页',
+    'mines'                 => '矿场基建',
+    'help'                  => '帮助',
+    'logout'                => '安全退出',
 );

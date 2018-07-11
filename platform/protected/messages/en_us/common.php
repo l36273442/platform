@@ -101,4 +101,8 @@ return array(
     'service_tell'          => 'Service tell',
     'wechat'                => 'Wechat',
     'customer_sercvice'     => 'CUSTOMER SERVICE',
+    'home'                  => 'HOME',
+    'mines'                 => 'MINES',
+    'help'                  => 'HELP',
+    'logout'                => 'logout',
 );
