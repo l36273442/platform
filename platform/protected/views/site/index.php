@@ -208,7 +208,6 @@
         .figure{
             width: 372px;
             height: 304px;
-            background: red;
             float: right;
             margin-top: 200px;
         }
@@ -348,7 +347,6 @@
             float: left;
             width: 440px;
             height: 310px;
-            background: pink;
             margin: 0 0 10px 10px;
         }
         .printright li img{
@@ -375,7 +373,7 @@
         .auspice li img{
             width: 120px;
             height: 50px;
-            background: red;
+            background-size: 100% 100%;
             margin:20px 0 0 112px;
         }
     </style>
@@ -618,7 +616,7 @@
         </ul>
     </div>
     <div class="figure">
-        <img src="" alt="">
+        <img src="/images/kuangji.png">
     </div>
     <ul class="card">
         <li>
@@ -651,10 +649,10 @@
             <div class="bgmine"></div>
         </div>
         <ul class="printright">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><img src="/images/kc_1.jpg"></li>
+            <li><img src="/images/kc_2.jpg"></li>
+            <li><img src="/images/kc_3.jpg"></li>
+            <li><img src="/images/kc_4.jpg"></li>
         </ul>
     </div>
 </div>
@@ -662,10 +660,10 @@
     <div class="type_area">
         <p class="sponsor">PARTNER</p>
         <ul class="auspice">
-            <li><img src="" alt=""></li>
-            <li><img src="" alt=""></li>
-            <li><img src="" alt=""></li>
-            <li><img src="" alt=""></li>
+            <li><img src="/images/jinse.png"></li>
+            <li><img src="/images/jinse.png"></li>
+            <li><img src="/images/jinse.png"></li>
+            <li><img src="/images/jinse.png"></li>
         </ul>
     </div>
 </div>
