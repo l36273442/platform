@@ -45,10 +45,10 @@ while($r=$mc->fetch() ){
     $cp[$r['coin_id']]['coin_id'] = $r['coin_id'];
     $up[$r['coin_id']][$r['uid']][$r['machine_id']][] = $r;
     if( isset($up[$r['coin_id']][$r['uid']]['all_total'])){
-        $up[$r['coin_id']][$r['uid']]['all_total'] += $r['total_power'];
+        $up[$r['coin_id']][$r['uid']][$r['machine_id']]['all_total'] += $r['total_power'];
     }
     else{
-        $up[$r['coin_id']][$r['uid']]['all_total'] = $r['total_power'];
+        $up[$r['coin_id']][$r['uid']][$r['machine_id']]['all_total'] = $r['total_power'];
     }
     $m_ids[] = $r['machine_id'];
 }
@@ -75,9 +75,15 @@ if($to){
         }
         if( isset($up[$r['coin_id']])){
             foreach( $up[$r['coin_id']] as $k=>$v ){
-                $inc = sprintf("%.12f" ,$v['all_total']*$cp[$r['coin_id']]['per_count']);
-                $m_fee = round($inc*$ms_k[$r['coin_id']]['manage_fee'],12);
-                $e_fee = round($up[$r['coin_id']][$k]['all_total']*$ms_k[$r['coin_id']]['electricity_fee'],12);
+                $inc = $m_fee = $e_fee = $in_d = 0 ;
+                foreach( $v as $key => $val){
+                    $inc += $val['all_total']*$cp[$r['coin_id']]['per_count'];
+                    $m_fee += $inc*$ms_k[$key]['manage_fee'];                
+                    $e_fee += $val['all_total']*$ms_k[$key]['electricity_fee'];
+                }
+                $inc = sprintf("%.12f" ,$inc);
+                $m_fee = round($m_fee,12);
+                $e_fee = round($e_fee,12);
                 $in_d = sprintf("%.12f",$inc-$m_fee-$e_fee);
                 try {
                     $db->beginTransaction();
