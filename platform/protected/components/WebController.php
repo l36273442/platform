@@ -45,6 +45,10 @@ class WebController extends CommonController
             $this->data['info']['email'] ='';
             $this->data['info']['about_zh_cn'] ='';
             $this->data['info']['about_en_us'] ='';
+            $this->data['info']['title_zh_cn'] ='';
+            $this->data['info']['title_en_us'] ='';
+            $this->data['info']['introduction_zh_cn'] ='';
+            $this->data['info']['introduction_en_us'] ='';
         }
     }
 }
