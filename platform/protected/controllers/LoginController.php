@@ -7,7 +7,7 @@ class LoginController extends CommonController{
         }    
         $this->render('signin');
     }
-    public function actionLoginOut(){
+    public function actionLogout(){
         if( isset(Yii::app()->session['id'] )){
             unset(Yii::app()->session['id']);
         }
