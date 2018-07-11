@@ -403,8 +403,8 @@
 <!--  版心 -->
 <div class="type_area"></div>
 <div class="ks_top1 type_area">
-        <p style="margin-top: 65px;">ACCESSIBLE AND SUPERIOR CLOUD HASH RENT SERVICE PLATFORM</p>
-        <span>MCC.TOP aims to povide accessible and qualified cloud hash service,through which clients can easily experience mining fun based on professional and comprehensive cloud hash maintenance by way of cluster equipment deployment.
+<p style="margin-top: 65px;"><?php echo $info['title_'.Yii::app()->language];?></p>
+        <span><?php echo $info['introduction_'.Yii::app()->language];?>
        </span>
     </div>
 <div class="ks_top2 type_area">
@@ -429,188 +429,89 @@
     </div>
 <div class="ks_top3">
     <div class="type_area">
-        <p class="shop">HASH SHOP</p>
+        <p class="shop"><?php echo Yii::t('power','power_shop');?></p>
+        <?php foreach( $power as $v ){  ?>
         <div class="store">
-            <p>ANTMINER S9</p>
+            <p><?php echo $block['seven_median'];?></p>
             <div class="bg"></div>
             <ul class="situation">
+                
                 <li>
                     <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
+                    <p><?php echo Yii::t('power','power_consumption');?>:&nbsp;<?php echo $v['power_consumption'];?></p>
+                </li>
+                
+                <li>
+                    <h5></h5>
+                    <i class="icon"></i>
+                    <p><?php echo Yii::t('power','deadline');?>:&nbsp;<?php echo Yii::t('power','lifelong');?></p>
                 </li>
                 <li>
                     <h5></h5>
                     <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
+                    <p><?php echo Yii::t('power','maintenance_fee');?>:&nbsp;<?php echo $v['manage_fee'];?>%profit</p>
                 </li>
                 <li>
                     <h5></h5>
                     <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
+                    <p><?php echo Yii::t('power','payment_methods');?>:&nbsp;usd</p>
                 </li>
                 <li>
                     <h5></h5>
                     <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
+                    <p><?php echo Yii::t('power','minimum_purchase_unit');?>:&nbsp;<?php echo $v['min_buy_number'];echo $v['unit_name'];?></p>
                 </li>
             </ul>
-            <span class="bigtext">￥750/T</span>
-            <span class="littletext">Minimum</span>
-            <button class="selection">Selection&nbsp;&nbsp;&nbsp;&nbsp;></button>
+            <span class="bigtext">usd&nbsp;<?php echo $v['price'];?>/<?php echo $v['unit_name'];?></span>
+            <span class="littletext"><?php echo Yii::t('power','minimum');?></span>
+            <a class="selection" href="/powercontractview/detail?id=<?php echo $v['id'];?>"><?php echo Yii::t('power','selection');?>&nbsp;&nbsp;&nbsp;&nbsp;></a>
         </div>
-        <div class="store">
-            <p>ANTMINER S9</p>
-            <div class="bg"></div>
-            <ul class="situation">
-                <li>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-            </ul>
-            <span class="bigtext">￥750/T</span>
-            <span class="littletext">Minimum</span>
-            <button class="selection">Selection&nbsp;&nbsp;&nbsp;&nbsp;></button>
-        </div>
-        <div class="store">
-            <p>ANTMINER S9</p>
-            <div class="bg"></div>
-            <ul class="situation">
-                <li>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-            </ul> <span class="bigtext">￥750/T</span>
-            <span class="littletext">Minimum</span>
-            <button class="selection">Selection&nbsp;&nbsp;&nbsp;&nbsp;></button>
-
-        </div>
-        <div class="store">
-            <p>ANTMINER S9</p>
-            <div class="bg"></div>
-            <ul class="situation">
-                <li>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-                <li>
-                    <h5></h5>
-                    <i class="icon"></i>
-                    <p>Power Consumption:100W/T</p>
-                </li>
-            </ul>
-            <span class="bigtext">￥750/T</span>
-            <span class="littletext">Minimum</span>
-            <button class="selection">Selection&nbsp;&nbsp;&nbsp;&nbsp;></button>
-        </div>
+        <?php }?>
     </div>
 </div>
 <div class="ks_top4 type_area">
     <div class="productleft">
         <i class="bgicon"></i>
         <i class="bgcircle"></i>
-        <p class="commodity">ANTMINER S9 WORLD'S MOST EFFICIENT MINER</p>
+        <p class="commodity"><?php echo $machine['name_'.Yii::app()->language];?></p>
         <h5 class="linebg"></h5>
         <span class="introduction">
-        The Antminer S9 follows the same form factor as that of the hugely
-        popular Antminer S7 and the size is nearly the same as Antminter S7 .
-        Yet it has more than thrice the power and twice the efficiency of the
-        S7 .Each Antminter S9 employs 189 such chips to deliver more
-        hashrate and efficiency than any bitcoin miner ever made.
-    </span>
+        <?php echo $machine['content_'.Yii::app()->language];?>
+        </span>
         <ul class="productlist">
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','hash_rate');?>: <?php echo $machine['rated_power'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','qiang');?>: <?php echo $machine['power_consumption'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','mains_efficiency');?>: <?php echo $machine['mains_efficiency'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','chips_num');?>: <?php echo $machine['chips_num'];?></span>
             </li>
         </ul>
         <ul class="productlist">
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','cool_down');?>: <?php echo $machine['cool_down'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','work_temperature');?>: <?php echo $machine['work_temperature'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','work_humidity');?>: <?php echo $machine['work_humidity'];?></span>
             </li>
             <li>
                 <i></i>
-                <span>Hash Rate: 14 TH/s +5%</span>
+                <span><?php echo Yii::t('power','rated_voltage');?>: <?php echo $machine['rated_voltage'];?></span>
             </li>
         </ul>
     </div>
@@ -622,22 +523,22 @@
                 <i class="cardleft1"></i>
                 <i class="cardright"></i>
                 <i class="carline"></i>
-            <p class="cardtext">STRICT SELECTION PROCESS OF MINERS</p>
-            <p class="cardcontent">To fully control the source of risk, MCC.TOP choosesco-operation organization strictly and does multidimensional audit and credit evaluation.</p>
+            <p class="cardtext"><?php echo Yii::t('power','machine_select');?></p>
+            <p class="cardcontent"><?php echo Yii::t('power','machine_select_content');?></p>
         </li>
         <li>
             <i class="cardleft2"></i>
             <i class="cardright"></i>
             <i class="carline"></i>
-            <p class="cardtext">STANDARD MANAGEMENT</p>
-            <p class="cardcontent">From miner purchase to profit creation,every operation process is under careful control of MCC.TOP to totally ensure the life cycle of the project.</p>
+            <p class="cardtext"><?php echo Yii::t('power','standard_management');?></p>
+            <p class="cardcontent"><?php echo Yii::t('power','standard_management_content');?></p>
         </li>
         <li>
             <i class="cardleft3"></i>
             <i class="cardright"></i>
             <i class="carline"></i>
-            <p class="cardtext">RISK CONTROL</p>
-            <p class="cardcontent">The MCC.TOP has its own self-development risk control system for capital selection and investors will enjoy the agreed income inde-pendently.</p>
+            <p class="cardtext"><?php echo Yii::t('power','risk_control');?></p>
+            <p class="cardcontent"><?php echo Yii::t('power','risk_control_content');?></p>
         </li>
     </ul>
 </div>
@@ -657,12 +558,11 @@
 </div>
 <div class="ks_top6">
     <div class="type_area">
-        <p class="sponsor">PARTNER</p>
+        <p class="sponsor"><?php echo Yii::t('common','partner');?></p>
         <ul class="auspice">
-            <li><img src="/images/jinse.png"></li>
-            <li><img src="/images/jinse.png"></li>
-            <li><img src="/images/jinse.png"></li>
-            <li><img src="/images/jinse.png"></li>
+            <?php foreach( $partner as $v ){?>
+            <li><img src="<?php echo $v['img_url'];?>"></li>
+            <?php }?>
         </ul>
     </div>
 </div>

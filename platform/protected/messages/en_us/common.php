@@ -92,4 +92,5 @@ return array(
     'img_empty'             => 'Image verification code cannot be empty!',
     'password_empty'        => 'Password cannot be empty!',
     'repeat_password_empty' => 'Repeat password cannot be empty!',
+    'partner'               => 'PARTNER',
 );
