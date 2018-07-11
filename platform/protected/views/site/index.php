@@ -432,7 +432,7 @@
         <p class="shop"><?php echo Yii::t('power','power_shop');?></p>
         <?php foreach( $power as $v ){  ?>
         <div class="store">
-            <p><?php echo $block['seven_median'];?></p>
+            <p><?php echo $v['name'];?></p>
             <div class="bg"></div>
             <ul class="situation">
                 
