@@ -411,20 +411,20 @@
 <div class="ks_top2 type_area">
         <ul>
             <li>
-                <p class="power">35744.96 PH/S</p>
-                <p class="describe">Whole Network Hash</p>
+            <p class="power"><?php echo $block['all_network_power'];?></p>
+                <p class="describe"><?php echo Yii::t('power','all_network_power');?></p>
             </li>
             <li>
-                <p class="power">299 H</p>
-                <p class="describe">Next Difficulty Remain Time</p>
+                <p class="power"><?php echo $block['next_difficulty_time'];?></p>
+                <p class="describe"><?php echo Yii::t('power','next_difficulty_time');?></p>
             </li>
             <li>
-                <p class="power">1792</p>
-                <p class="describe">Next Difficulty Remain Block</p>
+                <p class="power"><?php echo $block['next_last_block'];?></p>
+                <p class="describe"><?php echo Yii::t('power','next_last_block');?></p>
             </li>
             <li style="margin-right: 0;">
-                <p class="power">1.04 M</p>
-                <p class="describe">Block Median in Seven Day</p>
+                <p class="power"><?php echo $block['seven_median'];?></p>
+                <p class="describe"><?php echo Yii::t('power','seven_median');?></p>
             </li>
         </ul>
     </div>
