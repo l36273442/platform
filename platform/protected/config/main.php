@@ -47,6 +47,8 @@ return array(
                 '' => 'site/index',
                 'signin' => 'login/signin',
                 'signup' => 'register/signup',
+                'hashshop' => 'powercontractview/hashshop',  
+                'millshop' => 'machinecontractview/millshop',  
                 'resetpassword' => 'login/resetpassword',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
