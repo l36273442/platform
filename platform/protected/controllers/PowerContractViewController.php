@@ -2,8 +2,8 @@
 class PowerContractViewController extends CommonController{
 
     public $info;
-    public function actionList(){
-        $this->render('list',$this->data);
+    public function actionHashShop(){
+        $this->render('hashshop',$this->data);
     }
     public function actionDetail(){
         $p = $this->getParams('REQUEST');
