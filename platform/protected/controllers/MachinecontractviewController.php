@@ -1,5 +1,5 @@
 <?php
-class MachineContractViewController extends CommonController{
+class MachineContractViewController extends WebController{
 
     public $info;
     public function actionMillShop(){

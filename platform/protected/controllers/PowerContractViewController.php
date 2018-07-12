@@ -1,5 +1,5 @@
 <?php
-class PowerContractViewController extends CommonController{
+class PowerContractViewController extends WebController{
 
     public $info;
     public function actionHashShop(){
