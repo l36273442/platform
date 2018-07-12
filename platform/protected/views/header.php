@@ -15,6 +15,7 @@
             .nav .area{
                 margin: auto;
                 height: 100%;
+                position: relative;
             }
            .nav_logo {
                float: left;
@@ -68,21 +69,21 @@
                 padding: 0 10px 0 30px;
                 border-radius: 5px;
             }
-            .ind_right{
+           .layui-form{
                 float: right;
-                width: 68px;
-                height: 40px;
-                line-height: 40px;
-                border: 1px solid #fff;
-                position: relative;
-                text-align: left;
-                top: -60px;
-                right: -50px;
-                padding: 0 10px 0 30px;
-                border-radius: 5px;
-                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                width: 90px;
+                right: 0;
+           }
+            .layui-form-selected dl{
+               width:90px;
+               text-align: center;
             }
-            .ind_right a,.user a{
+           .layui-input, .layui-textarea{
+                text-align: center;
+           }
+            .user a{
                 display: inline-block;
                 font-size: 14px;
                 color: #fff;
@@ -130,41 +131,12 @@
                 color: #a7a6a8;
                 font-size: 18px;
             }
-            .nav_list{
-                width: 108px;
-                border: 1px solid #fff;
-                position: absolute;
-                right: -2px;
-                background: red;
-                top: 40px;
-                z-index: 2;
-                border-radius: 3px;
-                display: none;
-            }
-            ul.nav_list li{
-                width: 100%;
-                height: 40px;
-                line-height: 40px;
-            }
-            ul.nav_list li a{
-                float: left;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                color: #fff;
-            }
             .nav_tab .ind_lef a:hover{
                 border-bottom: 6px solid #009dea;
                 color: #fff;
             }
             .nav_tab .ind_ri:hover{
                 background: #42d06c;;
-            }
-            .ind_right:hover ul.nav_list{
-              display: block;
-            }
-            ul.nav_list li:hover{
-                background: yellow;
             }
 
             @media screen and (min-width: 1200px){
@@ -207,15 +179,14 @@
              </div>
             <?php }?>
         </ul>
-        <div class="ind_right">
-            <a href="#">中文</a>
-            <span class="triangle_border_down"></span>
 
-            <ul class="nav_list">
-               <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-            </ul>
-        </div>
+       <form class="layui-form" action="">
+            <select name="city" lay-verify="">
+                   <option value="">English</option>
+                   <option value="010">中文</option>
+             </select>
+       </form>
+
     </div>
 </div>
 
