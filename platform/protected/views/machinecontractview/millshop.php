@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo Yii::t('common','machine_shop');?></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="dist/css/layui.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
         .type_area{
             width: 1200px;
@@ -13,7 +13,7 @@
         }
         .millshop{
            height: 520px;
-            background: url("images/top-bg@2x.png") no-repeat;
+            background: url("/images/top-bg@2x.png") no-repeat;
             background-size: 100% 100%;
             color: #fff;
         }
@@ -34,7 +34,7 @@
         .mill{
             float: left;
             width: 380px;
-            background: url("images/背景@2x.png") no-repeat;
+            background: url("/images/背景@2x.png") no-repeat;
             background-size: 100% 100%;
             margin:0 30px 30px 0;
         }
@@ -110,136 +110,11 @@
 
 </div>
 <ul class="shop type_area">
-    <!--<li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <img src="images/bc_logo_@2x.png">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="">
-        </p>
-        <p class="three">交割时间&nbsp;<span class="day">15</span>天</p>
-        <p class="four">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>-->
+
 </ul>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="dist/layui.all.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/dist/layui.all.js"></script>
 <script>
     function millshop() {
         let size = 20;
@@ -253,7 +128,7 @@
                 if(data.ret =='1') {  // 成功
                     if(data.data){
                         let html = data.data.map((item, index) => {
-                            console.log(item);
+                            //console.log(item);
                            // console.log(item.deal_total,item.total);
                             return `<li class="mill" id=${item.id}>
                                       <p class="one">

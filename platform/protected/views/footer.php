@@ -24,7 +24,7 @@
         }
         .message li{
             float: left;
-            margin-right: 50px;
+            margin-right: 40px;
             font-size: 14px;
         }
         .message li a{
