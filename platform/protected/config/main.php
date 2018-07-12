@@ -43,7 +43,11 @@ return array(
 		'urlManager'=>array(
             'urlFormat'=>'path',
             //'urlSuffix'=>'.html',
-			'rules'=>array(
+            'rules'=>array(
+                '' => 'site/index',
+                'signin' => 'login/signin',
+                'signup' => 'register/signup',
+                'resetpassword' => 'login/resetpassword',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
         ),
