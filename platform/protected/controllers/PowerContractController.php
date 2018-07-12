@@ -27,23 +27,21 @@ class PowerContractController extends CommonController{
             if( !in_array( $v['coin_id'] , $coin_id ) ){
                 $coin_id[] = $v['coin_id'];
             }
-            if( !in_array( $v['unit_id'] , $unit_id ) ){
-                $unit_id[] = $v['unit_id'];
-            }
-            if( !in_array( $v['machine_id'] , $machine_id ) ){
-                $machine_id[] = $v['machine_id'];
-            }   
         }
         $coins = CoinModel::model()->getCoinsByIds($coin_id );
-        $coins_key = $this->RowsToArr($coins);
-        $machine = MiningMachineModel::model()->getMachinesByIds($machine_id );
-        $machine_key = $this->RowsToArr($machine);
+        if($coins){
+            
+            foreach( $coins as $v ){
+                $coins_key[$v['id']] = $v;
+                $unit_id[] = $v['unit_id'];
+            }
+        }
+        
         $unit = ComputingPowerUnitModel::model()->getUnitsByIds($unit_id );
         $unit_key = $this->RowsToArr($unit);
         foreach( $list['list'] as &$v ){
             $v['coin_name'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['name']:'';
-            $v['machine_name'] = isset($machine_key[$v['machine_id']])?$machine_key[$v['machine_id']]['name']:'';
-            $v['unit_name'] = isset($unit_key[$v['unit_id']])?$unit_key[$v['unit_id']]['name']:'';
+            $v['unit_name'] = isset($unit_key[$coins_key[$v['coin_id']]['unit_id']])?$unit_key[$coins_key[$v['coin_id']]['unit_id']]['name']:'';
         }
         $this->renderJson(Yii::t('common','success'), $list);
     }
