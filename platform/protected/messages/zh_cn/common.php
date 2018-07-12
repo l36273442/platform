@@ -105,4 +105,8 @@ return array(
     'mines'                 => '矿场基建',
     'help'                  => '帮助',
     'logout'                => '安全退出',
+    'wechat_service'        => '微信客户服务',
+    'shop_income_sm'        => '低成本高利润更安全',
+    'day'                   => '天',
+    'delivery_time'         => '交割时间',
 );
