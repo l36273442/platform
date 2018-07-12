@@ -40,6 +40,7 @@ class PowerContractController extends CommonController{
         $unit = ComputingPowerUnitModel::model()->getUnitsByIds($unit_id );
         $unit_key = $this->RowsToArr($unit);
         foreach( $list['list'] as &$v ){
+            $v['coin_img_url'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['img_url']:'';
             $v['coin_name'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['name']:'';
             $v['unit_name'] = isset($unit_key[$coins_key[$v['coin_id']]['unit_id']])?$unit_key[$coins_key[$v['coin_id']]['unit_id']]['name']:'';
         }
