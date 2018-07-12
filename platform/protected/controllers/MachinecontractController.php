@@ -19,8 +19,6 @@ class MachineContractController extends CommonController{
         foreach( $re as $v ){
             $r = array();
             $r = $v->attributes;
-            $r['start_time'] = date('Y-m-d H:i:s' , $r['start_time']);
-            $r['end_time']  = date('Y-m-d H:i:s' , $r['end_time']);
             $m[]= $r['machine_id'];
             $data[] = $r;
         }
@@ -46,7 +44,7 @@ class MachineContractController extends CommonController{
         } 
         foreach ( $data as &$v ){
             $v['coin_name'] = $c_k[$m_k[$v['machine_id']]['coin_id']]['name'];
-            $v['machine_name'] = $m_k[$v['machine_id']]['name'];
+            $v['machine_name'] = $m_k[$v['machine_id']]['name_'.Yii::app()->language];
             $v['unit_name'] = $u_k[$c_k[$m_k[$v['machine_id']]['coin_id']]['unit_id']]['name'];
         }
         $this->renderJson(Yii::t('common','success') , $data);
