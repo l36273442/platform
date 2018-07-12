@@ -101,6 +101,7 @@
     </style>
 </head>
 <body>
+<?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="millshop">
     <div class="type_area">
         <p class="shoptext1">矿机商店</p>
@@ -289,5 +290,6 @@
     });
 
 </script>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
 </html>

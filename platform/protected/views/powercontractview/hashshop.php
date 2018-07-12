@@ -116,6 +116,7 @@
     </style>
 </head>
 <body>
+<?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="millshop">
     <div class="type_area">
         <p class="shoptext1">HASH SHOP</p>
@@ -414,5 +415,6 @@
        window.location.href="/powercontractview/detail?id="+id;
    });
 </script>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
 </html>
