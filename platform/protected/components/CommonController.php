@@ -40,12 +40,13 @@ class CommonController extends CController
     const DEL = 2;
     const UPDATE = 3;
     const SEARCH = 4;
+    public $lang = array('zh_cn','en_us');
     public function init()
     {
         $this->start_time = microtime(true);
         Yii::app()->messages->forceTranslation = true;
         
-        if(isset($_GET['lang']) && $_GET['lang'] != "")
+        if(isset($_GET['lang']) && $_GET['lang'] != "" && in_array( $_GET['lang'], $this->lang))
         {
             Yii::app()->language = $_GET['lang'];
             Yii::app()->session['lang'] =  $_GET['lang'];
