@@ -43,6 +43,8 @@ class PowerContractController extends CommonController{
             $v['coin_img_url'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['img_url']:'';
             $v['coin_name'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['name']:'';
             $v['unit_name'] = isset($unit_key[$coins_key[$v['coin_id']]['unit_id']])?$unit_key[$coins_key[$v['coin_id']]['unit_id']]['name']:'';
+            $v['total'] = sprintf("%.4f",$v['total']);
+            $v['deal_total'] = sprintf("%.4f",$v['deal_total']);
         }
         $this->renderJson(Yii::t('common','success'), $list);
     }
