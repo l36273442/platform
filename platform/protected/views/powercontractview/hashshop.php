@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo Yii::t('common','power_shop');?></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="dist/css/layui.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
         .type_area{
             width: 1200px;
@@ -13,7 +13,7 @@
         }
         .millshop{
             height: 520px;
-            background: url("images/top-bg@2x.png") no-repeat;
+            background: url("/images/top-bg@2x.png") no-repeat;
             background-size: 100% 100%;
             color: #fff;
         }
@@ -34,7 +34,7 @@
         .mill{
             float: left;
             width: 380px;
-            background: url("images/背景@2x.png") no-repeat;
+            background: url("/images/背景@2x.png") no-repeat;
             background-size: 100% 100%;
             margin:0 30px 30px 0;
         }
@@ -73,7 +73,7 @@
             float: left;
             width: 60px;
             height: 100%;
-            background: url("images/卡片右侧@2x.png") no-repeat;
+            background: url("/images/卡片右侧@2x.png") no-repeat;
             background-size: 100% 100%;
         }
         .three span{
@@ -125,238 +125,11 @@
 
 </div>
 <ul class="shop type_area">
-    <!--<li class="mill">
-        <p class="one">
-            <span>L3+ FUTURES IN 15 DAYS</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>
-    <li class="mill mar_rig">
-        <p class="one">
-            <span>BTH+S9NHBA</span>
-        </p>
-        <p class="two">
-            <img src="images/kuangji.png">
-        </p>
-        <p class="three">
-            <i></i>
-            <span>20M</span>
-        </p>
-        <div class="layui-progress">
-            <div class="layui-progress-bar" lay-percent="70%"></div>
-        </div>
-        <p class="five">
-            <span>$ 2.50 USTD</span>
-            <a href="#" class="buy">BUY</a>
-        </p>
-    </li>-->
+
 </ul>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="dist/layui.all.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/dist/layui.all.js"></script>
 <script>
    function hashshop() {
        let size = 20;
