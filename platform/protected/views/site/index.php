@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>首页</title>
+    <title><?php echo Yii::t('common','home');?></title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
     <style>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>矿机商店</title>
+    <title><?php echo Yii::t('common','machine_shop');?></title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="dist/css/layui.css">
     <style>
@@ -104,8 +104,8 @@
 <?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="millshop">
     <div class="type_area">
-        <p class="shoptext1">矿机商店</p>
-        <p class="shoptext2">LOW COST HIGH PROFIT MORE SECURE</p>
+        <p class="shoptext1"><?php echo Yii::t('common','machine_shop');?></p>
+        <p class="shoptext2"><?php echo Yii::t('common','shop_income_sm');?></p>
     </div>
 
 </div>
@@ -263,10 +263,10 @@
                                       <p class="two">
                                          <img src=${item.machine_img_url}>
                                       </p>
-                                      <p class="three">交割时间&nbsp;<b>${item.pay_time}</b>天</p>
+                                      <p class="three"><?php echo Yii::t('common','delivery_time');?>&nbsp;<b>${item.pay_time}</b><?php echo Yii::t('common','day');?></p>
                                       <p class="four">
                                          <span>$ <b>${item.price}</b> USD</span>
-                                         <button class="buy">BUY</button>
+                                         <button class="buy"><?php echo Yii::t('common','buy');?></button>
                                        </p>
                                  </li>`
                         });
@@ -277,7 +277,7 @@
                 }
             },
             error: function (data) {
-                alert('接口发送失败！')
+                alert('fail！')
             }
         })
     }
