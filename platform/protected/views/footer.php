@@ -24,8 +24,11 @@
         }
         .message li{
             float: left;
-            margin-right: 80px;
+            margin-right: 50px;
             font-size: 14px;
+        }
+        .message li a{
+            color: #fff;
         }
         .middle{
             float: left;
@@ -87,10 +90,10 @@
         <div class="left">
             <p class="minebit">M I N E B I T</p>
             <ul class="message">
-                <a href="/powercontractview/shop"><Li><?php echo Yii::t('common','power_shop');?></li></a>
-                <a href="/machinecontractview/shop"><li><?php echo Yii::t('common','machine_shop');?></li></a>
-                <a href="/site/faqs"><li><?php echo Yii::t('common','faqs');?></li></a>
-                <a href="/site/about"><li><?php echo Yii::t('common','about');?></li></a>
+                <li><a href="/powercontractview/shop"><?php echo Yii::t('common','power_shop');?></a></li>
+                <li><a href="/machinecontractview/shop"><?php echo Yii::t('common','machine_shop');?></a></li>
+                <li><a href="/site/faqs"><?php echo Yii::t('common','faqs');?></a></li>
+                <li><a href="/site/about"><?php echo Yii::t('common','about');?></a></li>
             </ul>
         </div>
         <div class="middle">
