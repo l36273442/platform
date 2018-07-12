@@ -44,7 +44,9 @@ class MachineContractController extends CommonController{
         } 
         foreach ( $data as &$v ){
             $v['coin_name'] = $c_k[$m_k[$v['machine_id']]['coin_id']]['name'];
+            $v['coin_img_url'] = $c_k[$m_k[$v['machine_id']]['coin_id']]['img_url'];
             $v['machine_name'] = $m_k[$v['machine_id']]['name_'.Yii::app()->language];
+            $v['machine_img_url'] = $m_k[$v['machine_id']]['img_url'];
             $v['unit_name'] = $u_k[$c_k[$m_k[$v['machine_id']]['coin_id']]['unit_id']]['name'];
         }
         $this->renderJson(Yii::t('common','success') , $data);
