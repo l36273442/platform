@@ -97,7 +97,7 @@
             </ul>
         </div>
         <div class="middle">
-            <p>WECHAT CUSTOMER SERVICE</p>
+            <p><?php echo Yii::t('common','wechat_service');?></p>
             <div class="ewm"></div>
             <span>Copyright © 2018 MineBit Co.，Limited</span>
         </div>

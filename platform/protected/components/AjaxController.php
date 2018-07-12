@@ -7,7 +7,7 @@ class AjaxController extends CommonController
         $this->start_time = microtime(true);
         Yii::app()->messages->forceTranslation = true;
         
-        if(isset($_GET['lang']) && $_GET['lang'] != "")
+        if(isset($_GET['lang']) && $_GET['lang'] != "" && in_array( $_GET['lang'], $this->lang))
         {
             Yii::app()->language = $_GET['lang'];
             Yii::app()->session['lang'] = $_GET['lang'];

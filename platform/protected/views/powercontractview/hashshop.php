@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>算力商店</title>
+    <title><?php echo Yii::t('common','power_shop');?></title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="dist/css/layui.css">
     <style>
@@ -119,8 +119,8 @@
 <?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="millshop">
     <div class="type_area">
-        <p class="shoptext1">HASH SHOP</p>
-        <p class="shoptext2">LOW COST HIGH PROFIT MORE SECURE</p>
+        <p class="shoptext1"><?php echo Yii::t('common','power_shop');?></p>
+        <p class="shoptext2"><?php echo Yii::t('common','shop_income_sm');?></p>
     </div>
 
 </div>
@@ -389,7 +389,7 @@
                                   </div>
                                   <p class="five">
                                      <span>$ <b>${item.price}</b> USD</span>
-                                     <button class="buy">BUY</button>
+                                     <button class="buy"><?php echo Yii::t('common','buy');?></button>
                                    </p>
                                    </li>`
                        });
@@ -403,7 +403,7 @@
                }
            },
            error: function (data) {
-               alert('接口发送失败！')
+               alert('fail！')
            }
        })
    }

@@ -105,4 +105,8 @@ return array(
     'mines'                 => 'MINES',
     'help'                  => 'HELP',
     'logout'                => 'logout',
+    'wechat_service'        => 'WECHAT CUSTOMER SERVICE',
+    'shop_income_sm'        => 'LOW COST HIGH PROFIT MORE SECURE',
+    'day'                   => 'Day',
+    'delivery_time'         => 'Delivery time',
 );
