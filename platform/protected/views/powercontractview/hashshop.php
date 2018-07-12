@@ -412,7 +412,7 @@
     // 算力详情
    $('.shop').on('click','.mill', function (e) {
        let id = $(this).attr('id');
-       window.location.href="/powercontractview/detail?id="+id;
+       window.location.href="/hashdetail?id="+id;
    });
 </script>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>

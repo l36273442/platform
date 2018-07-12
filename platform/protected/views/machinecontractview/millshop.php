@@ -286,7 +286,7 @@
     // 矿机详情
     $('.shop').on('click','.mill', function (e) {
         let id = $(this).attr('id');
-        window.location.href="machinecontractview/detail?id="+id;
+        window.location.href="milldetail?id="+id;
     });
 
 </script>
