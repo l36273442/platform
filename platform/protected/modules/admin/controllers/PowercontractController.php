@@ -1,0 +1,69 @@
+<?php
+class PowerContractController extends CommonController{
+    
+	public function actionGetList(){
+        $p = $this->getParams('REQUEST');
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        $list = PowerContractModel::model()->getList( 0 , $page , $size );
+        if( !$list ){
+            $this->renderError(Yii::t('common','error') , ErrorCode::SYSTEM_ERROR);
+        }        
+        $coin_id = $machine_id = $unit_id = array();
+        foreach( $list['list'] as $v ){
+            if( !in_array( $v['coin_id'] , $coin_id ) ){
+                $coin_id[] = $v['coin_id'];
+            }
+        }
+        $coins = CoinModel::model()->getCoinsByIds($coin_id );
+        if($coins){
+            
+            foreach( $coins as $v ){
+                $coins_key[$v['id']] = $v;
+                $unit_id[] = $v['unit_id'];
+            }
+        }
+        
+        $unit = ComputingPowerUnitModel::model()->getUnitsByIds($unit_id );
+        $unit_key = $this->RowsToArr($unit);
+        foreach( $list['list'] as &$v ){
+            $v['coin_img_url'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['img_url']:'';
+            $v['coin_name'] = isset($coins_key[$v['coin_id']])?$coins_key[$v['coin_id']]['name']:'';
+            $v['unit_name'] = isset($unit_key[$coins_key[$v['coin_id']]['unit_id']])?$unit_key[$coins_key[$v['coin_id']]['unit_id']]['name']:'';
+            $v['total'] = sprintf("%.2f",$v['total']);
+            $v['price'] = sprintf("%.2f",$v['price']);
+            $v['deal_total'] = sprintf("%.2f",$v['deal_total']);
+        }
+        $this->renderJson(Yii::t('common','success'), $list);
+    }
+    public function actionGetDetail(){
+        $p = $this->getParams('REQUEST');
+        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0){
+            $this->renderError(Yii::t('common','param_error') , ErrorCode::SYSTEM_ERROR);
+        }
+        
+        $detail = PowerContractModel::model()->find( 'id=:id' , array(':id'=>$p['id']) );
+        $coin = coinModel::model()->find( 'id=:id' , array(':id'=>$detail['coin_id']) );
+        $unit = UnitModel::model()->find( 'id=:id' , array(':id'=>$coin['unit_id']) );
+        $data['detail'] = empty($detail)?array():$detail->attributes;
+        $data['coin'] = empty($coin)?array():$coin->attributes;
+        $data['unit'] = empty($unit)?array():$unit->attributes;
+        
+        $this->renderJson(Yii::t('common','success'), $data);
+         
+    }
+
+}
