@@ -6,13 +6,13 @@ class PowerContractOrderModel extends CActiveRecord{
     public function tableName(){
         return "platform_power_contract_order";
     }
-    public function getList( $uid , $status = '' , $page = 1 ,$size = 20  ){
+    public function getList( $uid = '' , $status = '' , $page = 1 ,$size = 20  ){
         $c = $criteria = new CDbCriteria();
         $c->order = 'id ASC';
         if( $status !== '' ){
             $c->addCondition('status='.$status);
         }
-        if( $uid === '' ){
+        if( $uid !== '' ){
             $c->addCondition('uid='.$uid);
         }
         $count = $this->count($c);
