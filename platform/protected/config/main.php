@@ -47,6 +47,7 @@ return array(
                 '' => 'site/index',
                 'signin' => 'login/signin',
                 'signup' => 'register/signup',
+                'logout' => 'login/logout',
                 'hashshop' => 'powercontractview/hashshop',  
                 'millshop' => 'machinecontractview/millshop',  
                 'hashdetail' => 'powercontractview/hashdetail',  

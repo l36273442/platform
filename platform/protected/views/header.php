@@ -189,7 +189,7 @@
                  <span class="triangle_border_down"></span>
 
                  <ul class="user_list">
-                    <li><a href="/site/logout"><?php echo Yii::t('common','logout');?></a></li>
+                    <li><a href="/logout"><?php echo Yii::t('common','logout');?></a></li>
                  </ul>
              </div>
             <?php }?>
@@ -197,8 +197,17 @@
 
         <form class="layui-form" action="">
                    <select name="city" lay-filter="test" class="my">
-                       <option value="zh_cn">中文</option>
-                       <option value="en_us">English</option>
+                   <option value="<?php echo Yii::app()->language; ?>"><?php echo Yii::t('common',Yii::app()->language);?></option>
+                        <?php if(isset($this->lang) && !empty($this->lang)) {
+                                foreach( $this->lang as $v ){
+                                  if( Yii::app()->language != $v ){
+                        ?>
+                                        <option value="<?php echo $v; ?>"><?php echo Yii::t('common',$v);?></option>
+                        <?php 
+                                    }
+                                }
+                            }
+                        ?>
                    </select>
         </form>
 
