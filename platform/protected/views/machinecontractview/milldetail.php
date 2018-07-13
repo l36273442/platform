@@ -58,6 +58,9 @@
             padding-left: 20px;
             color: #fff;
         }
+        .int_rig,.buy:hover{
+                    color: #fff;
+        }
         .trade{
             position: absolute;
             font-size: 22px;
@@ -80,6 +83,8 @@
             width: 160px;
             background: #42d06c;
             right: 0;
+            color: #fff;
+            cursor: pointer;
         }
         .active{
             width:100%;
@@ -285,6 +290,14 @@
         .layui-colla-icon{
             display: none;
         }
+        .msk{
+            width: 160px;
+            background: transparent;
+            right: 0;
+            height: 64px;
+            position: absolute;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -297,12 +310,13 @@
         </p>
         <div class="left1">
             <p class="text"><?php echo $machine['content_'.Yii::app()->language];?></p>
-            <p class="surplus"><?php echo Yii::t('power','surplus');?> <?php echo ($detail['total']-$detail['deal_total']>0)?($detail['total']-$detail['deal_total']):0    ;?><?php echo Yii::t('common','stand');?></p>
+            <p class="surplus"><?php echo Yii::t('power','surplus');?> <b class="num"> <?php echo ($detail['total']-$detail['deal_total']>0)?($detail['total']-$detail['deal_total']):0    ;?></b><?php echo Yii::t('common','stand');?></p>
             <p class="content">
                 <input type="text" class="buyinput" placeholder="<?php echo floor($detail['price']);?> USD/<?php echo Yii::t('common','stand');?>" onkeyup="NumberCheck(this)">
                 <span class="trade"><?php echo Yii::t('common','stand');?>=</span>
                 <span class="int_rig"><b class="btczong">0</b> USD</span>
-                <span class="buy"><?php echo Yii::t('common','buy');?></span>
+                <button class="buy"><?php echo Yii::t('common','buy');?></button>
+                <button class="msk"></button>
             </p>
             <p class="active">
                 <span class="bar"></span>
@@ -433,6 +447,45 @@
         obj.value = obj.value.replace(/[^\d]/g, ""); //清除"数字"以外的字符
         $('.btczong').html(obj.value*price);
     }
+
+     // 矿机购买
+     $('.buy').on('click',function () {
+            let id = window.location.search.substr(1).split('&')[0].split('=')[1];
+            let number = $('.num').html();
+            let count = $('.buyinput').val();
+            if(count){
+                 $('.msk').show();
+                 $.ajax({
+                      type: 'POST',
+                      url: '/machinecontractorder/order',
+                      data:{
+                           id:id,
+                           count:count
+                      },
+                      dataType: 'json',
+                      success: function(data){
+                           console.log(data);
+                           if(data.ret =='1') {  // 成功
+                               $('.msk').hide();
+                               layer.open({
+                                  title: '矿机购买',
+                                  content: '购买成功！',
+                                  yes:function(index, layero){
+                                  location.reload();
+                               }
+                             });
+                         }else{
+                              layer.msg(data.msg);
+                         }
+                      },
+                      error: function (data) {
+                            alert('fail!')
+                      }
+                 })
+            }else{
+                 layer.msg('请输入购买数量！');
+         }
+     });
 
 </script>
 </body>
