@@ -1,5 +1,5 @@
 <?php
-class MachineContractController extends CommonController{
+class MachineContractController extends AjaxController{
     public function actionGetList(){
         $re =  MachineContractModel::model()->findAllBySql('select * from '.MachineContractModel::model()->tableName().' where status = 0 order by id desc ');
         if( $re === false ){
@@ -56,9 +56,10 @@ class MachineContractController extends CommonController{
         if( !isset($p['id']) || !is_numeric($p['id']) || $p['id']<=0 ){
             $this->renderError(Yii::t('common','param_error') , ErrorCode::PARAM_ERROR);
         }
-        if( !isset($p['count']) || !is_int($p['count']) || $p['count']<=0 ){
+        if( !isset($p['count']) || !preg_match('/^[0-9]+$/', $p['count']) || $p['count']<=0 ){
             $this->renderError(Yii::t('common','param_error') , ErrorCode::PARAM_ERROR);
         }
+        $count = $p['count'];
         $transaction = Yii::app()->db->beginTransaction();
         try{
             $mc = MachineContractModel::model()->findBySql( 'select * from '.MachineContractModel::model()->tableName().' where id=:id for update '  , array( ':id' => $p['id'] ) );
@@ -68,10 +69,18 @@ class MachineContractController extends CommonController{
                 $this->renderError(Yii::t('common','system_error2'), ErrorCode::SYSTEM_ERROR); 
             }
             if( $mc->status != 0 ){
+                $transaction->rollback();
                 $this->renderError(Yii::t('common','contract_status_error'), ErrorCode::SYSTEM_ERROR); 
             }
             if( $mc->total <= $mc->deal_total + $count ){
+                $transaction->rollback();
                 $this->renderError(Yii::t('common','contract_not_enough'), ErrorCode::SYSTEM_ERROR); 
+            }
+            $m = MiningMachineModel::model()->find('id=:id', array(':id'=>$mc['machine_id']));
+            if(empty($m)){
+                $transaction->rollback();
+                $this->renderError(Yii::t('common','system_error2'), ErrorCode::SYSTEM_ERROR); 
+
             }
             $t = time();
             $total = round($mc->price*$p['count'],8);
@@ -82,22 +91,22 @@ class MachineContractController extends CommonController{
             $order->coin_id = $mc->coin_id;
             $order->price = $mc->price;
             $order->order_price = $total;
+            $order->power = $m->power;
+            $order->total_power = $p['count']* $m->power;
             $order->count = $p['count'];
-            $order->electricity_fee = $mc->electricity_fee;
-            $order->manage_fee = $mc->manage_fee;
             $order->ctime = $t;
             $order->uptime = $t;
             $re = $order->save();            
             $re2 = MachineContractModel::model()->updateCounters(array('deal_total'=>$count),'id=:id',array(':id'=>$p['id']));
             $re3 = UserLegalCoinModel::model()->updateCounters(array('usd'=>-$total) , 'uid=:uid',array('uid'=>Yii::app()->session['id']));
-            $re4 = UserCoinModel::model()->updateCounters( array('total_machine'=>$count ,'machine_total_investment' => $total ,'total_investment' => $total) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $c_info->coin_id ));
+            $re4 = UserCoinModel::model()->updateCounters( array('total_machine'=>$count ,'machine_total_investment' => $total ,'total_investment' => $total) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $mc->coin_id ));
 
-            if( !$re1 || !$re2 || !$re3 || !$re4 ){
+            if( !$re || !$re2 || !$re3 || !$re4 ){
                 $transaction->rollback();
                 $this->renderError(Yii::t('common','order_fail'), ErrorCode::PARAM_EMPTY); 
             }
-            $olog = new UserLegalCoinModel();
-            $olog->name = Yii::t('common','machine_buy');
+            $olog = new UserLegalCoinLogModel();
+            $olog->name = 'machine_buy';
             $olog->coin_id = $mc->coin_id;
             $olog->o_id = $order->id;
             $olog->uid = Yii::app()->session['id'];
