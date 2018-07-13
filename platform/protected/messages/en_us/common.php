@@ -109,4 +109,6 @@ return array(
     'shop_income_sm'        => 'LOW COST HIGH PROFIT MORE SECURE',
     'day'                   => 'Day',
     'delivery_time'         => 'Delivery time',
+    'zh_cn'                 => '中文',
+    'en_us'                 => 'English',
 );

@@ -109,4 +109,6 @@ return array(
     'shop_income_sm'        => '低成本高利润更安全',
     'day'                   => '天',
     'delivery_time'         => '交割时间',
+    'zh_cn'                 => '中文',
+    'en_us'                 => 'English',
 );
