@@ -1,4 +1,4 @@
-
+ <link rel="stylesheet" href="/dist/css/layui.css">
       <style>
             html,body{
                 width: 100%;
@@ -69,19 +69,34 @@
                 padding: 0 10px 0 30px;
                 border-radius: 5px;
             }
-           .layui-form{
+            .layui-form {
                 float: right;
                 position: absolute;
                 top: 20px;
                 width: 90px;
                 right: 0;
-           }
-            .layui-form-selected dl{
-               width:90px;
-               text-align: center;
             }
-           .layui-input, .layui-textarea{
-                text-align: center;
+
+           .layui-form-selected dl {
+               width: 90px;
+               text-align: center;
+               background: #323640;
+               color: #fff;
+               border-radius: 4px;
+           }
+
+           .layui-form-select dl dd.layui-this {
+               background: none;
+           }
+
+           .layui-input, .layui-textarea {
+               text-align: center;
+               background: #323640;
+               color: #fff;
+           }
+
+           .layui-form-select dl dd:hover {
+               background: #252832;
            }
             .user a{
                 display: inline-block;
@@ -180,13 +195,22 @@
             <?php }?>
         </ul>
 
-       <form class="layui-form" action="">
-            <select name="city" lay-verify="">
-                   <option value="">English</option>
-                   <option value="010">中文</option>
-             </select>
-       </form>
+        <form class="layui-form" action="">
+                   <select name="city" lay-filter="test" class="my">
+                       <option value="zh_cn">中文</option>
+                       <option value="en_us">English</option>
+                   </select>
+        </form>
 
     </div>
 </div>
+<script src="/dist/layui.all.js"></script>
+<script>
+         var form = layui.form;
+         form.on('select(test)', function (data) {
+             console.log(data)
+
+         });
+
+</script>
 
