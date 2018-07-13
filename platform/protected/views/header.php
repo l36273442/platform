@@ -172,14 +172,14 @@
         <p class="nav_logo col-lg-2 col-md-2 col-sm-3 col-xs-10">M I N E B I T</p>
         <ul class="nav_tab col-lg-10 col-md-10 col-sm-9">
             <li class="ind_lef"><a href="/"><?php echo Yii::t('common','home');?></a></li>
-            <li class="ind_lef"><a href="/powercontractview/list"><?php echo Yii::t('common','power_shop');?></a></li>
-            <li class="ind_lef"><a href="/machinecontractview/list"><?php echo Yii::t('common','machine_shop');?></a></li>
+            <li class="ind_lef"><a href="/hashshop"><?php echo Yii::t('common','power_shop');?></a></li>
+            <li class="ind_lef"><a href="/millshop"><?php echo Yii::t('common','machine_shop');?></a></li>
             <li class="ind_lef"><a href="/site/mines"><?php echo Yii::t('common','mines');?></a></li>
             <li class="ind_lef"><a href="/site/help"><?php echo Yii::t('common','help');?></a></li>
             <li class="ind_lef"><a href="/site/about"><?php echo Yii::t('common','about');?></a></li>
             <?php if( !isset($_SESSION['id']) ){?>
-            <li class="ind_ri ind_ri1"><a href="/register/signup"><?php echo Yii::t('common','signup');?></a></li>
-            <li class="ind_ri ind_ri2"><a href="/login/signin"><?php echo Yii::t('common','signin');?></a>
+            <li class="ind_ri ind_ri1"><a href="/signup"><?php echo Yii::t('common','signup');?></a></li>
+            <li class="ind_ri ind_ri2"><a href="/signin"><?php echo Yii::t('common','signin');?></a>
             <?php 
             }
             else{
