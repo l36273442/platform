@@ -42,4 +42,5 @@ return array(
     'profit_delivery_content'=> 'Revenue is paid daily from the date of project delivery.',
     'machine_detail'        => 'Mining machine details',
     'delivery_time'         => 'DELIVERY TIME',
+    'purchase_process'      => 'PURCHASE_PROCESS',
 );
