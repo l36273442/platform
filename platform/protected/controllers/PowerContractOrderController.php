@@ -129,6 +129,14 @@ class PowerContractOrderController extends AjaxController{
             $u_sql = "select * from ".UserLegalCoinModel::model()->tableName()." where uid = :uid for update";
             $user_coin = UserLegalCoinModel::model()->findBySql($u_sql , array(':uid' => Yii::app()->session['id'] ));
             $total = round( $c_info['price'] * $count , 8 );
+            $uc = UserCoinModel::model()->find('uid=:uid and coin_id=:coin_id' , array(':uid'=> Yii::app()->session['id'] ,':coin_id'=>$c_info->coin_id));
+            if(empty($uc)){
+                $xx = new UserCoinModel();
+                $xx->uid = Yii::app()->session['id'];
+                $xx->coin_id = $c_info->coin_id;
+                $uc_re = $xx->save();
+            }
+            $uc = UserCoinModel::model()->findBySql('select * from '.UserCoinModel::model()->tableName()." where uid = :uid and coin_id=:coin_id for update",array(':uid'=> Yii::app()->session['id'] ,':coin_id'=>$c_info->coin_id));    
             if( $total > $user_coin->usd ){
                 $transaction->rollback();
                 $this->renderError(Yii::t('common','account_not_enough'), ErrorCode::PARAM_EMPTY); 
@@ -159,6 +167,7 @@ class PowerContractOrderController extends AjaxController{
                     $re2 = PowerContractModel::model()->updateCounters(array('deal_total'=>$count),'id=:id',array(':id'=>$cid));
                     $re3 = UserLegalCoinModel::model()->updateCounters(array('usd'=>-$total) , 'uid=:uid',array('uid'=>Yii::app()->session['id']));
                     $re4 = UserCoinModel::model()->updateCounters( array('total_power'=>$count , 'power_total_investment' => $total , 'total_investment' => $total ) , 'uid=:uid and coin_id=:coin_id' , array('uid'=>Yii::app()->session['id'], ':coin_id' => $c_info->coin_id ));
+
                     if( !$re1 || !$re2 || !$re3 || !$re4 ){
                         $transaction->rollback();
                         $this->renderError(Yii::t('common','order_fail'), ErrorCode::PARAM_EMPTY); 
