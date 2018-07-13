@@ -77,6 +77,14 @@ class MachineContractOrderController extends AjaxController{
                 $this->renderError(Yii::t('common','system_error2'), ErrorCode::SYSTEM_ERROR); 
 
             }
+            $uc = UserCoinModel::model()->find('uid=:uid and coin_id=:coin_id' , array(':uid'=> Yii::app()->session['id'] ,':coin_id'=>$mc->coin_id));
+            if(empty($uc)){
+                $xx = new UserCoinModel();
+                $xx->uid = Yii::app()->session['id'];
+                $xx->coin_id = $mc->coin_id;
+                $uc_re = $xx->save();
+            }
+            $uc = UserCoinModel::model()->findBySql('select * from '.UserCoinModel::model()->tableName()." where uid = :uid and coin_id=:coin_id for update",array(':uid'=> Yii::app()->session['id'] ,':coin_id'=>$mc->coin_id));    
             $t = time();
             $total = round($mc->price*$p['count'],8);
             $order = new MachineContractOrderModel();
