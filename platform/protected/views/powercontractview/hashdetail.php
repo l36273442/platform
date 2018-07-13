@@ -13,7 +13,6 @@
         }
         .slDetail_cont{
             background: #1c192e;
-            height: 520px;
             color: #fff;
         }
         .currency{
@@ -32,9 +31,10 @@
             font-size: 20px;
             color: #9c9c9c;
         }
-        .left{
+        .left1{
             width: 752px;
             float: left;
+            margin-bottom:50px;
         }
         .surplus{
             line-height: 100px;
@@ -107,30 +107,30 @@
             font-size: 20px;
             padding: 10px 0 0 20px;
         }
-        .right{
+        .right1{
             margin-top: 34px;
             float: right;
         }
-        .right .row{
+        .right1 .row{
             width: 262px;
             height: 80px;
             background: url("images/top-右侧背景@2x.png") no-repeat;
             background-size: 100% 100%;
             margin-bottom: 10px;
         }
-        .right .row span{
+        .right1 .row span{
             display: block;
             padding-left: 40px;
         }
-        .right .row span b{
+        .right1 .row span b{
             font-size: 32px;
         }
-        .right .row span:nth-child(1){
+        .right1 .row span:nth-child(1){
             color: #0092da;
             font-size: 22px;
             line-height: 40px;
         }
-        .right .row span:nth-child(2){
+        .right1 .row span:nth-child(2){
             font-size: 16px;
         }
         .process{
@@ -259,8 +259,8 @@
         <img src="<?php echo $coin['img_url'];?>" style="vertical-align: inherit;">
             <span><?php echo $coin['name'];?></span>
         </p>
-        <p class="text"><?php echo $detail['content_'.Yii::app()->language];?></p>
-        <div class="left">
+        <div class="left1">
+            <p class="text"><?php echo $detail['content_'.Yii::app()->language];?></p>
             <p class="surplus"><?php echo Yii::t('power','surplus');?> <?php echo ($detail['total']-$detail['deal_total']>0)?($detail['total']-$detail['deal_total']):0;?><?php echo $unit['name'];?></p>
             <p class="content">
             <input type="text" class="buyinput" placeholder="<?php echo $detail['price'];?> USD/<?php echo $unit['name'];?>" onkeyup="clearNoNum(this)">
@@ -273,7 +273,7 @@
                 <span class="progress"><?php echo Yii::t('power','sell');?> <?php echo ceil(($detail['deal_total']/$detail['total'])*100);?>%</span>
             </p>
         </div>
-        <ul class="right">
+        <ul class="right1">
             <li class="row">
                 <span><?php echo Yii::t('power','prower');?></span>
                 <span><b><?php echo $detail['power_consumption'];?></b></span>
