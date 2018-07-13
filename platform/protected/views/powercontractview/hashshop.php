@@ -131,6 +131,7 @@
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/dist/layui.all.js"></script>
 <script>
+let element = layui.element;
    function hashshop() {
        let size = 20;
        $.ajax({
@@ -145,7 +146,7 @@
                        let html = data.data.list.map((item, index) => {
                            //console.log(item);
                            //console.log(item.deal_total,item.total);
-                           return `<li class="mill" id=${item.id}>
+                          let a = `<li class="mill ${(index+1)%3?"":'mar_rig'}" id=${item.id}>
                                   <p class="one">
                                       <img src=${item.coin_img_url}>
                                       <span>${item.coin_name}</span>
@@ -158,18 +159,17 @@
                                       <span><b>${item.total}</b>${item.unit_name}</span>
                                   </p>
                                   <div class="layui-progress" lay-filter="demo">
-                                    <div class="layui-progress-bar"  lay-percent="70%">
+                                    <div class="layui-progress-bar"  lay-percent=${(item.deal_total/item.total)*100+'%'}>
                                   </div>
                                   <p class="five">
                                      <span>$ <b>${item.price}</b> USD</span>
-                                     <button class="buy"><?php echo Yii::t('common','buy');?></button>
+                                     <button class="buy ${item.deal_total==item.total?"nobuy ":""}"><?php echo Yii::t('common','buy');?></button>
                                    </p>
                                    </li>`
+                               $('.shop').append(a);
+                               element.progress('demo', (item.deal_total/item.total)*100+'%');
+                               element.render('progress','demo');
                        });
-                       $('.shop').html(html.join(' '));
-                       let element = layui.element;
-                       element.progress('demo', '10%');
-                      /* element.render(progress,'demo');*/
                    }
                }else{
                    layer.msg(data.msg);
