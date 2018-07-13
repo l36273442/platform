@@ -296,10 +296,10 @@
         </p>
         <div class="left1">
             <p class="text"><?php echo $machine['content_'.Yii::app()->language];?></p>
-            <p class="surplus"><?php echo Yii::t('power','surplus');?> <?php echo ($detail['total']-$detail['deal_total']>0)?($detail['total']-$detail['deal_total']):0    ;?><?php echo $unit['name'];?></p>
+            <p class="surplus"><?php echo Yii::t('power','surplus');?> <?php echo ($detail['total']-$detail['deal_total']>0)?($detail['total']-$detail['deal_total']):0    ;?><?php echo Yii::t('common','stand');?></p>
             <p class="content">
-                <input type="text" class="buyinput" placeholder="<?php echo $detail['price'];?> USD/<?php echo $unit['name'];?>" onkeyup="NumberCheck(this)">
-                <span class="trade"><?php echo $unit['name'];?>=</span>
+                <input type="text" class="buyinput" placeholder="<?php echo floor($detail['price']);?> USD/<?php echo Yii::t('common','stand');?>" onkeyup="NumberCheck(this)">
+                <span class="trade"><?php echo Yii::t('common','stand');?>=</span>
                 <span class="int_rig"><b class="btczong">0</b> USD</span>
                 <span class="buy"><?php echo Yii::t('common','buy');?></span>
             </p>
