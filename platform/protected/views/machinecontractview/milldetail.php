@@ -131,6 +131,7 @@
         .millleft{
             float: left;
             margin-bottom: 40px;
+            width: 690px;
         }
         .process{
             margin-top: 60px;
