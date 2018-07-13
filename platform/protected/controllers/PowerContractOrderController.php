@@ -119,7 +119,8 @@ class PowerContractOrderController extends AjaxController{
         }
         if( !preg_match('/^[0-9]+(.[0-9]{1,2})?$/', $p['count']) ){
             $this->renderError(Yii::t('common','count_point_two'), ErrorCode::PARAM_EMPTY); 
-        } 
+        }
+        $count = $p['count'];
         $cid = $p['id'];
         $transaction = Yii::app()->db->beginTransaction();
         try{
