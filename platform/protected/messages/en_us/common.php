@@ -111,4 +111,5 @@ return array(
     'delivery_time'         => 'Delivery time',
     'zh_cn'                 => '中文',
     'en_us'                 => 'English',
+    'stand'                 => 'STAND',
 );
