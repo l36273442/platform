@@ -130,7 +130,7 @@
                         let html = data.data.map((item, index) => {
                             //console.log(item);
                            // console.log(item.deal_total,item.total);
-                            return `<li class="mill" id=${item.id}>
+                            return `<li class="mill ${(index+1)%3?"":'mar_rig'}" id=${item.id}>
                                       <p class="one">
                                          <img src=${item.coin_img_url}>
                                          <span>${item.coin_name}+${item.machine_name}</span>
@@ -141,7 +141,7 @@
                                       <p class="three"><?php echo Yii::t('common','delivery_time');?>&nbsp;<b>${item.pay_time}</b><?php echo Yii::t('common','day');?></p>
                                       <p class="four">
                                          <span>$ <b>${item.price}</b> USD</span>
-                                         <button class="buy"><?php echo Yii::t('common','buy');?></button>
+                                         <button class="buy ${item.deal_total==item.total?"nobuy ":""}"><?php echo Yii::t('common','buy');?></button>
                                        </p>
                                  </li>`
                         });
