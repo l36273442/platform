@@ -568,12 +568,10 @@
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
 
-
 <script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/dist/layui.all.js"></script>
 <script>
  // 轮播图
-      var carousel = layui.carousel;
+     var carousel = layui.carousel;
 
     function fn() {
         $.ajax({
@@ -602,6 +600,7 @@
         })
     }
     fn();
+
 
 </script>
 </body>
