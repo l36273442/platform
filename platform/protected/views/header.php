@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="/dist/css/layui.css">
+
       <style>
             html,body{
                 width: 100%;
@@ -215,12 +215,33 @@
 </div>
 <script src="/dist/layui.all.js"></script>
 <script>
+   var form = layui.form;
+                    let {search} = window.location;
+                        if (search) {
+                            if (/lang=/.test(search)) {
+                                let str = /lang=(\w+)/.exec(search)[1];
+                                console.log(str);
 
-         var form = layui.form;
-         form.on('select(test)', function (data) {
-             console.log(data)
-
-         });
-
+                                $(`.a option[value=${str}]`).attr('selected', true)
+                                form.render('select');
+                            } else {
+                                window.location.search += '&lang=zh'
+                            }
+                        } else {
+                            window.location.search = '?lang=zh'
+                        }
+                        form.on('select(test)', function (data) {
+                            let str = /lang=(\w+)/.exec(search)[1];
+                            console.log(data);
+                            if (data.value != str) {
+                                //search
+                                search = search.replace(/[^=]+$/g, (...arg) => {
+                                    console.log(arg);
+                                    return data.value
+                                });
+                                console.log(search);
+                                window.location.search = search;
+                            }
+                    });
 </script>
 
