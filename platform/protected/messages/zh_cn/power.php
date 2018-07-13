@@ -42,4 +42,5 @@ return array(
     'profit_delivery_content'=> '自项目交割日开始，每日都会发放收益。',
     'machine_detail'        => '矿机详情',
     'delivery_time'         => '交割时间',
+    'purchase_process'      => '购买流程',
 );
