@@ -215,6 +215,7 @@
 </div>
 <script src="/dist/layui.all.js"></script>
 <script>
+
          var form = layui.form;
          form.on('select(test)', function (data) {
              console.log(data)
