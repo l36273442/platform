@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo Yii::t('common','home');?></title>
+    <title><?php echo Yii::t('common','user_panel');?></title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
@@ -89,36 +89,29 @@
 <div class="user">
     <div class="type_area">
         <p class="user_title1">
-            <a href="#" style="color: #74737b;">首页 / </a>
-            <span>用户面板</span>
+            <a href="/" style="color: #74737b;"><?php echo Yii::t('common','home');?> / </a>
+            <span><?php echo Yii::t('common','user_panel');?></span>
         </p>
         <p class="user_title2">
-            <span class="power">算力详情</span>
+            <span class="power"><?php echo Yii::t('common','power_overview');?></span>
             <b> | </b>
-            <span class="mill">矿机详情</span>
+            <span class="mill"><?php echo Yii::t('common','mill_overview');?></span>
         </p>
         <ul class="user_content1">
-            <li class="survey"><img src="images/云算力icon@2x.png">云算力概况</li>
+            <li class="survey"><img src="images/云算力icon@2x.png"><?php echo Yii::t('common','power_overview');?></li>
+            <?php
+                if( $coins ){
+                    foreach( $coins as $v ){
+            ?>
             <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
+            <span><?php echo $v['name'];?>总量&nbsp;|&nbsp;<b><?php echo $v['current_total'];?></b>&nbsp;<?php echo $v['unit_name'];?></span>
                 <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
                 <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
             </li>
-            <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>
-            <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>
-            <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>
+            <?php 
+                }
+            }
+            ?>
         </ul>
         <ul class="user_content2">
             <li class="survey"><img src="images/云算力icon@2x.png">矿机概况</li>
