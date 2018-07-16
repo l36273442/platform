@@ -10,7 +10,7 @@ class UserViewController extends Controller{
         $this->render('uppass');
     }
     public function actionPanel(){
-        //$id=1;
+        $id=1;
         $id = Yii::app()->session['id']; 
         $uc = UserCoinModel::model()->findAll('uid=:uid' ,array(':uid'=>$id));
         $c = CoinModel::model()->findAll();
@@ -36,48 +36,27 @@ class UserViewController extends Controller{
                     $row['power_total_income'] = $uc_k[$v->id]['power_total_income'];
                     $row['power_total_investment'] = $uc_k[$v->id]['power_total_investment'];
                     $row['total_power'] = $uc_k[$v->id]['total_power'];
+                    $row['total_machine'] = $uc_k[$v->id]['total_machine'];
                     $row['total_investment'] = $uc_k[$v->id]['total_investment'];
                     $row['total_income'] = $uc_k[$v->id]['total_income'];
+                    $row['machine_total_investment'] = $uc_k[$v->id]['machine_total_investment'];
+                    $row['machine_total_income'] = $uc_k[$v->id]['machine_total_income'];
                 }
                 else{
                     $row['current_total'] = 0;
                     $row['power_total_income'] = 0;
                     $row['power_total_investment'] = 0;
                     $row['total_power'] = 0;
+                    $row['total_machine'] = 0;
                     $row['total_investment'] = 0;
                     $row['total_income'] = 0;
+                    $row['machine_total_income'] = 0;
+                    $row['machine_total_income'] = 0;
                 }
                 $row['coin_name'] = $v->name;
                 $row['unit_id'] = $v->unit_id;
                 $row['unit_name'] = isset($u_k[$v->unit_id])?$u_k[$v->unit_id]['name']:'';
                 $this->data['coins'][] = $row;
-            }
-        }
-        $m = MiningMachineModel::model()->findAll();
-        if( $m ){
-            foreach( $m as $v ){
-                $row = array();
-                $row = $v->attributes;
-                $row['coin_name'] = isset($c_k[$v->coin_id])?$c_k[$v->coin_id]['name']:'';
-                $row['unit_name'] = isset($u_k[$c_k[$v->coin_id]['unit_id']])?$u_k[$c_k[$v->coin_id]['unit_id']]['name']:'';
-                $row['unit_it'] = isset($c_k[$v->coin_id]['unit_id'])?$c_k[$v->coin_id]['unit_id']:'';
-                if(isset($uc_k[$v->coin_id])){
-                    $row['current_total'] = $uc_k[$v->coin_id]['current_total'];
-                    $row['total_machine'] = $uc_k[$v->coin_id]['total_machine'];
-                    $row['machine_total_investment'] = $uc_k[$v->coin_id]['machine_total_investment'];
-                    $row['machine_total_income'] = $uc_k[$v->coin_id]['machine_total_income'];
-                    $row['total_investment'] = $uc_k[$v->coin_id]['total_investment'];
-                    $row['total_income'] = $uc_k[$v->coin_id]['total_income'];
-                }
-                else{
-                    $row['current_total'] = 0;
-                    $row['total_machine'] = 0;
-                    $row['machine_total_investment'] = 0;
-                    $row['machine_total_income'] = 0;
-                    $row['total_investment'] = 0;
-                    $row['total_income'] = 0;
-                }
-                $this->data['machines'][] = $row;
             }
         }
         $legal = UserLegalCoinModel::model()->find('uid=:uid' , array(':uid'=>$id));
