@@ -89,7 +89,6 @@ if($to){
                     $db->beginTransaction();
                     $re6 = $db->query("select * from platform_user_coin where uid=".$k." and coin_id=".$r['coin_id']." for update");
                     if( $re6 ){
-                        echo 34343;
                         $re5 = $db->exec("update platform_user_coin set current_total= current_total + ".$in_d." ,machine_total_income = machine_total_income +".$in_d.",total_income=total_income+".$in_d.'where uid='.$k.' and coin_id='.$r['coin_id']);   
                     }else{
                         $re5 = $db->exec("insert into  platform_user_coin set current_total= ".$in_d." ,machine_total_income = ".$in_d.",total_income=".$in_d.', uid='.$k.', coin_id='.$r['coin_id']);                    }
