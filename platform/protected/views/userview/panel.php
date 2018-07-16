@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo Yii::t('common','user_panel');?></title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
         .customer{
             background: #1c192e;
