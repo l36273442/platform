@@ -1,4 +1,5 @@
-
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/dist/css/layui.css">
       <style>
             html,body{
                 width: 100%;
@@ -213,6 +214,7 @@
 
     </div>
 </div>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/dist/layui.all.js"></script>
 <script>
    var form = layui.form;
