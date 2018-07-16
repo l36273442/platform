@@ -33,6 +33,7 @@ class UserViewController extends Controller{
                 $row = $v->attributes;
                 if(isset($uc_k[$v->id])){
                     $row['current_total'] = sprintf("%.4f" ,$uc_k[$v->id]['current_total']);
+                    $row['freeze_total'] = sprintf("%.4f" ,$uc_k[$v->id]['freeze_total']);
                     $row['power_total_income'] = sprintf("%.4f",$uc_k[$v->id]['power_total_income']);
                     $row['power_total_investment'] = sprintf("%.4f",$uc_k[$v->id]['power_total_investment']);
                     $row['total_power'] = sprintf("%.4f",$uc_k[$v->id]['total_power']);
@@ -62,10 +63,14 @@ class UserViewController extends Controller{
         $legal = UserLegalCoinModel::model()->find('uid=:uid' , array(':uid'=>$id));
         if($legal ){
             $this->data['legal'] = $legal->attributes;   
+            $this->data['legal']['usd'] = sprintf("%.4f", $this->data['legal']['usd']);
+            $this->data['legal']['usd_freeze'] = sprintf("%.4f", $this->data['legal']['usd_freeze']);
+            $this->data['legal']['usd_recharge_total'] = sprintf("%.4f", $this->data['legal']['usd_recharge_total']);
         }
         else{
-            $this->data['legal']['usd'] = '';
-            $this->data['legal']['usd_recharge_total'] = '';
+            $this->data['legal']['usd'] = 0;
+            $this->data['legal']['usd_freeze'] = 0;
+            $this->data['legal']['usd_recharge_total'] = 0;
 
         }
         $this->render('panel',$this->data);
