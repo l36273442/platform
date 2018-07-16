@@ -48,6 +48,7 @@ return array(
                 'signin' => 'login/signin',
                 'signup' => 'register/signup',
                 'logout' => 'login/logout',
+                'userpanel' => 'userview/panel',
                 'hashshop' => 'powercontractview/hashshop',  
                 'millshop' => 'machinecontractview/millshop',  
                 'hashdetail' => 'powercontractview/hashdetail',  
