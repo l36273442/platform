@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo Yii::t('common','home');?></title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/dist/css/layui.css">
+
     <style>
-        .user{
+        .customer{
             background: #1c192e;
         }
         .type_area{
@@ -55,7 +49,7 @@
         .mill{
             color: #78767f;
         }
-        .row span{
+        .customer .row span{
             display: inline-block;
             font-size: 14px;
             width: 33%;
@@ -83,10 +77,8 @@
             display: none;
         }
     </style>
-</head>
-<body>
  <?php require(dirname(__FILE__).'/../header.php'); ?>
-<div class="user">
+<div class="customer">
     <div class="type_area">
         <p class="user_title1">
             <a href="#" style="color: #74737b;">首页 / </a>
@@ -219,8 +211,6 @@
     </div>
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
-<script src="/js/jquery.min.js"></script>
-<script src="/dist/layui.all.js"></script>
 <script>
     // 算力详情
   $('.mill').on('click',function () {
