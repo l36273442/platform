@@ -21,7 +21,7 @@ class Controller extends CommonController
             Yii::app()->language = Yii::app()->sourceLanguage;
         }
         if( !isset($_SESSION['id']) || empty($_SESSION['id'])) {
-            Yii::app()->controller->redirect('/login/login');
+            Yii::app()->controller->redirect('/signin');
         }
         $p = PartnerModel::model()->findAll('status=:status' , array(':status'=> 0));
         $this->data['partner'] = array();
