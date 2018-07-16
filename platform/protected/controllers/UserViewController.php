@@ -1,5 +1,5 @@
 <?php
-class UserViewController extends Controller{
+class UserViewController extends CommonController{
     //交易密码
     public function actionUpTpass(){
         $this->render('uptpass');
@@ -10,8 +10,8 @@ class UserViewController extends Controller{
         $this->render('uppass');
     }
     public function actionPanel(){
-        //$id=1;
-        $id = Yii::app()->session['id']; 
+        $id=1;
+        //$id = Yii::app()->session['id']; 
         $uc = UserCoinModel::model()->findAll('uid=:uid' ,array(':uid'=>$id));
         $c = CoinModel::model()->findAll();
         $uc_k = $c_k =  $m_k = $u_k = $coins = array();
