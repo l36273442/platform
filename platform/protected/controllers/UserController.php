@@ -1,6 +1,6 @@
 <?php
 class UserController extends AjaxController{
-    
+
     public function actionDoTradePass(){
         $p = $this->getParams('POST');
         if( !isset($p['trade_password']) || empty($p['trade_password']) ){
@@ -111,7 +111,7 @@ class UserController extends AjaxController{
         if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
             $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
         }
-        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid limit '.($page-1)*$size.','.$size;
+        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid order by id desc limit '.($page-1)*$size.','.$size;
         $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>0,':coin_id'=>$p['id']));
         $data = array();
         if($l){
@@ -144,7 +144,7 @@ class UserController extends AjaxController{
         if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
             $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
         }
-        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid limit '.($page-1)*$size.','.$size;
+        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
         $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>1,':coin_id'=>$p['id']));
         $data = array();
         if($l){

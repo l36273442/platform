@@ -1,7 +1,7 @@
 <?php
 class MachineContractOrderController extends AjaxController{
     const CANCEL = 5;
-    public function actiongetUserList(){
+    public function actionGetUserList(){
         $p = $this->getParams('REQUEST');
         if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
             $size = $this->size;
