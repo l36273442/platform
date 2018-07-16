@@ -89,20 +89,20 @@
             <span><?php echo Yii::t('common','user_panel');?></span>
         </p>
         <p class="user_title2">
-            <span class="power"><?php echo Yii::t('common','power_overview');?></span>
+            <span class="power"><?php echo Yii::t('power','power_overview');?></span>
             <b> | </b>
-            <span class="mill"><?php echo Yii::t('common','mill_overview');?></span>
+            <span class="mill"><?php echo Yii::t('power','mill_overview');?></span>
         </p>
         <ul class="user_content1">
-            <li class="survey"><img src="images/云算力icon@2x.png"><?php echo Yii::t('common','power_overview');?></li>
+            <li class="survey"><img src="images/云算力icon@2x.png"><?php echo Yii::t('power','power_overview');?></li>
             <?php
                 if( $coins ){
                     foreach( $coins as $v ){
             ?>
             <li class="row">
-            <span><?php echo $v['name'];?>总量&nbsp;|&nbsp;<b><?php echo $v['current_total'];?></b>&nbsp;<?php echo $v['unit_name'];?></span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
+            <span><?php echo $v['name'];?><?php echo Yii::t('common','total_amount');?>&nbsp;|&nbsp;<b><?php echo $v['total_power'];?></b>&nbsp;<?php echo $v['unit_name'];?></span>
+                <span>USD<?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b>0.00</b></span>
+                <span><?php echo $v['name'];?><?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b><?php echo $v['power_total_income'];?></b></span>
             </li>
             <?php 
                 }
@@ -110,27 +110,20 @@
             ?>
         </ul>
         <ul class="user_content2">
-            <li class="survey"><img src="images/云算力icon@2x.png">矿机概况</li>
+            <li class="survey"><img src="images/云算力icon@2x.png"><?php echo Yii::t('power','mill_overview');?></li>
+            <?php
+                if( $coins ){
+                    foreach( $coins as $v ){
+            ?>
             <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
+            <span><?php echo $v['name'];?><?php echo Yii::t('common','total_amount');?>&nbsp;|&nbsp;<b><?php echo $v['total_machine'];?></b>&nbsp;<?php echo Yii::t('common','stand');?></span>
+                <span>USD<?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b>0.00</b></span>
+                <span><?php echo $v['name'];?><?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b><?php echo $v['machine_total_income'];?></b></span>
             </li>
-            <!--<li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>
-            <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>
-            <li class="row">
-                <span>s9总量&nbsp;|&nbsp;<b>0.00</b>&nbsp;T</span>
-                <span>CNY总收益&nbsp;|&nbsp;<b>0.00</b></span>
-                <span>BTC总收益&nbsp;|&nbsp;<b>0.00000000</b></span>
-            </li>-->
+            <?php 
+                }
+            }
+            ?>
         </ul>
         <!--<ul class="user_content">
             <li class="survey"><img src="images/矿场基建icon@2x.png">矿场基建</li>
@@ -141,18 +134,20 @@
             </li>
         </ul>-->
         <ul class="user_content">
-            <li class="survey"><img src="images/tethericon@2x.png">USDT账户</li>
+            <li class="survey"><img src="images/tethericon@2x.png">USD<?php echo Yii::t('common','account');?></li>
             <li class="row">
-                <span>余额&nbsp;|&nbsp;<b>0.00000000</b>&nbsp;USDT</span>
-                <span>冻结&nbsp;|&nbsp;<b>0.00000000</b>USDT</span>
+            <span><?php echo Yii::t('power','over');?>&nbsp;|&nbsp;<b><?php echo $legal['usd'];?></b>&nbsp;USD</span>
+            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $legal['usd_freeze'];?></b>USD</span>
                 <span>
-                    <a href="#">充值</a>
-                    <a href="#">提现</a>
+                    <a href="/recharge"><?php echo Yii::t('common','recharge');?></a>
+                    <a href="/withdraw"><?php echo Yii::t('common','withdraw');?></a>
                 </span>
             </li>
         </ul>
+        <!--
         <ul class="user_content">
             <li class="survey"><img src="images/cyn账户icon@2x.png">CYN账户</li>
+            
             <li class="row">
                 <span>余额&nbsp;|&nbsp;<b>0.00</b>&nbsp;CYN</span>
                 <span>冻结&nbsp;|&nbsp;<b>0.00</b>CYN</span>
@@ -162,49 +157,26 @@
                 </span>
             </li>
         </ul>
+        -->
+        <?php 
+            if( $coins ){
+                foreach($coins as $v ){
+        ?>
         <ul class="user_content">
-            <li class="survey"><img src="images/bc_logo_@2x.png">BTC账户</li>
+        <li class="survey"><img src="<?php echo $v['img_url'];?>"><?php echo $v ['name'];?><?php echo Yii::t('common','account');?></li>
             <li class="row">
-                <span>余额&nbsp;|&nbsp;<b>0.00000000</b>&nbsp;BTC</span>
-                <span>冻结&nbsp;|&nbsp;<b>0.00000000</b>BTC</span>
+            <span><?php echo Yii::t('power','over');?>&nbsp;|&nbsp;<b><?php echo $v['current_total'];?></b>&nbsp;<?php echo $v['name'];?></span>
+            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $v['freeze_total'];?></b><?php echo $v['name'];?></span>
                 <span>
-                    <a href="#">充值</a>
-                    <a href="#">提现</a>
+                    <a href="/recharge"><?php echo Yii::t('common','recharge');?></a>
+                    <a href="/withdraw"><?php echo Yii::t('common','recharge');?></a>
                 </span>
             </li>
         </ul>
-        <ul class="user_content">
-            <li class="survey"><img src="images/eth账户@2x.png">ETH账户</li>
-            <li class="row">
-                <span>余额&nbsp;|&nbsp;<b>0.00000000</b>&nbsp;ETH</span>
-                <span>冻结&nbsp;|&nbsp;<b>0.00000000</b>ETH</span>
-                <span>
-                    <a href="#">充值</a>
-                    <a href="#">提现</a>
-                </span>
-            </li>
-        </ul>
-        <ul class="user_content">
-            <li class="survey"><img src="images/litecoin@2x.png">LTC账户</li>
-            <li class="row">
-                <span>余额&nbsp;|&nbsp;<b>0.00000000</b>&nbsp;LTC</span>
-                <span>冻结&nbsp;|&nbsp;<b>0.00000000</b>LTC</span>
-                <span>
-                    <a href="#">充值</a>
-                    <a href="#">提现</a>
-                </span>
-            </li>
-        </ul>
-        <ul class="user_content">
-            <li class="survey"><img src="images/btm账户icon@2x.png">ETH账户</li>
-            <li class="row">
-                <span>余额&nbsp;|&nbsp;<b>0.00000000</b>&nbsp;BTM</span>
-                <span>冻结&nbsp;|&nbsp;<b>0.00000000</b>BTM</span>
-                <span>
-                    <a href="#">提现</a>
-                </span>
-            </li>
-        </ul>
+        <?php 
+            }
+        }
+        ?>
     </div>
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
