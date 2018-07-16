@@ -113,4 +113,9 @@ return array(
     'en_us'                 => 'English',
     'stand'                 => 'STAND',
     'user_panel'            => 'user panel',
+    'total_amount'          => 'total amount',
+    'total_revenue'         => 'total revenue',
+    'account'               => 'account',
+    'recharge'              => 'recharge',
+    'withdraw'              => 'withdraw',
 );

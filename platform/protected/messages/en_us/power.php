@@ -45,4 +45,6 @@ return array(
     'purchase_process'      => 'PURCHASE_PROCESS',
     'power_overview'        => 'HASH OVERVIEW',
     'mill_overview'         => 'MILL OVERVIEW',
+    'over'                  => 'over',
+    'freeze'                => 'freeze',
 );

@@ -45,4 +45,6 @@ return array(
     'purchase_process'      => '购买流程',
     'power_overview'        => '算力概况',
     'mill_overview'         => '矿机概况',
+    'over'                  => '余额',
+    'freeze'                => '冻结',
 );

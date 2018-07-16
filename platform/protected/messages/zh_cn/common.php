@@ -113,4 +113,9 @@ return array(
     'en_us'                 => 'English',
     'stand'                 => '台',
     'user_panel'            => '用户面板',
+    'total_amount'          => '总量',
+    'total_revenue'         => '总收益',
+    'account'               => '账户',
+    'recharge'              => '充值',
+    'withdraw'              => '提现',
 );
