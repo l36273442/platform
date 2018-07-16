@@ -43,4 +43,6 @@ return array(
     'machine_detail'        => '矿机详情',
     'delivery_time'         => '交割时间',
     'purchase_process'      => '购买流程',
+    'power_overview'        => '算力概况',
+    'mill_overview'         => '矿机概况',
 );

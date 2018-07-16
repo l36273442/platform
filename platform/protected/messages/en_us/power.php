@@ -43,4 +43,6 @@ return array(
     'machine_detail'        => 'Mining machine details',
     'delivery_time'         => 'DELIVERY TIME',
     'purchase_process'      => 'PURCHASE_PROCESS',
+    'power_overview'        => 'HASH OVERVIEW',
+    'mill_overview'         => 'MILL OVERVIEW',
 );

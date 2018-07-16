@@ -112,4 +112,5 @@ return array(
     'zh_cn'                 => '中文',
     'en_us'                 => 'English',
     'stand'                 => 'STAND',
+    'user_panel'            => 'user panel',
 );
