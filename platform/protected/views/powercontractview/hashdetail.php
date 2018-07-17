@@ -228,11 +228,11 @@
             line-height: 25px;
             margin: 13px 23px 0;
         }
-        .layui-collapse{
+        .type_area .layui-collapse{
             margin: 40px 0 120px 0;
             border:none;
         }
-        .layui-colla-content {
+        .layui-collapse .layui-colla-content {
             padding-left: 25px;
             border: none;
             color: #8e8e8e;
