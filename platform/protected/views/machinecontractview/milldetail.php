@@ -266,19 +266,19 @@
             line-height: 25px;
             margin: 13px 23px 0;
         }
-        .layui-collapse{
+        .type_area .layui-collapse{
             margin: 40px 0 120px 0;
             border:none;
         }
-        .layui-colla-content {
+        .layui-collapse .layui-colla-content {
             padding-left: 25px;
             border: none;
             color: #8e8e8e;
         }
-        .layui-colla-item{
+        .layui-collapse .layui-colla-item{
             margin-bottom: 20px;
         }
-        .layui-colla-title{
+        .layui-collapse .layui-colla-title{
             height: 56px;
             line-height: 56px;
             margin-bottom: 20px;
@@ -464,7 +464,6 @@
                       },
                       dataType: 'json',
                       success: function(data){
-                           console.log(data);
                            if(data.ret =='1') {  // 成功
                                $('.msk').hide();
                                layer.open({

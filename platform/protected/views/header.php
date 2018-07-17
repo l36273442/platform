@@ -117,6 +117,7 @@
                 z-index: 2;
                 border-radius: 3px;
                 display: none;
+                 padding: 10px 0;
             }
             .user ul.user_list li{
                 width: 100%;
@@ -190,6 +191,7 @@
                  <span class="triangle_border_down"></span>
 
                  <ul class="user_list">
+                     <li><a href="#">用户面板</a></li>
                     <li><a href="/logout"><?php echo Yii::t('common','logout');?></a></li>
                  </ul>
              </div>
