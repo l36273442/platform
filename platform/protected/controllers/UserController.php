@@ -108,15 +108,34 @@ class UserController extends AjaxController{
         else{
             $page = $p['page'];
         }
-        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
-            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
+        if( isset($p['id']) && is_numeric($p['id']) && $p['id'] > 0 ){
+            $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>0,':mining_type'=>0,':coin_id'=>$p['id']);
+        
+        }else{
+            $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>0,':mining_type'=>0);
         }
-        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid order by id desc limit '.($page-1)*$size.','.$size;
-        $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>0,':coin_id'=>$p['id']));
-        $data = array();
+        $l = UserCoinLogModel::model()->findAllBySql($s , $pa );
+        $data = $cids = $c_k = array();
         if($l){
             foreach( $l as $v ){
-                $data[] = $v->attributes;
+                $r = $v->attributes;
+                $r['count'] = sprintf("%.4f" ,$v['count']);
+                $r['real_count'] = sprintf("%.4f" ,$v['real_count']);
+                $r['electricity_fee'] = sprintf("%.4f" ,$v['electricity_fee']);
+                $r['manage_fee'] = sprintf("%.4f" ,$v['manage_fee']);
+                $cids[] = $v['coin_id'];
+                $data[] = $r;
+            }
+            $coins = CoinModel::model()->getCoinsByIds($cids);
+            if( $coins ){
+                foreach( $coins as $v ){
+                    $c_k[$v['id']] = $v;
+                }
+            }
+            foreach( $data as &$v ){
+                $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
             }
         }
         $this->renderJson(Yii::t('common','success') , $data);
@@ -141,19 +160,146 @@ class UserController extends AjaxController{
         else{
             $page = $p['page'];
         }
-        if( !isset($p['id']) || !is_numeric($p['id']) || $p['id'] <= 0 ){
-            $this->renderError(Yii::t('common','param_error'), ErrorCode::PARAM_ERROR);  
+        if( isset($p['id']) && is_numeric($p['id']) && $p['id'] > 0 ){
+            $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>0,':mining_type'=>1,':coin_id'=>$p['id']);
+        
+        }else{
+            $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>0,':mining_type'=>1);
         }
-        $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
-        $l = UserCoinLogModel::model()->findAllBySql($s , array(':uid'=>$uid,':type'=>0,':mining_type'=>1,':coin_id'=>$p['id']));
-        $data = array();
+        $l = UserCoinLogModel::model()->findAllBySql($s , $pa );
+        $data = $cids = $c_k = array();
         if($l){
             foreach( $l as $v ){
-                $data[] = $v->attributes;
+                $r = $v->attributes;
+                $r['count'] = sprintf("%.4f" ,$v['count']);
+                $r['real_count'] = sprintf("%.4f" ,$v['real_count']);
+                $r['electricity_fee'] = sprintf("%.4f" ,$v['electricity_fee']);
+                $r['manage_fee'] = sprintf("%.4f" ,$v['manage_fee']);
+                $cids[] = $v['coin_id'];
+                $data[] = $r;
+            }
+            $coins = CoinModel::model()->getCoinsByIds($cids);
+            if( $coins ){
+                foreach( $coins as $v ){
+                    $c_k[$v['id']] = $v;
+                }
+            }
+            foreach( $data as &$v ){
+                $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
             }
         }
         $this->renderJson(Yii::t('common','success') , $data);
 
+    }
+    public function actionGetPowerBuyRecord(){
+        $p = $this->getParams('REQUEST');
+        //$uid = 1;
+        $uid = Yii::app()->session['id']; 
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        if( isset($p['id']) && is_numeric($p['id']) && $p['id'] > 0 ){
+            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>0,':coin_id'=>$p['id']);
+        
+        }else{
+            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>0);
+        }
+        $l = UserLegalCoinLogModel::model()->findAllBySql($s , $pa );
+        $data = array();
+        $cids = $c_k = array();
+        if($l){
+            foreach( $l as $v ){
+                $r = array();
+                $r = $v->attributes;
+                $r['vol'] = sprintf("%.4f" , $r['vol']);
+                $cids[] = $v['coin_id'];
+                $data[] = $r;
+            }
+            $coins = CoinModel::model()->getCoinsByIds($cids);
+            if( $coins ){
+                foreach( $coins as $v ){
+                    $c_k[$v['id']] = $v;
+                }
+            }
+            foreach ($data as &$v ){
+                $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+            }
+        }
+        $this->renderJson(Yii::t('common','success') , $data);
+    }
+    public function actionGetMachineBuyRecord(){
+        $p = $this->getParams('REQUEST');
+        //$uid = 1;
+        $uid = Yii::app()->session['id']; 
+        if( !isset($p['size']) || !is_numeric($p['size']) || $p['size'] <= 0 ){
+            $size = $this->size;
+        }
+        else{
+            $size = $p['size'];
+        }
+        if( $size > $this->maxSize ){
+            $size = $this->maxSize;
+        }     
+        if( !isset($p['page']) || !is_numeric($p['page']) || $p['page'] <= 0 ){
+            $page = 1;
+        }
+        else{
+            $page = $p['page'];
+        }
+        if( isset($p['id']) && is_numeric($p['id']) && $p['id'] > 0 ){
+            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and machine_id=:machine_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>1,':machine_id'=>$p['id']);
+        
+        }else{
+            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>1);
+        }
+        $l = UserLegalCoinLogModel::model()->findAllBySql($s , $pa );
+        $data = array();
+        $cids = $c_k = $ms = $m_k = array();
+        if($l){
+            foreach( $l as $v ){
+                $r = array();
+                $r = $v->attributes;
+                $r['vol'] = sprintf("%.4f" , $r['vol']);
+                $cids[] = $v['coin_id'];
+                $ms[] = $v['machine_id'];
+                $data[] = $r;
+            }
+            $coins = CoinModel::model()->getCoinsByIds($cids);
+            if( $coins ){
+                foreach( $coins as $v ){
+                    $c_k[$v['id']] = $v;
+                }
+            }
+            $mac = MiningMachineModel::model()->getMachinesByIds($ms);
+            if($mac ){
+                foreach( $mac as $v ){
+                    $m_k[$v['id']] = $v;
+                }
+            }
+            foreach ($data as &$v ){
+                $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+                $v['machine_name'] = isset($c_k[$v['machine_id']])?$c_k[$v['machine_id']]['name']:'';
+            }
+        }
+        $this->renderJson(Yii::t('common','success') , $data);
     }
 
 }
