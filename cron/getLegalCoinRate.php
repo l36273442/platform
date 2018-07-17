@@ -40,7 +40,7 @@ foreach( $arr as $v ){
         $t = '';
 
         foreach($d['result'] as $val){
-            if($val['currencyF'] == strtolower($v) ||  $val['currencyF'] == strtoupper($v)){ 
+            if($val['currencyF'] == 'USD' ||  $val['currencyF'] == 'usd'){ 
                 $t = $val['result'];
             }
         }
