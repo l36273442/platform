@@ -112,6 +112,7 @@ class MachineContractOrderController extends AjaxController{
             $olog->name = 'machine_buy';
             $olog->coin_id = $mc->coin_id;
             $olog->o_id = $order->id;
+            $olog->machine_id = $order->machine_id;
             $olog->uid = Yii::app()->session['id'];
             $olog->type = 1;
             $olog->mining_type = 1;
