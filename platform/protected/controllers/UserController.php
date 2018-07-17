@@ -263,8 +263,8 @@ class UserController extends AjaxController{
             $page = $p['page'];
         }
         if( isset($p['id']) && is_numeric($p['id']) && $p['id'] > 0 ){
-            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and machine_id=:machine_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
-            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>1,':machine_id'=>$p['id']);
+            $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and coin_id=:coin_id and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
+            $pa = array(':uid'=>$uid,':type'=>1,':mining_type'=>1,':coin_id'=>$p['id']);
         
         }else{
             $s = 'select * from '.UserLegalCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
