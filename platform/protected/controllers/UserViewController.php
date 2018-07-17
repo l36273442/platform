@@ -48,6 +48,7 @@ class UserViewController extends Controller{
                     $row['power_total_income'] = 0;
                     $row['power_total_investment'] = 0;
                     $row['total_power'] = 0;
+                    $row['freeze_total'] = 0;
                     $row['total_machine'] = 0;
                     $row['total_investment'] = 0;
                     $row['total_income'] = 0;
