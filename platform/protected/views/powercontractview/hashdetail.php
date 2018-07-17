@@ -237,10 +237,10 @@
             border: none;
             color: #8e8e8e;
         }
-         .layui-colla-item{
+         .layui-collapse .layui-colla-item{
             margin-bottom: 20px;
         }
-        .layui-colla-title{
+        .layui-collapse .layui-colla-title{
             height: 56px;
             line-height: 56px;
             margin-bottom: 20px;
