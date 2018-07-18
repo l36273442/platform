@@ -50,4 +50,5 @@ return array(
     'status_mco_0'          => '未交割',
     'status_mco_1'          => '正常',
     'status_mco_2'          => '结束',
+    'mill_contract_list'    => '矿机合约列表',
 );

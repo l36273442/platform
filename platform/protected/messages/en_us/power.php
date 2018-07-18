@@ -50,4 +50,5 @@ return array(
     'status_mco_0'          => 'Undelivered',
     'status_mco_1'          => 'normal',
     'status_mco_2'          => 'end',
+    'mill_contract_list'    => 'Mining machine contract list',
 );
