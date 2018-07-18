@@ -66,8 +66,8 @@ class MachineContractOrderController extends AjaxController{
             }
         }
         foreach($data as &$v ){
-            $v['start_time_text'] = empty($v['start_time'])?'':date('Y-m-d');
-            $v['end_time_text'] = empty($v['end_time'])?'':date('Y-m-d');
+            $v['start_time_text'] = empty($v['start_time'])?'':date('Y-m-d', $v['start_time']);
+            $v['end_time_text'] = empty($v['end_time'])?'':date('Y-m-d',$v['end_time']);
             $v['status_text'] = Yii::t('power','status_mco_'.$v['status']);
             $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
             $v['electricity_fee'] = isset($m_k[$v['machine_id']])?$m_k[$v['machine_id']]['electricity_fee']:'';
