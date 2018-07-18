@@ -174,6 +174,7 @@ class UserController extends AjaxController{
             foreach( $l as $v ){
                 $r = $v->attributes;
                 $r['count'] = sprintf("%.4f" ,$v['count']);
+                $r['release_time_text'] = date('Y-m-d' ,$v['release_time']);
                 $r['real_count'] = sprintf("%.4f" ,$v['real_count']);
                 $r['electricity_fee'] = sprintf("%.4f" ,$v['electricity_fee']);
                 $r['manage_fee'] = sprintf("%.4f" ,$v['manage_fee']);

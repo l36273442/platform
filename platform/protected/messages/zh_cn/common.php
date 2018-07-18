@@ -119,6 +119,7 @@ return array(
     'recharge'              => '充值',
     'withdraw'              => '提现',
     'machine_assets'        => '矿机资产',
+    'hash_assets'           => '算力资产',
     'my_recharge'           => '我的投入',
     'my_income'             => '我的收入',
     'total_income'          => '总收益',
@@ -126,4 +127,6 @@ return array(
     'count'                 => '数量',
     'start_time'            => '开始时间',
     'end_time'              => '结束时间',
+    'time'                  => '时间',
+    'real_income'           => '实际收益',
 );
