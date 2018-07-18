@@ -109,7 +109,7 @@
                         $i=0;
                         foreach( $coins as $v ){
                 ?>
-                    <li <?php if( $i==0 ){echo 'class="layui-this"';}?> coin_id="<?php echo $v['id']?>"><?php echo $v['name'];?></li>
+                    <li <?php if( $i==0 ){echo 'class="layui-this"';}?> coin_id="<?php echo $v['id'];?>"><?php echo $v['name'];?></li>
                 <?php
                     $i++;                
                     }
@@ -209,7 +209,7 @@
             success: function(data){
                 //console.log(data);
                 if(data.ret =='1') {  // 成功
-                    if(data.data){
+                    if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             //console.log(data)
                             return `<tr class="data">
@@ -251,7 +251,7 @@
             success: function(data){
                 //  console.log(data);
                 if(data.ret =='1') {  // 成功
-                    if(data.data){
+                    if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             return `<tr>
                                    <td>${item.release_time_text}</td>
