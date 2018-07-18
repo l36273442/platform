@@ -157,15 +157,15 @@
                         </table>
                     </div>
                     <div class="recharge_list">
-                        <div class="profit_head">收益明细</div>
+                        <div class="profit_head"><?php echo Yii::t('power','income_breakdown');?></div>
                             <table class="earningstable">
                                 <tr>
-                                    <th>时间</th>
-                                    <th>总收益</th>
-                                    <th>电费</th>
-                                    <th>管理费</th>
-                                    <th>实际收益</th>
-                                    <th>BTC价格</th>
+                                <th><?php  echo Yii::t('common','time');?></th>
+                                    <th><?php echo Yii::t('common','total_income');?></th>
+                                    <th><?php echo Yii::t('common','electricity_fee');?></th>
+                                    <th><?php echo Yii::t('common','manage_fee');?></th>
+                                    <th><?php echo Yii::t('common','real_income');?></th>
+                                    <th>BTC<?php echo Yii::t('common','price');?></th>
                                 </tr>
                                 <tbody class="coin">
 
@@ -182,7 +182,7 @@
         </div>
     </div>
 </div>
-
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 <script>
     var element = layui.element;
     element.on('tab(docDemoTabBrief)', function(data){
@@ -252,7 +252,7 @@
                     if(data.data){
                         let html = data.data.map((item, index) => {
                             return `<tr>
-                                   <td>${item.release_time}</td>
+                                   <td>${item.release_time_text}</td>
                                    <td>${item.count}</td>
                                    <td>${item.electricity_fee}</td>
                                     <td>${item.real_count}</td>
