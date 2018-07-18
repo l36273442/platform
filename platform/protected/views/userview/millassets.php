@@ -139,7 +139,7 @@
                         </ul>
                     </div>
                     <div class="recharge_list">
-                        <div class="profit_head">S9</div>
+                        <div class="profit_head"><?php echo Yii::t('power','mill_contract_list');?></div>
                         <table class="table">
                             <tr>
                                 <th><?php echo Yii::t('common','name');?></th>
