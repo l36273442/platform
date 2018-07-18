@@ -169,7 +169,7 @@
 
         </style>
 
-<div class="row nav">
+<div class="nav">
     <div class="area">
         <p class="nav_logo col-lg-2 col-md-2 col-sm-3 col-xs-10">M I N E B I T</p>
         <ul class="nav_tab col-lg-10 col-md-10 col-sm-9">
