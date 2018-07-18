@@ -120,7 +120,7 @@ class UserViewController extends Controller{
                     $row['total_machine'] = 0;
                     $row['total_investment'] = 0;
                     $row['total_income'] = 0;
-                    $row['machine_total_income'] = 0;
+                    $row['machine_total_investment'] = 0;
                     $row['machine_total_income'] = 0;
                 }
                 $row['coin_name'] = $v->name;
