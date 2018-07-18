@@ -38,11 +38,42 @@ class MachineContractOrderController extends AjaxController{
         }
         $s = 'select * from '.MachineContractOrderModel::model()->tableName().$where.' limit '.($page-1)*$size.','.$size;
         $r = MachineContractOrderModel::model()->findAllBySql( $s , $arr );
-        $data = array();
+        $data =$c=$c_k=$u=$u_k=$m=$m_k=$mids= array();
+        $c = CoinModel::model()->findAll();
+        if( $c ){
+            foreach($c as $v ){
+                $c_k[$v['id']] = $v->attributes;
+            }
+        }
+        $u = UnitModel::model()->findAll();
+        if( $u ){
+            foreach($u as $v ){
+                $u_k[$v['id']] = $v->attributes;
+            }
+        }
+
         if( $r ){ 
             foreach( $r as $v ){
+                $mids[] = $v->machine_id;
                 $data[] = $v->attributes;
             }
+            $m = MiningMachineModel::model()->getMachinesByIds($mids);
+            if($m){
+                foreach( $m as $v ){
+                    $m_k[$v['id']] = $v;
+                }
+            }
+        }
+        foreach($data as &$v ){
+            $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+            $v['electricity_fee'] = isset($m_k[$v['machine_id']])?$m_k[$v['machine_id']]['electricity_fee']:'';
+            $v['manage_fee'] = isset($m_k[$v['machine_id']])?$m_k[$v['machine_id']]['manage_fee']:'';
+            $v['machine_name'] = isset($m_k[$v['machine_id']])?$m_k[$v['machine_id']]['name_'. Yii::app()->language]:'';
+            $v['unit_name'] = isset($u_k[$c_k[$v['coin_id']]['unit_id']])?$u_k[$c_k[$v['coin_id']]['unit_id']]['name']:'';
+            $v['price'] = sprintf("%.4f",$v['price']);
+            $v['order_price'] = sprintf("%.4f",$v['order_price']);
+            $v['electricity_fee'] = sprintf("%.6f",$v['electricity_fee']);
+            $v['manage_fee'] = sprintf("%.4f",$v['manage_fee']);
         }
         $this->renderJson(Yii::t('common','success') , $data);
     }
