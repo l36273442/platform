@@ -47,4 +47,7 @@ return array(
     'mill_overview'         => 'MILL OVERVIEW',
     'over'                  => 'over',
     'freeze'                => 'freeze',
+    'status_mco_0'          => 'Undelivered',
+    'status_mco_1'          => 'normal',
+    'status_mco_2'          => 'end',
 );

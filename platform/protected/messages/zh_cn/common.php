@@ -118,4 +118,12 @@ return array(
     'account'               => '账户',
     'recharge'              => '充值',
     'withdraw'              => '提现',
+    'machine_assets'        => '矿机资产',
+    'my_recharge'           => '我的投入',
+    'my_income'             => '我的收入',
+    'total_income'          => '总收益',
+    'name'                  => '名称',
+    'count'                 => '数量',
+    'start_time'            => '开始时间',
+    'end_time'              => '结束时间',
 );

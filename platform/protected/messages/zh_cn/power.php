@@ -47,4 +47,7 @@ return array(
     'mill_overview'         => '矿机概况',
     'over'                  => '余额',
     'freeze'                => '冻结',
+    'status_mco_0'          => '未交割',
+    'status_mco_1'          => '正常',
+    'status_mco_2'          => '结束',
 );
