@@ -109,13 +109,30 @@
                         $i=0;
                         foreach( $coins as $v ){
                 ?>
-                    <li <?php if( $i==0 ){echo 'class="layui-this"';}?> coin_id="<?php echo $v['id']?>"><?php echo $v['name'];?></li>
+                    <li <?php if( $i==0 ){echo 'class="layui-this very"';}?> coin_id="<?php echo $v['id']?>"><?php echo $v['name'];?></li>
                 <?php
                     $i++;                
                     }
                 }
                 ?>
             </ul>
+
+            <div class="profit_btc1">
+                <ul class="user_content">
+                  <li class="row">
+                    <p><?php echo Yii::t('common','my_recharge');?> USD</p>
+                    <p> <b><?php echo $v['machine_total_investment'];?></b></p>
+                  </li>
+                  <li class="row">
+                    <p><?php echo Yii::t('common','my_income');?> USD</p>
+                    <p> <b><?php echo $v['machine_total_income']*$v['latest_price'];?></b></p>
+                  </li>
+                  <li class="row">
+                    <p><?php echo Yii::t('common','total_income');?><?php echo $v['name'];?></p>
+                    <p> <b><?php echo $v['machine_total_income'];?></b> </p>
+                  </li>
+                </ul>
+            </div>
 
             <div class="layui-tab-content">
                 <?php
@@ -124,25 +141,11 @@
                         foreach( $coins as $v){
                 ?>  
                     <div class="layui-tab-item <?php if($i==0) echo 'layui-show';?>">
-                    <div class="profit_btc1">
-                        <ul class="user_content">
-                            <li class="row">
-                                <p><?php echo Yii::t('common','my_recharge');?> USD</p>
-                                <p> <b><?php echo $v['machine_total_investment'];?></b></p>
-                            </li>
-                            <li class="row">
-                                <p><?php echo Yii::t('common','my_income');?> USD</p>
-                                <p> <b><?php echo $v['machine_total_income']*$v['latest_price'];?></b></p>
-                            </li>
-                            <li class="row">
-                            <p><?php echo Yii::t('common','total_income');?><?php echo $v['name'];?></p>
-                            <p> <b><?php echo $v['machine_total_income'];?></b> </p>
-                            </li>
-                        </ul>
-                    </div>
+
                     <div class="recharge_list">
                         <div class="profit_head"><?php echo Yii::t('power','mill_contract_list');?></div>
                         <table class="table">
+                         <thead>
                             <tr>
                                 <th><?php echo Yii::t('common','name');?></th>
                                 <th><?php echo Yii::t('common','count');?></th>
@@ -152,6 +155,7 @@
                                 <th><?php echo Yii::t('common','price');?></th>
                                 <th><?php echo Yii::t('common','manage_fee');?></th>
                                 <th><?php echo Yii::t('common','electricity_fee');?>/<?php echo Yii::t('common','day');?></th>
+                         <thead>
                             </tr>
                             <tbody class="tbody">
 
@@ -161,6 +165,7 @@
                     <div class="recharge_list">
                         <div class="profit_head"><?php echo Yii::t('power','income_breakdown');?></div>
                             <table class="earningstable">
+                            <thead>
                                 <tr>
                                 <th><?php  echo Yii::t('common','time');?></th>
                                     <th><?php echo Yii::t('common','total_income');?></th>
@@ -169,6 +174,7 @@
                                     <th><?php echo Yii::t('common','real_income');?></th>
                                     <th>BTC<?php echo Yii::t('common','price');?></th>
                                 </tr>
+                                 <thead>
                                 <tbody class="coin">
 
                                 </tbody>
@@ -207,9 +213,9 @@
             },
             dataType: 'json',
             success: function(data){
-                //console.log(data);
+                console.log(data);
                 if(data.ret =='1') {  // 成功
-                    if(data.data){
+                    if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             //console.log(data)
                             return `<tr class="data">
@@ -224,15 +230,16 @@
                             </tr>`
                         });
                         $('.tbody').html(html.join(' '));
+                    }else{
+                    $('.tbody').html(' ');
                     }
-
                 }else{
                     layer.msg(data.msg);
                 }
             }
         })
     }
-    currency($('.layui-this').attr('coin_id'));
+    currency($('.very').attr('coin_id'));
 
 
     // 收益明细
@@ -249,9 +256,9 @@
             },
             dataType: 'json',
             success: function(data){
-                //  console.log(data);
+                  console.log(data);
                 if(data.ret =='1') {  // 成功
-                    if(data.data){
+                    if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             return `<tr>
                                    <td>${item.release_time_text}</td>
@@ -263,6 +270,8 @@
                                </tr>`
                         });
                         $('.coin').html(html.join(' '));
+                    }else{
+                       $('.coin').html(' ');
                     }
 
                 }else{
@@ -271,7 +280,7 @@
             }
         })
     }
-    millassets($('.layui-this').attr('coin_id'));
+    millassets($('.very').attr('coin_id'));
 </script>
 </body>
 </html>
