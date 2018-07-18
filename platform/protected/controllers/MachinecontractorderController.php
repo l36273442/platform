@@ -36,7 +36,8 @@ class MachineContractOrderController extends AjaxController{
             $where .=' and coin_id=:coin_id';
             $arr[':coin_id'] = $p['coin_id'];
         }
-        $s = 'select * from '.MachineContractOrderModel::model()->tableName().$where.' limit '.($page-1)*$size.','.$size;
+        //$s = 'select * from '.MachineContractOrderModel::model()->tableName().$where.' limit '.($page-1)*$size.','.$size;
+        $s = 'select * from '.MachineContractOrderModel::model()->tableName().$where.' order by id desc ';
         $r = MachineContractOrderModel::model()->findAllBySql( $s , $arr );
         $data =$c=$c_k=$u=$u_k=$m=$m_k=$mids= array();
         $c = CoinModel::model()->findAll();
