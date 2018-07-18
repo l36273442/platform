@@ -29,7 +29,7 @@ if( empty($re)){
     exit;
 }
 
-$mc = $db->query("select * from platform_machine_contract_order where $x >= start_time and $x<= end_time");
+$mc = $db->query("select * from platform_machine_contract_order where $x >= start_time and $x<= end_time and status = 1");
 if( empty($mc) ){
     echo "计算矿机收益".$d.",时间",date("Y-m-d H:i:s" , $t),",原因获取用户矿机失败或用户无矿机 fail !",PHP_EOL;
     exit; 
