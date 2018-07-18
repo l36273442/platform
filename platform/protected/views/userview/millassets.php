@@ -70,24 +70,26 @@
             font-size: 24px;
             color: #0092da;
         }
-        .layui-tab-content,.layui-tab{
-            padding: 0;
+        div.layui-tab-content,div.layui-tab{
+               margin: 0;
+               padding: 0;
         }
-        .layui-tab-brief>.layui-tab-title .layui-this{
+        div.layui-tab-brief>.layui-tab-title .layui-this{
             color: #0092da
         }
-        .layui-tab-title li{
+        ul.layui-tab-title li{
             line-height: 106px;
             font-size: 28px;
             color: #74737b;
             padding: 0;
-            min-width: 70px;
+            text-align: left;
+            min-width: 80px;
         }
-        .layui-tab-title{
+        ul.layui-tab-title{
             height: auto;
             border: none;
         }
-        .layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{
+        div.layui-tab-brief>.layui-tab-more li.layui-this:after, div.layui-tab-brief>.layui-tab-title .layui-this:after{
             border: none;
         }
     </style>
