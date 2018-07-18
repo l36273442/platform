@@ -193,7 +193,7 @@
                  <ul class="user_list">
                      <li><a href="/userpanel"><?php echo Yii::t('common','user_panel');?></a></li>
                      <li><a href="/hashassets"><?php echo Yii::t('common','hash_assets');?></a></li>
-                     <li><a href="/millassets"><?php echo Yii::t('common','mill_assets');?></a></li>
+                     <li><a href="/millassets"><?php echo Yii::t('common','machine_assets');?></a></li>
                     <li><a href="/logout"><?php echo Yii::t('common','logout');?></a></li>
                  </ul>
              </div>
