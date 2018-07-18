@@ -101,7 +101,7 @@
             ?>
             <li class="row">
             <span><?php echo $v['name'];?><?php echo Yii::t('common','total_amount');?>&nbsp;|&nbsp;<b><?php echo $v['total_power'];?></b>&nbsp;<?php echo $v['unit_name'];?></span>
-                <span>USD<?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b>0.00</b></span>
+            <span>USD<?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b><?php echo $v['power_total_income']*$v['latest_price'];?></b></span>
                 <span><?php echo $v['name'];?><?php echo Yii::t('common','total_revenue');?>&nbsp;|&nbsp;<b><?php echo $v['power_total_income'];?></b></span>
             </li>
             <?php 
@@ -137,7 +137,7 @@
             <li class="survey"><img src="images/tethericon@2x.png">USD<?php echo Yii::t('common','account');?></li>
             <li class="row">
             <span><?php echo Yii::t('power','over');?>&nbsp;|&nbsp;<b><?php echo $legal['usd'];?></b>&nbsp;USD</span>
-            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $legal['usd_freeze'];?></b>USD</span>
+            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $legal['usd_freeze'];?></b>&nbsp;USD</span>
                 <span>
                     <a href="/recharge"><?php echo Yii::t('common','recharge');?></a>
                     <a href="/withdraw"><?php echo Yii::t('common','withdraw');?></a>
@@ -166,7 +166,7 @@
         <li class="survey"><img src="<?php echo $v['img_url'];?>"><?php echo $v ['name'];?><?php echo Yii::t('common','account');?></li>
             <li class="row">
             <span><?php echo Yii::t('power','over');?>&nbsp;|&nbsp;<b><?php echo $v['current_total'];?></b>&nbsp;<?php echo $v['name'];?></span>
-            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $v['freeze_total'];?></b><?php echo $v['name'];?></span>
+            <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $v['freeze_total'];?></b>&nbsp;<?php echo $v['name'];?></span>
                 <span>
                     <a href="/recharge"><?php echo Yii::t('common','recharge');?></a>
                     <a href="/withdraw"><?php echo Yii::t('common','recharge');?></a>
