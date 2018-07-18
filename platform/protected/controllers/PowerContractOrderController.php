@@ -32,16 +32,38 @@ class PowerContractOrderController extends AjaxController{
             $where .= ' and status=:status';
             $arr[':status'] = $status;          
         }
-        if( isset($p['coin_id']) && is_numeric($p['coin_id']) && $p['coin_id']>=0 ){
+        if( isset($p['coin_id']) && is_numeric($p['coin_id']) && $p['coin_id']>0 ){
             $where .=' and coin_id=:coin_id';
             $arr[':coin_id'] = $p['coin_id'];
         }
         $s = 'select * from '.PowerContractOrderModel::model()->tableName().$where.' limit '.($page-1)*$size.','.$size;
         $r = PowerContractOrderModel::model()->findAllBySql( $s , $arr );
-        $data = array();
+        $data = $c = $c_k = $u = $u_k = array();
+        $c = CoinModel::model()->findAll();
+        if( $c ){
+            foreach($c as $v ){
+                $c_k[$v['id']] = $v->attributes;
+            }
+        }
+        $u = UnitModel::model()->findAll();
+        if( $u ){
+            foreach($u as $v ){
+                $u_k[$v['id']] = $v->attributes;
+            }
+        }
         if( $r ){ 
             foreach( $r as $v ){
-                $data[] = $v->attributes;
+                $row = array();
+                $row = $v->attributes;
+                $row['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+                $row['electricity_fee'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['electricity_fee']:'';
+                $row['manage_fee'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['manage_fee']:'';
+                $row['unit_name'] = isset($u_k[$c_k[$v['coin_id']]['unit_id']])?$u_k[$c_k[$v['coin_id']]['unit_id']]['name']:'';
+                $row['price'] = sprintf("%.4f",$row['price']);
+                $row['order_price'] = sprintf("%.4f",$row['order_price']);
+                $row['electricity_fee'] = sprintf("%.6f",$row['electricity_fee']);
+                $row['manage_fee'] = sprintf("%.4f",$row['manage_fee']);
+                $data[] = $row;
             }
         }
         $this->renderJson(Yii::t('common','success') , $data);
