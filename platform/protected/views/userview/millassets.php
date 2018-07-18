@@ -109,7 +109,11 @@
                         $i=0;
                         foreach( $coins as $v ){
                 ?>
+<<<<<<< HEAD
                     <li <?php if( $i==0 ){echo 'class="layui-this very"';}?> coin_id="<?php echo $v['id']?>"><?php echo $v['name'];?></li>
+=======
+                    <li <?php if( $i==0 ){echo 'class="layui-this"';}?> coin_id="<?php echo $v['id'];?>"><?php echo $v['name'];?></li>
+>>>>>>> bb60e131a73c7e4eef5bb9709ddf28c634d68bad
                 <?php
                     $i++;                
                     }

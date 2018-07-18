@@ -47,7 +47,7 @@ return array(
                 '' => 'site/index',
                 'signin' => 'login/signin',
                 'signup' => 'register/signup',
-                'logout' => 'login/logout',
+                'logout' => 'userview/logout',
                 'userpanel' => 'userview/panel',
                 'millassets' => 'userview/machineassets',
                 'hashassets' => 'userview/powerassets',

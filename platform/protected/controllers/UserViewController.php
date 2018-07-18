@@ -9,6 +9,19 @@ class UserViewController extends Controller{
 
         $this->render('uppass');
     }
+    public function actionLogout(){
+        if( isset(Yii::app()->session['id'] )){
+            unset(Yii::app()->session['id']);
+        }
+        if( isset(Yii::app()->session['phone'] )){
+            unset(Yii::app()->session['phone']);
+        }
+        if( isset(Yii::app()->session['expire'] )){
+            unset(Yii::app()->session['expire']);
+        }
+        $this->redirect(Yii::app()->getBaseUrl().'/site/index');
+    }
+
     public function actionPanel(){
         //$id=1;
         $id = Yii::app()->session['id']; 
