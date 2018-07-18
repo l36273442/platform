@@ -81,6 +81,7 @@ class UserViewController extends Controller{
         $id = Yii::app()->session['id']; 
         $uc = UserCoinModel::model()->findAll('uid=:uid' ,array(':uid'=>$id));
         $c = CoinModel::model()->findAll();
+        
         $uc_k = $c_k =  $m_k = $u_k = $coins = array();
         $u = UnitModel::model()->findAll();
         if($u){
@@ -128,7 +129,7 @@ class UserViewController extends Controller{
                 $this->data['coins'][] = $row;
             }
         }
-        print_r($this->data); 
+        $this->render('millassets',$this->data);
 
     }
     public function actionHashAssets(){
