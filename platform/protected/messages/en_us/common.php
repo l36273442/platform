@@ -119,10 +119,13 @@ return array(
     'recharge'              => 'recharge',
     'withdraw'              => 'withdraw',
     'machine_assets'        => 'mill assets',
+    'hash_assets'           => 'hash assets',
     'my_recharge'           => 'my recharge',
     'my_income'             => 'my income',
     'total_income'          => 'total income',
     'count'                 => 'count',
     'start_time'            => 'start time',
     'end_time'              => 'end time',
+    'time'                  => 'Time',
+    'real_income'           => 'Actual income',
 );
