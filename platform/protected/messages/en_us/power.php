@@ -52,4 +52,6 @@ return array(
     'status_mco_2'          => 'end',
     'mill_contract_list'    => 'Mining machine contract list',
     'income_breakdown'      => 'Income breakdown',
+    'return_status'         => 'Return status(Total revenue/Total investment)',
+    'buy_breakdown'         => 'Purchase details',
 );

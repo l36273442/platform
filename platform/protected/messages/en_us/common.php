@@ -128,4 +128,6 @@ return array(
     'end_time'              => 'end time',
     'time'                  => 'Time',
     'real_income'           => 'Actual income',
+    'total_power'           => 'Total power',
+    'total_price'           => 'Total power',
 );

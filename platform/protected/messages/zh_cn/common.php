@@ -129,4 +129,6 @@ return array(
     'end_time'              => '结束时间',
     'time'                  => '时间',
     'real_income'           => '实际收益',
+    'total_power'           => '总算力',
+    'total_price'           => '总价',
 );

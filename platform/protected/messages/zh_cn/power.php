@@ -52,4 +52,6 @@ return array(
     'status_mco_2'          => '结束',
     'mill_contract_list'    => '矿机合约列表',
     'income_breakdown'      => '收益明细',
+    'return_status'         => '回本状态(总收益/总投入)',
+    'buy_breakdown'         => '购买明细',
 );
