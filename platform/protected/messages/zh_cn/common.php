@@ -131,4 +131,5 @@ return array(
     'real_income'           => '实际收益',
     'total_power'           => '总算力',
     'total_price'           => '总价',
+    'power'                 => '算力',
 );

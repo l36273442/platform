@@ -130,4 +130,5 @@ return array(
     'real_income'           => 'Actual income',
     'total_power'           => 'Total power',
     'total_price'           => 'Total power',
+    'power'                 => 'hash',
 );
