@@ -216,5 +216,49 @@ class UserViewController extends Controller{
         $this->render('powerassets',$this->data);
 
     }
-
+    public function actionInvite(){
+        $id = Yii::app()->session['id'];
+        $config = InviteConfigModel::model()->find();
+        $invite = UserInviteModel::model()->find('uid=:uid', array(':uid'=> $id));
+        if($config ){
+            $this->data['config'] = $config->attributes;
+        }
+        else{
+            $this->data['config'] = array();;
+        }
+        if( $invite ){
+            $this->data['invite'] = $invite->attributes;
+        }else{
+            $this->data['invite'] = array();;
+        }
+        $coins = $u_k = $c_k = array();
+        $u = UnitModel::model()->findAll();
+        if( $u ){
+            foreach( $u as $v ){
+                $u_k[$v['id']] = $v->attributes;
+            }
+        }
+        $uc = UserCoinModel::model()->findAllBySql('select coin_id ,total_invite_power from platform_user_coin where uid='.$id.' and total_invite_power >0');
+        if( $uc  ){
+            foreach( $uc as $v){
+                $cids[] = $v['coin_id'];
+                $coins[] = $v->attributes; 
+            }
+            $cs = CoinModel::model()->getCoinsByIds($cids);
+            if($cs){
+                foreach($cs as $v){
+                    $c_k[$v['id']] = $v;
+                }
+            }
+        }
+    
+        foreach( $coins as &$v){
+            $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+            $v['unit_name'] = isset($u_k[$c_k[$v['coin_id']]['unit_id']])?$u_k[$c_k[$v['coin_id']]['unit_id']]['name']:'';
+            $v['total_invite_power'] = sprintf("%.4f" , $v['total_invite_power']);
+        }
+        $this->data['coins'] = $coins;
+        $this->data['invite_url'] = Yii::app()->request->getHostInfo().'/signup?invitecode='.$this->data['invite']['invite_code'];
+        $this->render('invite',$this->data);
+    }
 }
