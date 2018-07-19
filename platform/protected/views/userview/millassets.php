@@ -154,6 +154,8 @@
                             <tr>
                                 <th><?php echo Yii::t('common','name');?></th>
                                 <th><?php echo Yii::t('common','count');?></th>
+                                <th><?php echo Yii::t('common','power');?></th>
+                                <th><?php echo Yii::t('common','total_power');?></th>
                                 <th><?php echo Yii::t('common','status');?></th>
                                 <th><?php echo Yii::t('common','start_time');?></th>
                                 <th><?php echo Yii::t('common','end_time');?></th>
@@ -227,10 +229,12 @@
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                            // console.log(item)
-                            return `<tr class="data">
+                            return `<tr >
                                <td style="max-width: 250px;">${item.machine_name}</td>
                                 <td>${item.count}</td>
-                                <td>${item.status}</td>
+                                <td>${item.power}</td>
+                                <td>${item.total_power}</td>
+                                <td>${item.status_text}</td>
                                 <td>${item.start_time_text}</td>
                                 <td>${item.end_time_text}</td>
                                 <td>${item.price}</td>
