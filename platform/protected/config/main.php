@@ -48,6 +48,7 @@ return array(
                 'signin' => 'login/signin',
                 'signup' => 'register/signup',
                 'logout' => 'userview/logout',
+                'invite' => 'userview/invite',
                 'userpanel' => 'userview/panel',
                 'millassets' => 'userview/machineassets',
                 'hashassets' => 'userview/powerassets',
