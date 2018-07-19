@@ -160,6 +160,7 @@
                                 <th><?php echo Yii::t('common','price');?></th>
                                 <th><?php echo Yii::t('common','manage_fee');?></th>
                                 <th><?php echo Yii::t('common','electricity_fee');?>/<?php echo Yii::t('common','day');?></th>
+                         <thead>
                             </tr>
                             </thead>
                             <tbody class="tbody">
@@ -221,7 +222,7 @@
             },
             dataType: 'json',
             success: function(data){
-                //console.log(data);
+                console.log(data);
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
