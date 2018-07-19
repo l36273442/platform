@@ -169,7 +169,7 @@
                         </table>
                     </div>
                     <div class="recharge_list">
-                        <div class="profit_head">收益明细</div>
+                        <div class="profit_head"><?php echo Yii::t('power','income_breakdown');?></div>
                         <table class="table">
                             <thead>
                             <tr>
@@ -276,7 +276,7 @@
                                    <td>${item.electricity_fee}</td>
                                     <td>${item.real_count}</td>
                                    <td>${item.manage_fee}</td>
-                                   <td>0.00</td>
+                                   <td>${item.btc_price}</td>
                                </tr>`
                         });
                         $('.coin').html(html.join(' '));
