@@ -63,6 +63,7 @@ class PowerContractOrderController extends AjaxController{
                 $row['order_price'] = sprintf("%.4f",$row['order_price']);
                 $row['electricity_fee'] = sprintf("%.6f",$row['electricity_fee']);
                 $row['manage_fee'] = sprintf("%.4f",$row['manage_fee']);
+                $row['ctime'] = date("Y-m-d",$row['ctime']);
                 $data[] = $row;
             }
         }

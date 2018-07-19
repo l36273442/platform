@@ -107,6 +107,13 @@ class UserViewController extends Controller{
                 $uc_k[$v['coin_id']] = $v->attributes;
             }
         }
+        $b = CoinModel::model()->findBySql("select id,name,latest_price from platform_coin where name = 'btc' ");
+        if($b ){
+            $this->data['btc'] = $v->attributes;
+        }
+        else{
+            $this->data['btc'] = array();
+        }
         if( $c ){
             foreach( $c as $v ){
                 $c_k[$v->id] = $v->attributes;
@@ -145,7 +152,7 @@ class UserViewController extends Controller{
         $this->render('millassets',$this->data);
 
     }
-    public function actionHashAssets(){
+    public function actionPowerAssets(){
         //$id=1;
         $id = Yii::app()->session['id']; 
         $uc = UserCoinModel::model()->findAll('uid=:uid' ,array(':uid'=>$id));
@@ -161,6 +168,15 @@ class UserViewController extends Controller{
             foreach( $uc as $v ){
                 $uc_k[$v['coin_id']] = $v->attributes;
             }
+        }
+        $b = CoinModel::model()->findBySql("select id,name,latest_price from platform_coin where name = 'btc' ");
+        if($b ){
+            $this->data['btc']['id'] = $b->id;
+            $this->data['btc']['name'] = $b->name;
+            $this->data['btc']['latest_price'] = $b->latest_price;
+        }
+        else{
+            $this->data['btc'] = array();
         }
         if( $c ){
             foreach( $c as $v ){
@@ -197,7 +213,7 @@ class UserViewController extends Controller{
                 $this->data['coins'][] = $row;
             }
         }
-        print_r($this->data); 
+        $this->render('powerassets',$this->data);
 
     }
 

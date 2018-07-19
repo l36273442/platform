@@ -116,6 +116,15 @@ class UserController extends AjaxController{
             $s = 'select * from '.UserCoinLogModel::model()->tableName().' where type=:type and mining_type=:mining_type and uid=:uid  order by id desc limit '.($page-1)*$size.','.$size;
             $pa = array(':uid'=>$uid,':type'=>0,':mining_type'=>0);
         }
+        $b = CoinModel::model()->findBySql("select id,name,latest_price from platform_coin where name = 'btc' ");
+        if($b ){
+            $btc['id'] = $b->id;
+            $btc['name'] = $b->name;
+            $btc['latest_price'] = $b->latest_price;
+        }
+        else{
+            $btc = array();
+        }
         $l = UserCoinLogModel::model()->findAllBySql($s , $pa );
         $data = $cids = $c_k = array();
         if($l){
@@ -125,6 +134,7 @@ class UserController extends AjaxController{
                 $r['real_count'] = sprintf("%.4f" ,$v['real_count']);
                 $r['electricity_fee'] = sprintf("%.4f" ,$v['electricity_fee']);
                 $r['manage_fee'] = sprintf("%.4f" ,$v['manage_fee']);
+                $r['release_time_text'] = date('Y-m-d' ,$v['release_time']);
                 $cids[] = $v['coin_id'];
                 $data[] = $r;
             }
@@ -136,6 +146,8 @@ class UserController extends AjaxController{
             }
             foreach( $data as &$v ){
                 $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+                $v['btc_price'] = isset($c_k[$v['coin_id']])?($v['real_count']*$c_k[$v['coin_id']]['latset_btc_price']):'';
+                $v['btc_price'] = sprintf("%.8f",$v['btc_price']);
             }
         }
         $this->renderJson(Yii::t('common','success') , $data);
@@ -189,6 +201,8 @@ class UserController extends AjaxController{
             }
             foreach( $data as &$v ){
                 $v['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+                $v['btc_price'] = isset($c_k[$v['coin_id']])?($v['real_count']*$c_k[$v['coin_id']]['latset_btc_price']):'';
+                $v['btc_price'] = sprintf("%.8f",$v['btc_price']);
             }
         }
         $this->renderJson(Yii::t('common','success') , $data);
