@@ -27,6 +27,7 @@
             padding:  33px 32px 20px 32px;
             border-bottom: 1px solid #302d40;
             overflow: auto;
+            display: none;
         }
         .profit_btc ul:last-child{
             border-bottom: none;
@@ -71,8 +72,8 @@
             color: #0092da;
         }
         div.layui-tab-content,div.layui-tab{
-               margin: 0;
-               padding: 0;
+            margin: 0;
+            padding: 0;
         }
         div.layui-tab-brief>.layui-tab-title .layui-this{
             color: #0092da
@@ -83,11 +84,13 @@
             color: #74737b;
             padding: 0;
             text-align: left;
-            min-width: 80px;
+            min-width: 60px;
         }
         ul.layui-tab-title{
             height: auto;
             border: none;
+            color: #74737b;
+            font-size: 24px;
         }
         div.layui-tab-brief>.layui-tab-more li.layui-this:after, div.layui-tab-brief>.layui-tab-title .layui-this:after{
             border: none;
@@ -95,7 +98,7 @@
     </style>
 </head>
 <body>
- <?php require(dirname(__FILE__).'/../header.php'); ?>
+<?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="customer">
     <div class="type_area">
         <p class="user_title1">
@@ -107,42 +110,47 @@
                 <?php
                     if($coins){
                         $i=0;
+                        $len = count($coins)-1;
                         foreach( $coins as $v ){
                 ?>
-                    <li <?php if( $i==0 ){echo 'class="layui-this"';}?> coin_id="<?php echo $v['id'];?>"><?php echo $v['name'];?></li>
+                    <li <?php if( $i==0 ){echo 'class="layui-this very"';}?> coin_id="<?php echo $v['id'];?>"><?php echo $v['name'];?></li><?php if($i!=$len) echo '&nbsp;&nbsp;|&nbsp;&nbsp;';?>
                 <?php
                     $i++;                
                     }
                 }
-                ?>
+                ?> 
             </ul>
-
-            <div class="layui-tab-content">
+            <div class="profit_btc1">
                 <?php
                     if($coins){
-                        $i=0;
-                        foreach( $coins as $v){
-                ?>  
-                    <div class="layui-tab-item <?php if($i==0) echo 'layui-show';?>">
-                    <div class="profit_btc1">
-                        <ul class="user_content">
-                            <li class="row">
-                                <p><?php echo Yii::t('common','my_recharge');?> USD</p>
-                                <p> <b><?php echo $v['machine_total_investment'];?></b></p>
-                            </li>
-                            <li class="row">
-                                <p><?php echo Yii::t('common','my_income');?> USD</p>
-                                <p> <b><?php echo $v['machine_total_income']*$v['latest_price'];?></b></p>
-                            </li>
-                            <li class="row">
-                            <p><?php echo Yii::t('common','total_income');?><?php echo $v['name'];?></p>
-                            <p> <b><?php echo $v['machine_total_income'];?></b> </p>
-                            </li>
-                        </ul>
-                    </div>
+                        foreach( $coins as $v ){
+                ?>
+                    <ul class="user_content" id="<?php echo $v['id'];?>">
+                    <li class="row">
+                        <p><?php echo Yii::t('common','my_recharge');?> USD</p>
+                        <p> <b><?php echo $v['machine_total_investment'];?></b></p>
+                    </li>
+                    <li class="row">
+                        <p><?php echo Yii::t('common','my_income');?> USD</p>
+                        <p> <b><?php echo $v['machine_total_income']*$v['latest_price'];?></b></p>
+                    </li>
+                    <li class="row">
+                        <p><?php echo Yii::t('common','total_income');?><?php echo $v['name'];?></p>
+                        <p> <b><?php echo $v['machine_total_income'];?></b> </p>
+                    </li>
+                </ul>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
                     <div class="recharge_list">
-                        <div class="profit_head"><?php echo Yii::t('power','mill_contract_list');?></div>
+                        <div class="profit_head">S9</div>
                         <table class="table">
+                            <thead>
                             <tr>
                                 <th><?php echo Yii::t('common','name');?></th>
                                 <th><?php echo Yii::t('common','count');?></th>
@@ -153,33 +161,31 @@
                                 <th><?php echo Yii::t('common','manage_fee');?></th>
                                 <th><?php echo Yii::t('common','electricity_fee');?>/<?php echo Yii::t('common','day');?></th>
                             </tr>
+                            </thead>
                             <tbody class="tbody">
 
                             </tbody>
                         </table>
                     </div>
                     <div class="recharge_list">
-                        <div class="profit_head"><?php echo Yii::t('power','income_breakdown');?></div>
-                            <table class="earningstable">
-                                <tr>
+                        <div class="profit_head">收益明细</div>
+                        <table class="table">
+                            <thead>
+                            <tr>
                                 <th><?php  echo Yii::t('common','time');?></th>
                                     <th><?php echo Yii::t('common','total_income');?></th>
                                     <th><?php echo Yii::t('common','electricity_fee');?></th>
                                     <th><?php echo Yii::t('common','manage_fee');?></th>
                                     <th><?php echo Yii::t('common','real_income');?></th>
                                     <th>BTC<?php echo Yii::t('common','price');?></th>
-                                </tr>
-                                <tbody class="coin">
+                            </tr>
+                            </thead>
+                            <tbody class="coin">
 
-                                </tbody>
-                            </table>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <?php
-                    $i++;                
-                    }
-                }
-                ?>
             </div>
         </div>
     </div>
@@ -188,10 +194,18 @@
 <script>
     var element = layui.element;
     element.on('tab(docDemoTabBrief)', function(data){
+         // console.log($(this));
            currency($(this).attr('coin_id'));
            millassets($(this).attr('coin_id'));
+           render($(this).attr('coin_id'));
     });
 
+    // 币种切换
+   function render(id) {
+       $('.user_content').hide();
+       $('#'+id).show();
+   }
+    render($('.user_content').attr('id'));
 
     // 币种
     function currency(coin_id) {
@@ -211,11 +225,11 @@
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
-                            //console.log(data)
+                           // console.log(item)
                             return `<tr class="data">
                                <td style="max-width: 250px;">${item.machine_name}</td>
                                 <td>${item.count}</td>
-                                <td>${item.status_text}</td>
+                                <td>${item.status}</td>
                                 <td>${item.start_time_text}</td>
                                 <td>${item.end_time_text}</td>
                                 <td>${item.price}</td>
@@ -224,19 +238,21 @@
                             </tr>`
                         });
                         $('.tbody').html(html.join(' '));
+                    }else{
+                        $('.tbody').html(' ');
                     }
-
                 }else{
                     layer.msg(data.msg);
                 }
             }
         })
     }
-    currency($('.layui-this').attr('coin_id'));
+    currency($('.very').attr('coin_id'));
 
 
     // 收益明细
     function millassets(coin_id) {
+        /* let id = 1;*/
         let size = 20;
         let page = 1;
         $.ajax({
@@ -249,7 +265,7 @@
             },
             dataType: 'json',
             success: function(data){
-                //  console.log(data);
+                 // console.log(data);
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
@@ -263,15 +279,16 @@
                                </tr>`
                         });
                         $('.coin').html(html.join(' '));
+                    }else{
+                        $('.coin').html(' ');
                     }
-
                 }else{
                     layer.msg(data.msg);
                 }
             }
         })
     }
-    millassets($('.layui-this').attr('coin_id'));
+    millassets($('.very').attr('coin_id'));
 </script>
 </body>
 </html>
