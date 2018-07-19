@@ -132,4 +132,10 @@ return array(
     'total_power'           => '总算力',
     'total_price'           => '总价',
     'power'                 => '算力',
+    'invite'                => '邀请好友',
+    'shared_revenue'        => '共享收益',
+    'my_invite_code'        => '我的邀请码',
+    'invite_url'            => '推荐链接',
+    'recommend_friends'     => '已推荐好友',
+    'gained_power'          => '已获得算力',
 );
