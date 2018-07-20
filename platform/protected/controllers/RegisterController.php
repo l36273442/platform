@@ -18,6 +18,7 @@ class RegisterController extends CommonController{
 
 	public function actionDoRegister(){
         $p = $this->getParams('POST');
+        
         if( !isset($p['country_code']) || empty($p['country_code']) ){
             $this->renderError(Yii::t('common','country_code_empty'), ErrorCode::PARAM_EMPTY); 
         }
@@ -48,6 +49,7 @@ class RegisterController extends CommonController{
         if( !$this->check_password($p['password']) ){
             $this->renderError(Yii::t('common','password_type'), ErrorCode::PARAM_ERROR); 
         }
+         
         $p['country_code'] = trim($p['country_code']);
         $p['mobile'] = trim($p['mobile']);
 
@@ -83,6 +85,47 @@ class RegisterController extends CommonController{
             unset(Yii::app()->session['sms_code_time']);
             if( $user->invite_uid ){
                 UserInviteModel::model()->updateCounters(array('sum'=>1),'uid=:uid',array(':uid'=>$user->invite_uid));
+                $invite_config = InviteConfigModel::model()->find();
+                if( $invite_config && $invite_config->coin_id > 0 && $invite_config->reward_count > 0 ){
+                    $iuc = UserCoinModel::model()->find('coin_id=:coin_id and uid=:uid' , array(':coin_id' => $invite_config->coin_id,':uid'=> $user->invite_uid ));
+                    if( $iuc ){
+                        $re8 = UserCoinModel::model()->findBySql('select * from platform_user_coin_log where coin_id='.$invite_config->coin_id.' and uid ='.$user->invite_uid.' for update');
+                        if( !$re8 ){
+                            $transaction->rollback();
+                            $this->renderError(Yii::t('common','error2') , ErrorCode::SYSTEM_ERROR);
+
+                        }
+                        $re7 = UserCoinModel::model()->updateCounters(array('total_power'=>$invite_config['reward_count'],'total_invite_power' => $invite_config['reward_count']),'uid=:uid and coin_id=:coin_id' , array(':uid'=>$user->invite_uid,':coin_id' => $invite_config->coin_id));
+                        if( !$re7 ){
+                            $transaction->rollback();
+                            $this->renderError(Yii::t('common','error3') , ErrorCode::SYSTEM_ERROR);
+                        }
+                        
+                    }
+                    else{
+                        $inu = new UserCoinModel();
+                        $inu->uid=$user->invite_uid;
+                        $inu->coin_id = $invite_config->coin_id;
+                        $inu->total_invite_power = $invite_config['reward_count'];
+                        $inu->total_power = $invite_config['reward_count'];
+                        $re10 = $inu->save();
+                        if( !$re10 ){
+                            $transaction->rollback();
+                            $this->renderError(Yii::t('common','error4') , ErrorCode::SYSTEM_ERROR);
+                        }
+                    }
+                    $iu =  new PowerLogModel();
+                    $iu->coin_id = $invite_config->coin_id;
+                    $iu->uid = $user->invite_uid;
+                    $iu->name = 'power_invite_reward';
+                    $iu->count = $invite_config['reward_count'];
+                    $iu->ctime = $t;
+                    $re9 = $iu->save();
+                    if( !$re9 ){
+                        $transaction->rollback();
+                        $this->renderError(Yii::t('common','error5') , ErrorCode::SYSTEM_ERROR);
+                    }
+                }
             }
             $invit_code = $this->getInvite( $user->primaryKey);
             if( $invit_code ){
