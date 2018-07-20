@@ -240,36 +240,46 @@
 <script>
     var element = layui.element;
 
+    let obj = {};
+    $('.name').on('change',function () {
+        obj.name = $(this).val();
+    });
+    $('.email').on('change',function () {
+        obj.email = $(this).val();
+    });
+
     // send
     $('.send').on('click',function () {
-           let name = $('.name').val();
-           let email = $('.email').val();
-           let offer = $('.offer').val();
+         let name = $('.name').val();
+         let email = $('.email').val();
+         let offer = $('.offer').val();
 
-               if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
-                   layer.msg('请输入正确的邮箱！');
-               }else{
-                   $.ajax({
-                       type: 'POST',
-                       url: '/contactmessage/setmessage',
-                       data:{
-                           name: name,
-                           email: email,
-                           offer: offer,
-                       },
-                       dataType: 'json',
-                       success: function(data){
-                           console.log(data);
-                           if(data.ret =='1') {  // 成功
-                               layer.msg(data.msg);
+         if(!obj.name) return layer.msg('名字不能为空!');
+         if(!obj.email) return layer.msg('邮箱不能为空！');
 
-                           }else{
-                               layer.msg(data.msg);
-                           }
+         if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+               layer.msg('请输入正确的邮箱！');
+         }else{
+              $.ajax({
+                   type: 'POST',
+                   url: '/contactmessage/setmessage',
+                   data:{
+                       name: name,
+                       email: email,
+                       offer: offer,
+                   },
+                   dataType: 'json',
+                   success: function(data){
+                       console.log(data);
+                       if(data.ret =='1') {  // 成功
+                           layer.msg(data.msg);
+                       }else{
+                           layer.msg(data.msg);
                        }
-                   })
-               }
-       })
+                   }
+              })
+         }
+    })
 
 </script>
 </body>
