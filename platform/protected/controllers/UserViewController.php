@@ -232,6 +232,22 @@ class UserViewController extends Controller{
             $this->data['invite'] = array();;
         }
         $coins = $u_k = $c_k = array();
+        $f = UserModel::model()->findAllBySql('select id,name,phone,ctime from platform_user where invite_uid='.$id.' order by id desc limit 5' );
+        if($f){
+            foreach( $f as $v ){
+                $row = array();
+                $row['id'] = $v['id'];
+                $row['name'] = $v['name'];
+                $row['phone'] = substr($v['phone'],0,3).'****'.substr($v['phone'],7);
+                $row['ctime'] = $v['ctime'];
+                $row['ctime'] = $v['ctime'];
+                $row['ctime_text'] = date('Y-m-d H:i' ,$v['ctime']);
+                $this->data['friends'][] = $row;
+            }
+        }
+        else{
+             $this->data['friends'] = array();
+        }
         $u = UnitModel::model()->findAll();
         if( $u ){
             foreach( $u as $v ){
@@ -244,12 +260,30 @@ class UserViewController extends Controller{
                 $cids[] = $v['coin_id'];
                 $coins[] = $v->attributes; 
             }
-            $cs = CoinModel::model()->getCoinsByIds($cids);
+            $cs = CoinModel::model()->findAll();
             if($cs){
                 foreach($cs as $v){
                     $c_k[$v['id']] = $v;
                 }
             }
+        }
+        $reward = UserCoinLogModel::model()->findAllBySql('select * from platform_user_coin_log where uid ='.$id.' and type = 4 and mining_type = 0 order by id desc limit 5');
+        if( $reward ){
+            foreach( $reward as $v ){
+                $row = array();
+                $row['id'] = $v['id'];
+                $row['coin_id'] = $v['coin_id'];
+                $row['name'] = $v['name'];
+                $row['real_count'] = sprintf("%.8f",$v['real_count']);
+                $row['release_time'] = $v['release_time'];
+                $row['release_time_text'] = date('Y-m-d H:i:s' ,$v['release_time']);
+                $row['ctime'] = $v['ctime'];
+                $row['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
+                $this->data['reward'][] = $row;
+            }
+        }
+        else{
+            $this->data['reward'] = array();
         }
     
         foreach( $coins as &$v){
