@@ -176,9 +176,9 @@
             <li class="ind_lef"><a href="/"><?php echo Yii::t('common','home');?></a></li>
             <li class="ind_lef"><a href="/hashshop"><?php echo Yii::t('common','power_shop');?></a></li>
             <li class="ind_lef"><a href="/millshop"><?php echo Yii::t('common','machine_shop');?></a></li>
-            <li class="ind_lef"><a href="/site/mines"><?php echo Yii::t('common','mines');?></a></li>
-            <li class="ind_lef"><a href="/site/help"><?php echo Yii::t('common','help');?></a></li>
-            <li class="ind_lef"><a href="/site/about"><?php echo Yii::t('common','about');?></a></li>
+            <li class="ind_lef"><a href="/mines"><?php echo Yii::t('common','mines');?></a></li>
+            <li class="ind_lef"><a href="/help"><?php echo Yii::t('common','help');?></a></li>
+            <li class="ind_lef"><a href="/about"><?php echo Yii::t('common','about');?></a></li>
             <?php if( !isset($_SESSION['id']) ){?>
             <li class="ind_ri ind_ri1"><a href="/signup"><?php echo Yii::t('common','signup');?></a></li>
             <li class="ind_ri ind_ri2"><a href="/signin"><?php echo Yii::t('common','signin');?></a>
