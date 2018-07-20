@@ -223,10 +223,10 @@
         <p class="process"><?php echo Yii::t('common','business_cooperation');?></p>
         <p class="line"></p>
         <div class="touch">
-        <input type="text" class="name" placeholder="<?php echo Yii::t('common','your_name');?>">
-            <input type="text" class="mar-let email" placeholder="<?php echo Yii::t('common','your_email');?>">
+        <input type="text" class="name" placeholder="<?php echo Yii::t('common','your_name');?>" maxlength="64">
+            <input type="text" class="mar-let email" placeholder="<?php echo Yii::t('common','your_email');?>" maxlength="255">
             <div class="put">
-                <textarea class="offer" placeholder="<?php echo Yii::t('common','message');?>"></textarea>
+                <textarea class="offer" placeholder="<?php echo Yii::t('common','message');?>" maxlength="255"></textarea>
                 <button class="send"><?php echo Yii::t('common','send');?></button>
             </div>
             <p class="collaborate">
@@ -242,30 +242,34 @@
 
     // send
     $('.send').on('click',function () {
-        let name = $('.name').val();
-        let email = $('.email').val();
-        let offer = $('.offer').val();
+           let name = $('.name').val();
+           let email = $('.email').val();
+           let offer = $('.offer').val();
 
-        $.ajax({
-            type: 'POST',
-            url: '/contactmessage/setmessage',
-            data:{
-                name: name,
-                email: email,
-                offer: offer,
-            },
-            dataType: 'json',
-            success: function(data){
-                console.log(data);
-                if(data.ret =='1') {  // 成功
-                    layer.msg(data.msg);
+               if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+                   layer.msg('请输入正确的邮箱！');
+               }else{
+                   $.ajax({
+                       type: 'POST',
+                       url: '/contactmessage/setmessage',
+                       data:{
+                           name: name,
+                           email: email,
+                           offer: offer,
+                       },
+                       dataType: 'json',
+                       success: function(data){
+                           console.log(data);
+                           if(data.ret =='1') {  // 成功
+                               layer.msg(data.msg);
 
-                }else{
-                    layer.msg(data.msg);
-                }
-            }
-        })
-    })
+                           }else{
+                               layer.msg(data.msg);
+                           }
+                       }
+                   })
+               }
+       })
 
 </script>
 </body>
