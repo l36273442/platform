@@ -117,8 +117,10 @@ class RegisterController extends CommonController{
                     $iu =  new PowerLogModel();
                     $iu->coin_id = $invite_config->coin_id;
                     $iu->uid = $user->invite_uid;
+                    $iu->type = 2;
                     $iu->name = 'power_invite_reward';
                     $iu->count = $invite_config['reward_count'];
+                    $in->relation_uid =  $user->primaryKey;
                     $iu->ctime = $t;
                     $re9 = $iu->save();
                     if( !$re9 ){

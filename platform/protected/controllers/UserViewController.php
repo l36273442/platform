@@ -267,16 +267,15 @@ class UserViewController extends Controller{
                 }
             }
         }
-        $reward = UserCoinLogModel::model()->findAllBySql('select * from platform_user_coin_log where uid ='.$id.' and type = 4 and mining_type = 0 order by id desc limit 5');
+        $reward = PowerLogModel::model()->findAllBySql('select * from platform_power_log where uid ='.$id.' and type = 2 order by id desc limit 5');
         if( $reward ){
             foreach( $reward as $v ){
                 $row = array();
                 $row['id'] = $v['id'];
                 $row['coin_id'] = $v['coin_id'];
                 $row['name'] = $v['name'];
-                $row['real_count'] = sprintf("%.8f",$v['real_count']);
-                $row['release_time'] = $v['release_time'];
-                $row['release_time_text'] = date('Y-m-d H:i:s' ,$v['release_time']);
+                $row['count'] = sprintf("%.8f",$v['count']);
+                $row['ctime_text'] = date('Y-m-d H:i:s' ,$v['ctime']);
                 $row['ctime'] = $v['ctime'];
                 $row['coin_name'] = isset($c_k[$v['coin_id']])?$c_k[$v['coin_id']]['name']:'';
                 $this->data['reward'][] = $row;
