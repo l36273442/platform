@@ -182,7 +182,8 @@ class PowerContractOrderController extends AjaxController{
                     $order = new PowerContractOrderModel();
                     $order->cid = $cid;
                     $order->uid = Yii::app()->session['id'];
-                    $order->price = $c_info['price'];
+                    $order->price = $c_info->price;
+                    $order->coin_id = $c_info->coin_id;
                     $order->ctime = $t;
                     $order->order_price = $total;
                     $order->count = $count;
@@ -195,6 +196,19 @@ class PowerContractOrderController extends AjaxController{
                         $transaction->rollback();
                         $this->renderError(Yii::t('common','order_fail'), ErrorCode::PARAM_EMPTY); 
                     }
+                    $pl = new PowerLogModel();
+                    $pl->name = 'power_buy';
+                    $pl->coin_id = $c_info->coin_id;
+                    $pl->type = 0;
+                    $pl->uid = Yii::app()->session['id'];
+                    $pl->count = $count;
+                    $pl->ctime = $t;
+                    $re8 = $pl->save();
+                    if( !$re8 ){
+                        $transaction->rollback();
+                        $this->renderError(Yii::t('common','order_fail3'), ErrorCode::PARAM_EMPTY); 
+                    }
+                     
                     $olog = new UserLegalCoinLogModel();
                     $olog->name = Yii::t('common','power_buy');
                     $olog->coin_id = $c_info->coin_id;
