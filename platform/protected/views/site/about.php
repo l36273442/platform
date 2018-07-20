@@ -270,9 +270,12 @@
                    },
                    dataType: 'json',
                    success: function(data){
-                       console.log(data);
+                       //console.log(data);
                        if(data.ret =='1') {  // 成功
                            layer.msg(data.msg);
+                           setTimeout(function () {
+                               location.reload();
+                           },1500)
                        }else{
                            layer.msg(data.msg);
                        }
