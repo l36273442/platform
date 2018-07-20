@@ -256,36 +256,54 @@
             <div class="section2_left">
                 <p class="friend">
                     <i class="icon_3"></i>
-                    <span>推荐的朋友</span>
+                    <span><?php echo Yii::t('common','recommended_friend');?></span>
                 </p>
                 <ul class="my_friend">
                     <li>
-                        <span>手机号</span>
-                        <span>时间</span>
+                        <span><?php echo Yii::t('common','phone_number');?></span>
+                        <span><?php echo Yii::t('common','time');?></span>
                     </li>
+                    <?php
+                        if($friends){ 
+                            foreach( $friends as $v){
+                    ?>  
                     <li>
-                        <span>18022287654</span>
-                        <span>2018-05-27 17:55:50</span>
+                    <span><?php echo $v['phone'];?></span>
+                    <span><?php echo $v['ctime_text'];?></span>
                     </li>
-                    <li>
-                        <span>18611119282</span>
-                        <span>2018-05-27 17:55:50</span>
-                    </li>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="section2_right">
                 <p class="friend">
                     <i class="icon_4"></i>
-                    <span>奖励算力记录</span>
+                    <span><?php echo Yii::t('common','reward_power_record');?></span>
                 </p>
                 <ul class="my_friend">
                     <li>
-                        <span class="log">名称</span>
-                        <span class="log">矿机</span>
-                        <span class="log">单价</span>
-                        <span class="log">数量</span>
-                        <span class="log">时间</span>
+                        <span class="log"><?php echo Yii::t('common','name');?></span>
+                        <span class="log"><?php echo Yii::t('common','coin_name');?></span>
+                        <span class="log"><?php echo Yii::t('common','count');?></span>
+                        <span class="log"><?php echo Yii::t('common','time');?></span>
                     </li>
+                    <?php
+                        if( $reward ){
+                            foreach( $reward as $v){
+                    ?>
+                    <li>
+                        <span class="log"><?php echo Yii::t('common',$v['name']);?></span>
+                        <span class="log"><?php echo $v['coin_name'];?></span>
+                        <span class="log"><?php echo $v['real_count'];?></span>
+                        <span class="log"><?php echo $v['release_time_text'];?></span>
+                    </li>
+
+                    <?php 
+                        }
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -293,20 +311,20 @@
         <div class="section3">
             <p class="friend">
                 <i class="icon_5"></i>
-                <span>推荐细则</span>
+                <span><?php echo Yii::t('common','recommended_rules');?></span>
             </p>
             <div class="rule">
-                <h5>1.一旦您推荐用户购买算力，您可以获得3%的算力返点 (算力资产 - 算力明细可查看)。</h5>
-                <h5>2.MCC.TOP保留随时共享收益规则进行调整的权利，但是对您推荐的好友数量没有限制。</h5>
-                <h5>3.被推荐人必须使用您的推荐链接、二维码或者推荐ID注册才可以。</h5>
-                <h5>4.MCC.TOP会严查重复的或者虚假账户，一经发现，将不会支付共享利益。重复账户或者共享资金是不合格的。</h5>
-                <p>特别注意:</p>
-                <h5>由于市场环境的改成，欺诈风险的存在原因，MCC.TOP保留随时对共享收益规则做出调整的最终解释权。</h5>
+                <h5><?php echo Yii::t('common','recommended_rules1');?></h5>
+                <h5><?php echo Yii::t('common','recommended_rules2');?></h5>
+                <h5><?php echo Yii::t('common','recommended_rules3');?></h5>
+                <h5><?php echo Yii::t('common','recommended_rules4');?></h5>
+                <p><?php echo Yii::t('common','pay_attention');?></p>
+                <h5><?php echo Yii::t('common','pay_attention_content');?></h5>
             </div>
         </div>
     </div>
 </div>
-
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 <script>
     // 复制ID
     function copyText() {
