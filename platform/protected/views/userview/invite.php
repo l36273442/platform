@@ -312,8 +312,8 @@
                     <li>
                         <span class="log"><?php echo Yii::t('common',$v['name']);?></span>
                         <span class="log"><?php echo $v['coin_name'];?></span>
-                        <span class="log"><?php echo $v['real_count'];?></span>
-                        <span class="log"><?php echo $v['release_time_text'];?></span>
+                        <span class="log"><?php echo $v['count'];?></span>
+                        <span class="log"><?php echo $v['ctime_text'];?></span>
                     </li>
 
                     <?php 
