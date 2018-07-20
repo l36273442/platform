@@ -31,18 +31,21 @@
         .section1_left{
             float: left;
             border: 2px solid #494758;
-            width:59%;
-            padding: 30px;
+            width: 61%;
+            height:202px;
+            padding: 30px 0 0 30px
         }
-        .ewm{
+        .ask{
             float: left;
-            width: 148px;
-            height: 148px;
-            margin: 10px 20px 10px 0;
+            width: 146px;
+            height: 146px;
+            border: 1px solid #696969;
+            margin-right: 20px;
         }
-        .ewm img{
-            width: 100%;
-            height:100%;
+        canvas{
+            margin: 3px;
+            width: 140px;
+            height: 140px;
             background-size: 100% 100%;
         }
         .address li{
@@ -56,7 +59,7 @@
             color: #777582;
             width: 80px;
         }
-        input[type="text"]{
+        #input,#input2,#input3{
             background: none;
             border: none;
             font-size: 16px;
@@ -76,6 +79,7 @@
         .section1_right{
             float: right;
             width: 34%;
+            height:232px;
             border: 2px solid #494855;
         }
         .recommend,.friend{
@@ -92,37 +96,50 @@
             text-align: right;
             position: relative;
         }
-        .recommend span i{
-            position: absolute;
-            top: 30px;
-            left: 20px;
+        .recommend span:nth-child(1){
+            width: 40%;
+        }
+        .recommend span:nth-child(2){
+             width: 60%;
         }
         .icon_1{
+            position: absolute;
+            top: 26px;
+            left: -15px;
             width: 28px;
             height: 28px;
             background: url("/images/推荐icon@2x.png")no-repeat;
             background-size: 100% 100%;
         }
         .icon_2{
+            position: absolute;
+            top: 30px;
+            left: 55px;
             width: 19px;
             height: 26px;
             background: url("/images/获得算力@2x.png")no-repeat;
             background-size: 100% 100%;
         }
-        .message{
+        .obtain{
             overflow: auto;
         }
-        .message li{
-            float: left;
-            font-size: 32px;
-            color: #0092da;
-            line-height: 47px;
-            padding: 0 65px;
+        .obtain li{
+             text-align: center;
+             float: left;
+             font-size: 26px;
+             color: #0092da;
+             line-height: 47px;
         }
-        .message li span{
+        .obtain li:nth-child(1){
+             width: 40%;
+        }
+        .obtain li:nth-child(2){
+             width: 60%;
+        }
+        .obtain li span{
             display: block;
         }
-        .message li span b:nth-child(1){
+        .obtain li span b:nth-child(1){
             display: inline-block;
             width: 65px;
         }
@@ -132,7 +149,6 @@
         }
         .section2_left,.section2_right{
             border: 2px solid #494758;
-            height: 228px;
         }
         .section2_left{
             float: left;
@@ -182,7 +198,7 @@
             line-height: 34px;
         }
         .my_friend li .log{
-            width: 20%;
+            width: 25%;
         }
         .section3{
             border: 2px solid #494758;
@@ -209,7 +225,7 @@
     <div class="type_area">
         <div class="section1">
             <div class="section1_left">
-                <p class="ewm"><img src=""></p>
+                <p class="ask"></p>
                 <ul class="address">
                     <li>
                         <span><?php echo Yii::t('common','my_invite_code');?></span>
@@ -235,7 +251,7 @@
                     <span><i class="icon_1"></i><?php echo Yii::t('common','recommend_friends');?></span>
                     <span><i class="icon_2"></i><?php echo Yii::t('common','gained_power');?></span>
                 </p>
-                <ul class="message">
+                <ul class="obtain">
                 <li><?php echo $invite['sum'];?></li>
                     <li>
                         <?php 
@@ -324,8 +340,13 @@
         </div>
     </div>
 </div>
+<script src="/js/jquery.qrcode.js"></script>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
 <script>
+   // 二维码
+    let ewm = $('#input2').val();
+       $('.ask').qrcode(ewm);
+
     // 复制ID
     function copyText() {
         var text = document.getElementById("input").value;
