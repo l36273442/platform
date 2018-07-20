@@ -177,7 +177,9 @@
         <li class="reg-center">
             <input type="password" class="repetition" placeholder="<?php echo Yii::t('common','repeat_password');?>">
         </li>
-        <li class="text"><?php echo Yii::t('common','repeat_password');?></li>
+        <li class="reg-center">
+           <input type="text" class="invite" placeholder="Invite code">
+        </li>
         <li class="up">
             <button class="login"><?php echo Yii::t('common','signup');?></button>
         </li>
@@ -220,6 +222,8 @@
     $('.repetition').on('change',function () {
         obj.repetition = $(this).val();
     });
+
+
 
     // 倒计时
         var num=60;
@@ -270,6 +274,17 @@
         }
     });
 
+     // 邀请码
+        let tr = window.location.search.substr(1);
+        let ary=tr.split('&');
+        let object={};
+        ary.forEach(item=>{
+            let [key,val]=  item.split('=');
+            object[key]=val;
+        });
+        $('.invite').val(object.invitecode);
+
+
     //注册
     $('.login').on('click',function () {
         if(!obj.phone) return layer.msg('<?php echo Yii::t('common','phone_empty');?>');
@@ -278,6 +293,7 @@
         if(!obj.password) return layer.msg('<?php echo Yii::t('common','password_empty');?>');
         if(!obj.repetition) return layer.msg('<?php echo Yii::t('common','repeat_password_empty');?>');
         if(obj.password === obj.repetition) {
+            obj.invite = $('.invite').val();
             $.ajax({
                 type: 'POST',
                 url: '/register/doregister',
@@ -285,7 +301,8 @@
                     country_code: obj.country,
                     mobile: obj.phone,
                     sms_code:obj.code,
-                    password:obj.password
+                    password:obj.password,
+                    invite:obj.invite
                 },
                 dataType: 'json',
                 success: function(data){
