@@ -31,19 +31,21 @@
         .section1_left{
             float: left;
             border: 2px solid #494758;
-            width:59%;
+            width: 61%;
             height:202px;
             padding: 30px 0 0 30px
         }
         .ask{
             float: left;
-            width: 148px;
-            height: 148px;
-            margin: 10px 20px 10px 0;
+            width: 146px;
+            height: 146px;
+            border: 1px solid #696969;
+            margin-right: 20px;
         }
         canvas{
-            width: 148px;
-            height: 148px;
+            margin: 3px;
+            width: 140px;
+            height: 140px;
             background-size: 100% 100%;
         }
         .address li{
