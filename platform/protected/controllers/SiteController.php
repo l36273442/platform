@@ -154,8 +154,7 @@ class SiteController extends WebController
                 $this->data['employee'][] = $v->attributes;
             }
         }
-        print_r($this->data);
-
+        $this->render('about',$this->data);
     }
     public function actionUserProtocol(){
         //$p = $this->getParams('GET');
