@@ -57,6 +57,7 @@ return array(
     'order_cancel'          => '取消订单',
     'order_fail'            => '下单失败',
     'order_fail2'           => '下单失败2',
+    'order_fail3'           => '下单失败3',
     'order_pay'             => '已付款',
     'order_deal'            => '已完成',
     'order_unknown'         => '未知状态',
@@ -156,4 +157,10 @@ return array(
     'your_name'             => '你的名字',
     'your_email'            => '你的邮箱',
     'message'               => '信息(最多255字符)',
+    'error'                 => '系统错误',
+    'error1'                => '系统错误1',
+    'error2'                => '系统错误2',
+    'error3'                => '系统错误3',
+    'error4'                => '系统错误4',
+    'error5'                => '系统错误5',
 );
