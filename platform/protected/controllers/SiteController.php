@@ -166,10 +166,6 @@ class SiteController extends WebController
         } 
     }
     public function actionError(){
-        echo 'error';
-    }
-    public function actionHello(){
-    
-        echo 34343;
+        $this->render('error',$this->data);
     }
 }
