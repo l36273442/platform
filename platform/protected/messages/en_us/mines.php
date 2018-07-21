@@ -1,6 +1,7 @@
 <?php
 return array(
         'advantage'             => 'ADVANTAGE',
+        'mines_contact'         => 'MINES CONTACT',
         'mines_select'          => 'STRICT SELECTION PROCESS OF MINERS',
         'mines_select_text'     => 'To fully control the source of risk, MineBit choosesco-operation origanization strictly and does multidimensional audit and credit     evaluation.',
         'mines_manage'          => 'STANDARD MANAGEMENT',

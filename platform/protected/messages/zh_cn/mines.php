@@ -1,6 +1,7 @@
 <?php
 return array(
         'advantage'             => '优点',
+        'mines_contact'         => '基建合约',
         'mines_select'          => '矿场的严格选择过程',
         'mines_select_text'     => '为了全面控制风险源，MineBie严格选择合作操作，并进行多维审计和信用评估。',
         'mines_manage'          => '标准管理',
