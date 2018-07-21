@@ -190,7 +190,9 @@
         <li class="reg-center">
             <input type="password" class="repetition" placeholder="Repeat password">
         </li>
-        <li class="text">I have read agree Terms of Service</li>
+        <li class="reg-center">
+            <input type="text" class="invite" placeholder="Invite code">
+        </li>
         <li class="up">
             <button class="login">Sign Up</button>
         </li>
@@ -234,6 +236,9 @@
     $('.repetition').on('change',function () {
         obj.repetition = $(this).val();
     });
+   /* $('.invite').on('change',function () {
+        obj.invite = $(this).val();
+    });*/
 
 
     // 发送验证码
@@ -268,6 +273,8 @@
     });
 
     $('.login').on('click',function () {
+        obj.invite = $('.invite').val();
+       // console.log(obj.invite);
         if(!obj.phone) return layer.msg('电话号码不能为空!');
         if(!obj.random) return layer.msg('图像验证码不能为空！');
         if(!obj.code) return layer.msg('验证码不能为空！');
@@ -280,7 +287,8 @@
                 country_code: obj.country,
                 mobile: obj.phone,
                 sms_code:obj.code,
-                password:obj.password
+                password:obj.password,
+                invite:obj.invite
             },
             dataType: 'json',
             success: function(data){
@@ -294,6 +302,16 @@
             }
         })
     })
+
+    // 邀请码
+    let tr = window.location.search.substr(1);
+    let ary=tr.split('&');
+    let object={};
+    ary.forEach(item=>{
+        let [key,val]=  item.split('=');
+        object[key]=val;
+    });
+    $('.invite').val(object.invitecode);
 </script>
 </body>
 </html>
