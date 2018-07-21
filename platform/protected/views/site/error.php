@@ -5,11 +5,11 @@
     <title><?php echo Yii::t('common','page_error');?></title>
     <style>
         .error{
-            width: 175px;
+            width: 200px;
             margin: 188px auto 0;
         }
         .error img{
-            width: 100%;
+            width: 175px;
             height: 165px;
             background-size: 100% 100%;
         }
@@ -21,7 +21,7 @@
         .back{
             width: 64px;
             height: 26px;
-            margin:0 0 265px 50px;
+            margin:0 0 265px 55px;
             background: #009dea;
             color: #fff;
             border: none;
