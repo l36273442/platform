@@ -165,4 +165,5 @@ return array(
     'error5'                => 'system error5',
     'page_error_content'    => 'The page was accidentally lost!',
     'back_home'             => 'Back to home',
+    'mines'                 => 'Mine infrastructure',
 );
