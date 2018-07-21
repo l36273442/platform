@@ -21,7 +21,7 @@
         .back{
             width: 64px;
             height: 26px;
-            margin-left: 50px;
+            margin:0 0 265px 50px;
             background: #009dea;
             color: #fff;
             border: none;
