@@ -37,14 +37,14 @@
             }
            .nav_tab li{
                 float: left;
-                width: 80px;
+                padding: 0 10px;
                 text-align: center;
                 position: relative;
                 cursor: pointer;
             }
            .nav_tab .ind_lef{
                height: 74px;
-               margin-right: 40px;
+               margin-right: 25px;
             }
            .nav_tab .ind_ri{
                width: 100px;

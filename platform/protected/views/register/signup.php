@@ -226,8 +226,8 @@
 
 
     // 倒计时
-        var num=60;
         function setNum(){
+            let num=60;
             clearInterval(Countdown);
             //$('.security').html(num+'S');
            var Countdown = setInterval(function () {
@@ -236,7 +236,7 @@
                if(num<=0){
                    clearInterval( Countdown);
                    $('.security').html('send');
-                   $('.security').attr('disabled','false');
+                   $('.security').removeAttr('disabled');
                }
             },1000);
         }
