@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>帮助中心</title>
+    <title><?php echo Yii::t('common','helps');?></title>
     <style>
         .type_area{
             width: 1200px;
@@ -66,88 +66,38 @@
     </style>
 </head>
 <body>
+<?php require(dirname(__FILE__).'/../header.php'); ?>
 <div class="slDetail_cont">
         <p>
-            <span class="currency">FAQS</span>
-            <span class="help">HELP CONTENT</span>
+        <span class="currency"><?php echo Yii::t('common','faqs');?> </span>
+            <span class="help"><?php echo Yii::t('common','help_content');?></span>
         </p>
 </div>
 <div class="type_area">
-    <p class="process">ABOUT ACCOUNT</p>
+    <?php 
+        if( $help ){
+            foreach( $help as $k=>$v){
+    ?>
+    <p class="process"><?php echo Yii::t('common','help_faq_type'.$k);?></p>
     <p class="line"></p>
     <div class="layui-collapse">
+            <?php foreach( $v as $val ) {?>
             <div class="layui-colla-item">
-                <h2 class="layui-colla-title">L3+MINER RARAMETER</h2>
-                <div class="layui-colla-content layui-show">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
+            <h2 class="layui-colla-title"><?php echo $val['title_'.Yii::app()->language];?></h2>
+                <div class="layui-colla-content layui-show"><?php echo $val['content_'.Yii::app()->language];?></div>
             </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">L3+GLOUD HASH MINE FIELD</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">WHEN DOES L3+CLOUD HASH PROFIT BEGIN?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">HOW DOES THE L3+CLOUD HASH PROFIT ISSUE?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">HOW TO DETERMINE THE BITCOINS PRICE WHEN CALCULATED ELECTRIC FEE?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">THE DEAD LINE OF L3+ CLOUD HASH?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">THE DEAD LINE OF L3+ CLOUD HASH?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">EVALUATION THE RETURN OF THIS PROJECT,WHEN DOES THIS PROJECT RECOVERY THE COST.?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
+            <?php 
+                }
+            ?>
         </div>
-
-    <p class="process">FAQS</p>
-    <p class="line"></p>
-    <div class="layui-collapse">
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">L3+MINER RARAMETER</h2>
-                <div class="layui-colla-content layui-show">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">L3+GLOUD HASH MINE FIELD</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">WHEN DOES L3+CLOUD HASH PROFIT BEGIN?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">HOW DOES THE L3+CLOUD HASH PROFIT ISSUE?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">HOW TO DETERMINE THE BITCOINS PRICE WHEN CALCULATED ELECTRIC FEE?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">THE DEAD LINE OF L3+ CLOUD HASH?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">THE DEAD LINE OF L3+ CLOUD HASH?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-            <div class="layui-colla-item">
-                <h2 class="layui-colla-title">EVALUATION THE RETURN OF THIS PROJECT,WHEN DOES THIS PROJECT RECOVERY THE COST.?</h2>
-                <div class="layui-colla-content">AntiminerL3+ parameter: Hash 504M/S+10%,   Power Dissipation 800W+10%。 The rest please check the http://shop.bitmain.com/</div>
-            </div>
-        </div>
+    <?php
+        
+        }
+    }
+    ?>
+                
 </div>
-
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 <script>
     var element = layui.element;
 
