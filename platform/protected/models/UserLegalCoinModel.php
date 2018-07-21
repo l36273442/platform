@@ -4,6 +4,6 @@ class UserLegalCoinModel extends CActiveRecord{
         return parent::model($className);
     }
     public function tableName(){
-        return "platform_user_Legal_coin";
+        return "platform_user_legal_coin";
     }
 }
