@@ -132,10 +132,14 @@ class SiteController extends WebController
     }
     public function actionHelp(){
         $h = HelpModel::model()->findAll('status=:status' ,array(':status'=>0));
+        
         if($h){
             foreach($h as $v ){
-                $this->data[$v->type][] = $v->attributes;
+                $this->data['help'][$v->type][] = $v->attributes;
             }
+        }
+        else{
+            $this->data['help'] = array();
         }
         $this->render('help',$this->data);
     }
