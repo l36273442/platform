@@ -165,4 +165,10 @@ return array(
     'error5'                => 'system error5',
     'page_error_content'    => 'The page was accidentally lost!',
     'back_home'             => 'Back to home',
+    'helps'                 => 'Help center',
+    'help_content'          => 'HELP CONTENT',
+    'help_faq_type1'        => 'ABOUT ACCOUNT',
+    'help_faq_type2'        => 'Getting started explanation',
+    'help_faq_type3'        => 'ABOUT ACCOUNT',
+    'help_faq_type4'        => 'ABOUT MILL',
 );

@@ -166,4 +166,10 @@ return array(
     'error5'                => '系统错误5',
     'page_error_content'    => '页面不小心走丢了哦！',
     'back_home'             => '返回首页',
+    'helps'                 => '帮助中心',
+    'help_content'          => '帮助内容',
+    'help_faq_type1'        => '账户相关',
+    'help_faq_type2'        => '入门解释',
+    'help_faq_type3'        => '算力相关',
+    'help_faq_type4'        => '矿机相关',
 );
