@@ -92,7 +92,7 @@
             <ul class="message">
                 <li><a href="/hashshop"><?php echo Yii::t('common','power_shop');?></a></li>
                 <li><a href="/millshop"><?php echo Yii::t('common','machine_shop');?></a></li>
-                <li><a href="/site/faqs"><?php echo Yii::t('common','faqs');?></a></li>
+                <li><a href="/help"><?php echo Yii::t('common','faqs');?></a></li>
                 <li><a href="/about"><?php echo Yii::t('common','about');?></a></li>
             </ul>
         </div>
