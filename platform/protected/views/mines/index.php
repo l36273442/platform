@@ -133,7 +133,7 @@
 <div class="slDetail_cont"></div>
 <div class="type_area">
         <div class="cont">
-                <p class="mines">基建合约</p>
+                <p class="mines"><?php echo Yii::t('mines','mines_contact');?></p>
                 <p class="process"><?php echo Yii::t('mines','advantage');?></p>
                 <p class="line"></p>
                 <ul class="card">
