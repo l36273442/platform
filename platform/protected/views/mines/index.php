@@ -11,11 +11,16 @@
         }
         .type_area{
             width: 1200px;
-            margin: 0 auto;
+            margin: -520px auto 0;
             overflow: auto;
         }
+        .mines{
+           line-height: 160px;
+           text-align: center;
+           font-size: 60px;
+           color: #fff;
+        }
         .process{
-            margin-top: 160px;
             line-height: 102px;
             font-size: 32px;
             color: #fff;
@@ -125,9 +130,10 @@
 </head>
 <body>
 <?php require(dirname(__FILE__).'/../header.php'); ?>
-<div class="slDetail_cont">
-    <div class="type_area">
+<div class="slDetail_cont"></div>
+<div class="type_area">
         <div class="cont">
+                <p class="mines">基建合约</p>
                 <p class="process"><?php echo Yii::t('mines','advantage');?></p>
                 <p class="line"></p>
                 <ul class="card">
@@ -170,7 +176,6 @@
         <?php echo Yii::t('mines','mines_introduce_text5');?>
         </p>
         <p class="referral" style="margin-bottom: 360px;"><?php echo Yii::t('mines','mines_introduce_text6');?></p>
-    </div>
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
