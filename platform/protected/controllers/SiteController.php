@@ -137,7 +137,7 @@ class SiteController extends WebController
                 $this->data[$v->type][] = $v->attributes;
             }
         }
-        print_r($this->data);
+        $this->render('help',$this->data);
     }
     public function actionAbout(){
         $a = InfoModel::model()->find();
