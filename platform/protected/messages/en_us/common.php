@@ -57,6 +57,7 @@ return array(
     'order_cancel'          => 'cancel order',
     'order_fail'            => 'order fail',
     'order_fail2'           => 'order fail 2',
+    'order_fail3'           => 'order fail 3',
     'order_pay'             => 'already paid',
     'order_deal'            => 'completed',
     'order_unknown'         => 'order unknown',
@@ -155,4 +156,10 @@ return array(
     'your_name'             => 'YOUR NAME',
     'your_email'            => 'YOUR EMAIL',
     'message'               => 'MESSAGE(Up to 255 characters)',
+    'error'                 => 'system error',
+    'error1'                => 'system error1',
+    'error2'                => 'system error2',
+    'error3'                => 'system error3',
+    'error4'                => 'system error4',
+    'error5'                => 'system error5',
 );
