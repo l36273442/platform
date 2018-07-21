@@ -166,5 +166,4 @@ return array(
     'error5'                => '系统错误5',
     'page_error_content'    => '页面不小心走丢了哦！',
     'back_home'             => '返回首页',
-    'mines'                 => '矿场基建',
 );
