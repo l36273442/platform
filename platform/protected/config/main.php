@@ -50,6 +50,7 @@ return array(
                 'logout' => 'userview/logout',
                 'invite' => 'userview/invite',
                 'about' => 'site/about',
+                'help' => 'site/help',
                 'mines' => 'mines/index',
                 'userpanel' => 'userview/panel',
                 'millassets' => 'userview/machineassets',
