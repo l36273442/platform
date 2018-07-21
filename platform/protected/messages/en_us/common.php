@@ -156,10 +156,13 @@ return array(
     'your_name'             => 'YOUR NAME',
     'your_email'            => 'YOUR EMAIL',
     'message'               => 'MESSAGE(Up to 255 characters)',
+    'page_error'            => 'error',
     'error'                 => 'system error',
     'error1'                => 'system error1',
     'error2'                => 'system error2',
     'error3'                => 'system error3',
     'error4'                => 'system error4',
     'error5'                => 'system error5',
+    'page_error_content'    => 'The page was accidentally lost!',
+    'back_home'             => 'Back to home',
 );

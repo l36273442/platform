@@ -157,10 +157,13 @@ return array(
     'your_name'             => '你的名字',
     'your_email'            => '你的邮箱',
     'message'               => '信息(最多255字符)',
+    'page_error'            => '错误',
     'error'                 => '系统错误',
     'error1'                => '系统错误1',
     'error2'                => '系统错误2',
     'error3'                => '系统错误3',
     'error4'                => '系统错误4',
     'error5'                => '系统错误5',
+    'page_error_content'    => '页面不小心走丢了哦！',
+    'back_home'             => '返回首页',
 );
