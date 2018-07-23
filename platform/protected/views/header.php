@@ -232,10 +232,10 @@
                                 $(`.a option[value=${str}]`).attr('selected', true)
                                 form.render('select');
                             } else {
-                                window.location.search += '&lang=zh'
+                                window.location.search += '&lang=zh_cn'
                             }
                         } else {
-                            window.location.search = '?lang=zh'
+                            window.location.search = '?lang=zh_cn'
                         }
                         form.on('select(test)', function (data) {
                             let str = /lang=(\w+)/.exec(search)[1];
