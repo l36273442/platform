@@ -230,12 +230,12 @@
                     <li>
                         <span><?php echo Yii::t('common','my_invite_code');?></span>
                         <input type="text" id="input" value="<?php echo $invite['invite_code'];?>">
-                        <span class="copy" onclick="copyText()">复制</span>
+                        <span class="copy" onclick="copyText()"><?php echo Yii::t('common','copy');?></span>
                     </li>
                     <li>
                         <span><?php echo Yii::t('common','invite_url');?></span>
                         <input type="text" id="input2" value="<?php echo $invite_url;?>">
-                        <span class="copy" onclick="copyText2()">复制</span>
+                        <span class="copy" onclick="copyText2()"><?php echo Yii::t('common','copy');?></span>
                     </li>
                     <!--
                     <li>
