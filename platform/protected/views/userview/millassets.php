@@ -148,7 +148,7 @@
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show">
                     <div class="recharge_list">
-                        <div class="profit_head">S9</div>
+                        <div class="profit_head"><?php echo Yii::t('common','mill_contract_list');?></div>
                         <table class="table">
                             <thead>
                             <tr>
