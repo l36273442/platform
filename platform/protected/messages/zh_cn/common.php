@@ -172,4 +172,5 @@ return array(
     'help_faq_type2'        => '入门解释',
     'help_faq_type3'        => '算力相关',
     'help_faq_type4'        => '矿机相关',
+    'copy'                  => '复制',
 );

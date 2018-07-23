@@ -171,4 +171,5 @@ return array(
     'help_faq_type2'        => 'Getting started explanation',
     'help_faq_type3'        => 'ABOUT ACCOUNT',
     'help_faq_type4'        => 'ABOUT MILL',
+    'copy'                  => 'COPY',
 );
