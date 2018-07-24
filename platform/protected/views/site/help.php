@@ -87,8 +87,7 @@
                 <div class="layui-colla-content layui-show"><?php echo $val['content_'.Yii::app()->language];?></div>
             </div>
             <?php 
-                }
-            ?>
+                }?>
         </div>
     <?php
         
@@ -97,11 +96,12 @@
     ?>
                 
 </div>
-<?php require(dirname(__FILE__).'/../footer.php'); ?>
+
 <script>
     var element = layui.element;
 
 
 </script>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
 </html>

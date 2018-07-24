@@ -38,31 +38,34 @@
             background-size: 100% 100%;
             margin:0 30px 30px 0;
         }
-        .mar_rig{
+        mar_rig{
             margin-right: 0;
         }
         .one{
             padding:30px 0 15px 20px;
+            position: relative;
         }
         .one img{
             width: 37px;
             height: 37px;
             background-size: 100% 100%;
+            position: absolute;
+            top: 28px;
         }
         .one span{
             line-height: 38px;
             font-size: 22px;
             display: inline-block;
-            margin-left: 20px;
+            margin-left: 57px;
         }
         .two{
             padding: 10px 0;
-            height: 252px;
+            height: 260px;
         }
         .two img{
             display: block;
-            max-width: 100%;
-            height: 100%;
+            width: 260px;
+            height: 260px;
             margin: 0 auto;
             background-size: 100% 100%;
         }

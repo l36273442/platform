@@ -34,7 +34,7 @@
                 height: 100%;
                 line-height: 80px;
             }
-           .nav_tab li{
+           .nav_tab .ind_lef,.nav_tab .ind_ri{
                 float: left;
                 padding: 0 10px;
                 text-align: center;
