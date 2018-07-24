@@ -1,9 +1,14 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
       <style>
+            @font-face {
+                 font-family: besas;
+                 src: url('/fonts/BebasNeue-Regular.eot');
+            }
             html,body{
                 width: 100%;
                 height: 100%;
+                font-family: besas;
             }
             .nav{
                 height: 80px;
@@ -22,20 +27,18 @@
                float: left;
                height: 100%;
                width: 157px;
-               text-align: center;
                font-size: 20px;
                font-weight: 600;
                line-height: 80px;
                overflow: hidden;
                color: #fff;
-              /* margin-right: 45px;*/
             }
            .nav_tab {
                 float: left;
                 height: 100%;
                 line-height: 80px;
             }
-           .nav_tab li{
+           .nav_tab .ind_lef,.nav_tab .ind_ri{
                 float: left;
                 padding: 0 10px;
                 text-align: center;
@@ -222,33 +225,23 @@
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/dist/layui.all.js"></script>
 <script>
-   var form = layui.form;
-                    let {search} = window.location;
-                        if (search) {
-                            if (/lang=/.test(search)) {
-                                let str = /lang=(\w+)/.exec(search)[1];
-                                console.log(str);
+  var form = layui.form;
 
-                                $(`.a option[value=${str}]`).attr('selected', true)
-                                form.render('select');
-                            } else {
-                                window.location.search += '&lang=zh_cn'
-                            }
-                        } else {
-                            window.location.search = '?lang=zh_cn'
-                        }
-                        form.on('select(test)', function (data) {
-                            let str = /lang=(\w+)/.exec(search)[1];
-                            console.log(data);
-                            if (data.value != str) {
-                                //search
-                                search = search.replace(/[^=]+$/g, (...arg) => {
-                                    console.log(arg);
-                                    return data.value
-                                });
-                                console.log(search);
-                                window.location.search = search;
-                            }
-                    });
+      form.on('select(test)', function (data) {
+          let {search} = window.location
+          if (search) {
+              if(/lang=/.test(search)){
+                  search = search.replace(/[^=]+$/g, (...arg) => {
+                      console.log(arg);
+                      return data.value
+                  });
+                  window.location.search =search ;
+              }else {
+                  window.location.search =`${search}&lang=${data.value}` ;
+              }
+          } else {
+              window.location.search = `?lang=${data.value}`;
+          }
+      });
 </script>
 

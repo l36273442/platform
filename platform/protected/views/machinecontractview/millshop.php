@@ -38,31 +38,35 @@
             background-size: 100% 100%;
             margin:0 30px 30px 0;
         }
-        .mar_rig{
+        mar_rig{
             margin-right: 0;
         }
         .one{
-            padding:30px 0 15px 20px;
+           height: 90px;
+           line-height: 90px;
+           padding-left: 20px;
+           position: relative;
         }
         .one img{
             width: 37px;
             height: 37px;
             background-size: 100% 100%;
+            position: absolute;
+            top: 23px;
         }
         .one span{
             line-height: 38px;
             font-size: 22px;
             display: inline-block;
-            margin-left: 20px;
+            margin-left: 57px;
         }
         .two{
-            padding: 10px 0;
-            height: 252px;
+            height: 260px;
         }
         .two img{
             display: block;
-            max-width: 100%;
-            height: 100%;
+            width: 260px;
+            height: 260px;
             margin: 0 auto;
             background-size: 100% 100%;
         }
@@ -77,13 +81,13 @@
             background:linear-gradient(to right,#0092da,transparent);/* 标准*/
         }
         .four{
-            line-height: 80px;
+            line-height: 90px;
             font-size: 26px;
-            padding-left: 20px;
+            padding:0 20px;
         }
         .buy {
             float: right;
-            margin: 20px;
+            margin-top: 30px;
             width: 100px;
             height: 40px;
             line-height: 40px;

@@ -42,26 +42,31 @@
             margin-right: 0;
         }
         .one{
-            padding:30px 0 15px 20px;
+            height: 90px;
+            line-height: 90px;
+            padding-left: 20px;
+            position: relative;
         }
         .one img{
             width: 37px;
             height: 37px;
             background-size: 100% 100%;
+            position: absolute;
+            top: 23px;
         }
         .one span{
             line-height: 38px;
             font-size: 22px;
             display: inline-block;
-            margin-left: 20px;
+            margin-left: 57px;
         }
         .two{
-            height: 257px;
+            height: 260px;
         }
         .two img{
             display: block;
-            max-width: 100%;
-            height: 100%;
+            width: 260px;
+            height: 260px;
             margin: 0 auto;
             background-size: 100% 100%;
         }
@@ -82,23 +87,24 @@
             color: #0092da;
             margin-top: 22px;
         }
-        .layui-progress{
-            margin: 6px 20px 17px;
+        div.layui-progress{
+            margin: 6px 20px 12px;;
             height: 8px;
             background-color: #252c42;
         }
-        .layui-progress-bar{
+        div.layui-progress-bar{
             height: 8px;
             background-color: #0092da;
         }
         .five{
             line-height: 80px;
             font-size: 26px;
-            padding-left: 20px;
+            overflow: auto;
+            padding: 0 20px;
         }
         .buy {
             float: right;
-            margin: 20px;
+            margin-top: 20px;
             width: 100px;
             height: 40px;
             line-height: 40px;
@@ -159,7 +165,7 @@ let element = layui.element;
                                       <span><b>${item.total}</b>${item.unit_name}</span>
                                   </p>
                                   <div class="layui-progress" lay-filter="demo">
-                                    <div class="layui-progress-bar"  lay-percent=${(item.deal_total/item.total)*100+'%'}>
+                                    <div class="layui-progress-bar"  lay-percent=${(item.deal_total/item.total)*100+'%'}></div>
                                   </div>
                                   <p class="five">
                                      <span>$ <b>${item.price}</b> USD</span>
