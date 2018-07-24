@@ -154,6 +154,7 @@
             left: 390px;
             width: 300px;
             height: 300px;
+            z-index: -1;
             background: url("/images/商品背景装饰-园@2x.png") no-repeat;
         }
         .commodity{
@@ -309,7 +310,7 @@
             overflow: auto;
             position: absolute;
             z-index: 1;
-            width: 72%;
+            width: 73%;
             right: 0;
             top: 88px;
         }
