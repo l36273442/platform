@@ -43,25 +43,28 @@
         }
         .one{
             padding:30px 0 15px 20px;
+            position: relative;
         }
         .one img{
             width: 37px;
             height: 37px;
             background-size: 100% 100%;
+            position: absolute;
+            top: 28px;
         }
         .one span{
             line-height: 38px;
             font-size: 22px;
             display: inline-block;
-            margin-left: 20px;
+            margin-left: 57px;
         }
         .two{
-            height: 257px;
+            height: 260px;
         }
         .two img{
             display: block;
-            max-width: 100%;
-            height: 100%;
+            width: 260px;
+            height: 260px;
             margin: 0 auto;
             background-size: 100% 100%;
         }
@@ -82,12 +85,12 @@
             color: #0092da;
             margin-top: 22px;
         }
-        .layui-progress{
+        div.layui-progress{
             margin: 6px 20px 17px;
             height: 8px;
             background-color: #252c42;
         }
-        .layui-progress-bar{
+        div.layui-progress-bar{
             height: 8px;
             background-color: #0092da;
         }
@@ -98,7 +101,7 @@
         }
         .buy {
             float: right;
-            margin: 20px;
+            margin: 20px 0;
             width: 100px;
             height: 40px;
             line-height: 40px;
