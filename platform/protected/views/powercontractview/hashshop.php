@@ -42,7 +42,9 @@
             margin-right: 0;
         }
         .one{
-            padding:30px 0 15px 20px;
+            height: 90px;
+            line-height: 90px;
+            padding-left: 20px;
             position: relative;
         }
         .one img{
@@ -50,7 +52,7 @@
             height: 37px;
             background-size: 100% 100%;
             position: absolute;
-            top: 28px;
+            top: 23px;
         }
         .one span{
             line-height: 38px;
@@ -86,7 +88,7 @@
             margin-top: 22px;
         }
         div.layui-progress{
-            margin: 6px 20px 17px;
+            margin: 6px 20px 12px;;
             height: 8px;
             background-color: #252c42;
         }
@@ -97,11 +99,12 @@
         .five{
             line-height: 80px;
             font-size: 26px;
-            padding-left: 20px;
+            overflow: auto;
+            padding: 0 20px;
         }
         .buy {
             float: right;
-            margin: 20px 0;
+            margin-top: 20px;
             width: 100px;
             height: 40px;
             line-height: 40px;
@@ -162,7 +165,7 @@ let element = layui.element;
                                       <span><b>${item.total}</b>${item.unit_name}</span>
                                   </p>
                                   <div class="layui-progress" lay-filter="demo">
-                                    <div class="layui-progress-bar"  lay-percent=${(item.deal_total/item.total)*100+'%'}>
+                                    <div class="layui-progress-bar"  lay-percent=${(item.deal_total/item.total)*100+'%'}></div>
                                   </div>
                                   <p class="five">
                                      <span>$ <b>${item.price}</b> USD</span>
