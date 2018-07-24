@@ -112,7 +112,6 @@
             text-align: center;
             position: absolute;
             cursor: pointer;
-            font-family: HelveticaNeue;
             top: 9px;
             right: 8px;
             font-size: 10px;
@@ -123,7 +122,6 @@
         .text{
             color: #009dea;
             line-height: 26px;
-            font-family: HelveticaNeue;
         }
         .up{
             margin: 14px 0;

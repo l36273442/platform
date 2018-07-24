@@ -100,7 +100,6 @@
           text-align: center;
           position: absolute;
           cursor: pointer;
-          font-family: HelveticaNeue;
           top: 9px;
           right: 8px;
           font-size: 10px;
@@ -112,7 +111,6 @@
           line-height: 26px;
           text-align: right;
           margin-right: 43px;
-          font-family: HelveticaNeue;
        }
        .text a{
           color: #009dea;

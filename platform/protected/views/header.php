@@ -32,7 +32,6 @@
                line-height: 80px;
                overflow: hidden;
                color: #fff;
-               font-family: Bebas Neue;
             }
            .nav_tab {
                 float: left;

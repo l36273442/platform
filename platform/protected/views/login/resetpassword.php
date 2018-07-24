@@ -57,7 +57,6 @@
         }
         .reg-title{
             font-weight: 600;
-            font-family: BebasNeue-Regular;
             font-size: 20px;
             color:#05a0e8;
             line-height: 86px;
@@ -113,7 +112,6 @@
             text-align: center;
             position: absolute;
             cursor: pointer;
-            font-family: HelveticaNeue;
             top: 9px;
             right: 8px;
             font-size: 10px;
