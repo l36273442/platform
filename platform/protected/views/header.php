@@ -223,32 +223,21 @@
 <script src="/dist/layui.all.js"></script>
 <script>
    var form = layui.form;
-                    let {search} = window.location;
-                        if (search) {
-                            if (/lang=/.test(search)) {
-                                let str = /lang=(\w+)/.exec(search)[1];
-                                console.log(str);
-
-                                $(`.a option[value=${str}]`).attr('selected', true)
-                                form.render('select');
-                            } else {
-                                window.location.search += '&lang=zh'
-                            }
-                        } else {
-                            window.location.search = '?lang=zh'
-                        }
-                        form.on('select(test)', function (data) {
-                            let str = /lang=(\w+)/.exec(search)[1];
-                            console.log(data);
-                            if (data.value != str) {
-                                //search
-                                search = search.replace(/[^=]+$/g, (...arg) => {
-                                    console.log(arg);
-                                    return data.value
-                                });
-                                console.log(search);
-                                window.location.search = search;
-                            }
-                    });
+   form.on('select(test)', function (data) {
+           let {search} = window.location
+           if (search) {
+               if(/lang=/.test(search)){
+                   search = search.replace(/[^=]+$/g, (...arg) => {
+                       console.log(arg);
+                       return data.value
+                   });
+                   window.location.search =search ;
+               }else {
+                   window.location.search =`${search}&lang=${data.value}` ;
+               }
+           } else {
+               window.location.search = `?lang=${data.value}`;
+           }
+       });
 </script>
 
