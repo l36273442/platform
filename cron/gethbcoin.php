@@ -9,7 +9,7 @@ $url = huobi_pro_market.'/trade';
 foreach($c as $v ){
     $p1 = $p2 = '';
     $u .= '?symbol='.$v.'btc';
-    $d = @file_get_contents($u)；
+    $d = @file_get_contents($u);
     if( !$d ){
         echo "获取币种交易信息失败".$u."\n";
     }
