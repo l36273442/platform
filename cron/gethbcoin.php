@@ -8,7 +8,7 @@ $c = array('btc','eth');
 $url = HOUBI_PRO_MARKET.'/trade'; 
 foreach($c as $v ){
     $p1 = $p2 = '';
-    $u = $url.'?symbol='.$v.'btc';
+    $u = $url.'?symbol='.$v.'usdt';
     $d = @file_get_contents($u);
     if( !$d ){
         echo "获取币种交易信息失败".$u."\n";
