@@ -75,7 +75,7 @@
         }
         .line2{
             width: 100%;
-            height: 2px;
+            height: 1px;
             background: url("/images/商店-分割装饰2@2x.png") no-repeat;
             background-size: 100% 100%;
             margin-bottom: 14px;
