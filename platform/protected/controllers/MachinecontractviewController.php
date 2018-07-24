@@ -13,7 +13,7 @@ class MachineContractViewController extends WebController{
         }
         
         $detail = MachineContractModel::model()->find( 'id=:id' , array(':id'=>$p['id']) );
-        $coin = coinModel::model()->find( 'id=:id' , array(':id'=>$detail['coin_id']) );
+        $coin = CoinModel::model()->find( 'id=:id' , array(':id'=>$detail['coin_id']) );
         $unit = UnitModel::model()->find( 'id=:id' , array(':id'=>$coin['unit_id']) );
         $machine = MiningMachineModel::model()->find( 'id=:id' , array(':id'=>$detail['machine_id']) );
         $faqs = FaqModel::model()->findAll('machine_id=:machine_id and coin_id=:coin_id', array(':coin_id'=>$coin['id'],':machine_id'=>$detail['machine_id']) );

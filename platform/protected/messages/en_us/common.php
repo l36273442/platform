@@ -136,8 +136,8 @@ return array(
     'shared_revenue'        => 'Shared revenue',
     'my_invite_code'        => 'my invite code',
     'invite_url'            => 'invite url',
-    'recommend_friends'     => 'recommend friends',
-    'gained_power'          => 'gained power',
+    'recommend_friends'     => 'friends',
+    'gained_power'          => 'get power',
     'recommended_friend'    => 'Recommended friend',
     'reward_power_record'   => 'Power reward record',
     'recommended_rules'     => 'Recommended rules',
@@ -171,4 +171,5 @@ return array(
     'help_faq_type2'        => 'Getting started explanation',
     'help_faq_type3'        => 'ABOUT ACCOUNT',
     'help_faq_type4'        => 'ABOUT MILL',
+    'copy'                  => 'COPY',
 );

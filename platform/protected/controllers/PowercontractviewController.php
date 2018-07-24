@@ -13,7 +13,7 @@ class PowerContractViewController extends WebController{
         }
         
         $detail = PowerContractModel::model()->find( 'id=:id' , array(':id'=>$p['id']) );
-        $coin = coinModel::model()->find( 'id=:id' , array(':id'=>$detail['coin_id']) );
+        $coin = CoinModel::model()->find( 'id=:id' , array(':id'=>$detail['coin_id']) );
         $unit = UnitModel::model()->find( 'id=:id' , array(':id'=>$coin['unit_id']) );
         $faqs = FaqModel::model()->findAll('coin_id=:coin_id and type=:type', array(':coin_id'=>$coin['id'],':type'=>0) );
         $this->data['detail'] = empty($detail)?array():$detail->attributes;
