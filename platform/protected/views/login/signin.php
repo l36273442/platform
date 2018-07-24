@@ -26,7 +26,7 @@
            width: 130px;
            float: left;
            height: 100%;
-           background: url("images/左侧背景@2x.png")no-repeat;
+           background: url("/images/左侧背景@2x.png")no-repeat;
            background-size: 100% 100%;
            position: relative;
        }
@@ -185,7 +185,7 @@
             <a href="/register/signup"><?php echo Yii::t('common','signup');?></a>
         </li>
     </ul>
-    <div class="close"><img src="images/icon_close@2x.png"></div>
+    <div class="close"><img src="/images/icon_close@2x.png"></div>
 </div>
 
 

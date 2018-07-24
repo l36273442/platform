@@ -190,7 +190,7 @@
             <button class="login"><?php echo Yii::t('common','find_back');?></button>
         </li>
     </ul>
-  <div class="close"><img src="images/icon_close@2x.png"></div>
+  <div class="close"><img src="/images/icon_close@2x.png"></div>
 </div>
 
 
