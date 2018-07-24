@@ -42,15 +42,17 @@
             margin-right: 0;
         }
         .one{
-            padding:30px 0 15px 20px;
-            position: relative;
+           height: 90px;
+           line-height: 90px;
+           padding-left: 20px;
+           position: relative;
         }
         .one img{
             width: 37px;
             height: 37px;
             background-size: 100% 100%;
             position: absolute;
-            top: 28px;
+            top: 23px;
         }
         .one span{
             line-height: 38px;
@@ -59,7 +61,6 @@
             margin-left: 57px;
         }
         .two{
-            padding: 10px 0;
             height: 260px;
         }
         .two img{
@@ -80,13 +81,13 @@
             background:linear-gradient(to right,#0092da,transparent);/* 标准*/
         }
         .four{
-            line-height: 80px;
+            line-height: 90px;
             font-size: 26px;
-            padding-left: 20px;
+            padding:0 20px;
         }
         .buy {
             float: right;
-            margin: 20px;
+            margin-top: 30px;
             width: 100px;
             height: 40px;
             line-height: 40px;
