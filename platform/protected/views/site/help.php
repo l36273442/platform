@@ -81,27 +81,28 @@
     <p class="process"><?php echo Yii::t('common','help_faq_type'.$k);?></p>
     <p class="line"></p>
     <div class="layui-collapse">
-            <?php foreach( $v as $val ) {?>
-            <div class="layui-colla-item">
-            <h2 class="layui-colla-title"><?php echo $val['title_'.Yii::app()->language];?></h2>
-                <div class="layui-colla-content layui-show"><?php echo $val['content_'.Yii::app()->language];?></div>
+                <?php foreach( $v as $val ) {?>
+                <div class="layui-colla-item">
+                <h2 class="layui-colla-title"><?php echo $val['title_'.Yii::app()->language];?></h2>
+                    <div class="layui-colla-content layui-show"><?php echo $val['content_'.Yii::app()->language];?></div>
+                </div>
+                <?php
+                    }?>
             </div>
-            <?php 
-                }?>
-        </div>
-    <?php
-        
-        }
-    }
-    ?>
-                
-</div>
+        <?php
 
+            }
+        }
+        ?>
+</div>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="dist/layui.all.js"></script>
 <script>
     var element = layui.element;
 
 
 </script>
-<?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
 </html>
