@@ -22,13 +22,12 @@
                float: left;
                height: 100%;
                width: 157px;
-               text-align: center;
                font-size: 20px;
                font-weight: 600;
                line-height: 80px;
                overflow: hidden;
                color: #fff;
-              /* margin-right: 45px;*/
+               font-family: Bebas Neue;
             }
            .nav_tab {
                 float: left;
