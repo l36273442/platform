@@ -16,7 +16,7 @@ foreach($c as $v ){
     $c = json_decode($d,true);
     if( isset($c['status']) && $c['status'] == 'ok' ){
         if(isset($c['tick']['data']) && !empty($c['tick']['data'])){
-           foreach(  $c['tick']['data'] $val ){
+           foreach(  $c['tick']['data'] as $val ){
                 echo $val['price'],"---",date('Y-m-d H:i:s' , $val['ts']),"\n";
             } 
         }
