@@ -232,8 +232,7 @@
     </div>
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
-<script src="js/jquery.min.js"></script>
-<script src="dist/layui.all.js"></script>
+
 <script>
     var element = layui.element;
     element.on('tab(docDemoTabBrief)', function(data){

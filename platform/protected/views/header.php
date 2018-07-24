@@ -226,8 +226,8 @@
 <script src="/dist/layui.all.js"></script>
 <script>
   var form = layui.form;
-
       form.on('select(test)', function (data) {
+
           let {search} = window.location
           if (search) {
               if(/lang=/.test(search)){
