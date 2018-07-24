@@ -16,7 +16,6 @@
         .register{
             width: 380px;
             height: 400px;
-            background: #fff;
             overflow: auto;
             margin: auto;
             position: absolute;
@@ -52,8 +51,9 @@
         }
         .right{
             float: right;
-            width: 226px;
-            position: relative;
+            width: 250px;
+            height: 100%;
+            background: #fff;
         }
         .reg-title{
             font-weight: 600;
@@ -61,14 +61,14 @@
             font-size: 20px;
             color:#05a0e8;
             line-height: 86px;
-            margin-top: 8px;
+            margin: 8px 0 0 20px;
         }
         .reg-center{
             width: 180px;
             height: 33px;
             line-height: 33px;
             border-left: 4px solid #009de9;
-            margin-bottom: 10px;
+            margin: 0 0 10px 20px;
             box-shadow: 5px 10px 10px #efeff0;
             position: relative;
         }
@@ -129,6 +129,7 @@
             height: 33px;
             line-height: 33px;
             color: #fff;
+            margin-left: 20px;
             border: none;
             background: #009dea;
             border-radius: 4px;
@@ -139,6 +140,19 @@
             color: #67b9ef;
             right: 48px;
             line-height: 20px;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+        .close img{
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
         }
     </style>
 </head>
@@ -176,7 +190,7 @@
             <button class="login"><?php echo Yii::t('common','find_back');?></button>
         </li>
     </ul>
-
+  <div class="close"><img src="images/icon_close@2x.png"></div>
 </div>
 
 

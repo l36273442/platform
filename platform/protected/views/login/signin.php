@@ -185,6 +185,7 @@
             <a href="/register/signup"><?php echo Yii::t('common','signup');?></a>
         </li>
     </ul>
+    <div class="close"><img src="images/icon_close@2x.png"></div>
 </div>
 
 
