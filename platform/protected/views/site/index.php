@@ -101,7 +101,7 @@
         }
         .situation li h5{
             width: 280px;
-            height: 2px;
+            height: 1px;
             background: url("/images/商店-分割装饰2@2x.png") no-repeat;
             background-size: 100% 100%;
         }
