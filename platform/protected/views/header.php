@@ -1,9 +1,14 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
       <style>
+            @font-face {
+                 font-family: besas;
+                 src: url('/fonts/BebasNeue-Regular.eot');
+            }
             html,body{
                 width: 100%;
                 height: 100%;
+                font-family: besas;
             }
             .nav{
                 height: 80px;

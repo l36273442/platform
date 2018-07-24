@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title><?php echo Yii::t('common','helps');?></title>
     <style>
+
         .type_area{
             width: 1200px;
             margin: 0 auto;
