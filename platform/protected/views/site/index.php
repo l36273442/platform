@@ -7,41 +7,10 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
     <style>
-        .carousel div:nth-child(1){
-            position: relative;
-        }
-         .carousel a{
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                }
-        .slider-one{
-            width: 1200px;
-            position: absolute;
-            color: #fff;
-            left: 5%;
-            top: 0;
-        }
-        .slider-one p{
-            line-height: 100px;
-            font-size: 60px;
-        }
-        .slider-one span{
-            display: block;
-            line-height: 78px;
-            font-size: 22px;
-        }
-        .slider-one button{
-            width: 238px;
-            height: 78px;
-            line-height: 80px;
-            margin-top: 32px;
-            font-size: 18px;
-            text-align: center;
-            border: 1px solid #fff;
-            background: none;
-            color: #fff;
-            cursor: pointer;
+        div.layui-carousel>[carousel-item]>.layui-this img{
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
         }
         .type_area{
             width: 1200px;
@@ -52,14 +21,12 @@
             line-height: 60px;
             font-size: 34px;
             color: #696969;
-            width: 620px;
         }
         .ks_top1 span{
             display: inline-block;
             line-height: 35px;
             color: #9c9c9c;
             margin: 25px 0;
-             width: 450px;
         }
         .ks_top2{
             overflow: hidden;
@@ -73,7 +40,7 @@
             width: 255px;
             padding-left: 25px;
             height: 168px;
-            background: url("/images/背景@2x.png") no-repeat;
+            background: url("images/首页背景@2x.png") no-repeat;
             background-size: 100% 100%;
             margin-right: 26px;
             cursor: pointer;
@@ -205,7 +172,7 @@
             font-size: 22px;
             color: #696969;
             width: 700px;
-            line-height: 30px;
+            line-height: 34px;
             margin: 43px 0 8px 0;
         }
         .figure{
