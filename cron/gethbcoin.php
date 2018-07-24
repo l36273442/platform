@@ -17,7 +17,7 @@ foreach($c as $v ){
     if( isset($c['status']) && $c['status'] == 'ok' ){
         if(isset($c['tick']['data']) && !empty($c['tick']['data'])){
            foreach(  $c['tick']['data'] as $val ){
-                echo $val['price'],"---",date('Y-m-d H:i:s' , $val['ts']),"\n";
+                echo $val['price'],"---",date('Y-m-d H:i:s' , sprintf("%d",$val['ts']/1000)),"\n";
             } 
         }
     }
