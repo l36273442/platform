@@ -134,8 +134,6 @@
 
 </ul>
 
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/dist/layui.all.js"></script>
 <script>
 let element = layui.element;
    function hashshop() {

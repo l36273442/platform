@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title><?php echo Yii::t('common','helps');?></title>
     <style>
-
         .type_area{
             width: 1200px;
             margin: 0 auto;
@@ -98,8 +97,6 @@
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="dist/layui.all.js"></script>
 <script>
     var element = layui.element;
 

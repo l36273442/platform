@@ -346,8 +346,6 @@
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="dist/layui.all.js"></script>
 <script>
     var element = layui.element;
 
