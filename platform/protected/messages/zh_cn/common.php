@@ -173,4 +173,9 @@ return array(
     'help_faq_type3'        => '算力相关',
     'help_faq_type4'        => '矿机相关',
     'copy'                  => '复制',
+    'co_status_text0'       => '申请成功',
+    'co_status_text1'       => '等待人工审核',
+    'co_status_text2'       => '提币中',
+    'co_status_text3'       => '成功',
+    'co_status_text4'       => '失败',
 );

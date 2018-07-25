@@ -172,4 +172,9 @@ return array(
     'help_faq_type3'        => 'ABOUT ACCOUNT',
     'help_faq_type4'        => 'ABOUT MILL',
     'copy'                  => 'COPY',
+    'co_status_text0'       => 'Successful application',
+    'co_status_text1'       => 'Waiting for manual review',
+    'co_status_text2'       => 'Cash withdrawal',
+    'co_status_text3'       => 'success',
+    'co_status_text4'       => 'failure',
 );
