@@ -228,29 +228,29 @@
             line-height: 25px;
             margin: 13px 23px 0;
         }
-        .type_area .layui-collapse{
-            margin: 40px 0 120px 0;
-            border:none;
+        .collapse{
+            margin-top: 46px;
         }
-        .layui-collapse .layui-colla-content {
-            padding-left: 25px;
-            border: none;
-            color: #8e8e8e;
-        }
-         .layui-collapse .layui-colla-item{
+        .colla-item{
             margin-bottom: 20px;
         }
-        .layui-collapse .layui-colla-title{
+        .colla-title{
             height: 56px;
-            line-height: 56px;
-            margin-bottom: 20px;
-            border-left: 7px solid #009dea;
-            padding: 0 15px 0 25px;
             background: #f5f5f5;
+            line-height: 56px;
             color: #696969;
+            font-size: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding-left: 25px;
+            border-left: 6px solid #009dea;
         }
-        .layui-colla-icon{
+        .colla-content{
+            font-size: 14px;
+            line-height: 22px;
+            color: #8e8e8e;
             display: none;
+            padding: 28px;
         }
         .msk{
             width: 160px;
@@ -331,13 +331,13 @@
         <p class="process"><?php echo Yii::t('common','faqs');?></p>
         <p class="line"></p>
 
-        <div class="layui-collapse">
+        <div class="collapse">
             <?php  if(!empty($faqs)){
                 foreach($faqs as $v ){
             ?>
-            <div class="layui-colla-item">
-            <h2 class="layui-colla-title"><?php echo $v['title_'.Yii::app()->language];?></h2>
-                <div class="layui-colla-content layui-show"><?php echo $v['content_'.Yii::app()->language];?></div>
+            <div class="colla-item">
+            <h2 class="colla-title"><?php echo $v['title_'.Yii::app()->language];?></h2>
+                <div class="colla-content"><?php echo $v['content_'.Yii::app()->language];?></div>
             </div>
             <?php }
                     }?>
@@ -399,6 +399,17 @@
                }
 
            });
+
+           //
+           $('.colla-title').on('click',function () {
+                        if (!window.flag) {
+                            $(this).next().show();
+                            window.flag = true;
+                        }else{
+                            $(this).next().hide();
+                            window.flag = false;
+                        }
+                    })
 </script>
 </body>
 </html>
