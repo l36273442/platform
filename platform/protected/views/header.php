@@ -1,5 +1,6 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/dist/css/layui.css">
+
       <style>
             @font-face {
                  font-family: besas;
@@ -222,12 +223,12 @@
 
     </div>
 </div>
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/dist/layui.all.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/dist/layui.all.js"></script>
 <script>
-  var form = layui.form;
-      form.on('select(test)', function (data) {
+   var form = layui.form;
 
+      form.on('select(test)', function (data) {
           let {search} = window.location
           if (search) {
               if(/lang=/.test(search)){

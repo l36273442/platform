@@ -345,7 +345,6 @@
     </div>
 </div>
 <?php require(dirname(__FILE__).'/../footer.php'); ?>
-
 <script>
     var element = layui.element;
 

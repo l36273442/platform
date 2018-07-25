@@ -95,12 +95,11 @@
         }
         ?>
 </div>
-<?php require(dirname(__FILE__).'/../footer.php'); ?>
 
 <script>
-    var element = layui.element;
-
+     var element = layui.element;
 
 </script>
+<?php require(dirname(__FILE__).'/../footer.php'); ?>
 </body>
 </html>
