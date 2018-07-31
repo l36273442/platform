@@ -84,8 +84,6 @@
             margin: 50px 0;
         }
 
-
-
         .record{
             border: 2px solid #333043;
             overflow: auto;
@@ -142,8 +140,8 @@
             <li class="balance"><span><?php echo Yii::t('common','available_balance');?>:</span>&nbsp;&nbsp;<b><?php echo isset($uc['current_total'])?sprintf("%.8f",$uc['current_total']):0;?></b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
             <li class="site"><?php echo Yii::t('common','withdrawal_amount');?></li>
             <li><input type="text" class="money"></li>
-            <li class="balance"><span><?php echo Yii::t('common','handling_fee');?>:</span>&nbsp;&nbsp;<b><?php echo $coin['extract_fee'];?></b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
-            <li class="balance"><span><?php echo Yii::t('common','actual_arrival');?>:</span>&nbsp;&nbsp;<b>0</b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
+            <li class="balance"><span><?php echo Yii::t('common','handling_fee');?>:</span>&nbsp;&nbsp;<b class="service"><?php echo $coin['extract_fee'];?></b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
+            <li class="balance"><span><?php echo Yii::t('common','actual_arrival');?>:</span>&nbsp;&nbsp;<b class="practical">0</b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
             <li class="site" style="margin-top: 30px;"><?php echo Yii::t('common','transaction_password');?></li>
             <li><input type="text" class="password"></li>
             <!--<li class="site" style="margin-top: 20px;">短信验证码</li>
@@ -185,7 +183,7 @@
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
-                            return `<option value=${index} id=${item.id}>${item.remark}${item.address}</option>`
+                            return `<option value=${index} id=${item.id}>${item.remark}--${item.address}</option>`
                         });
                         $('#withdraw').html(html.join(' '));
                     }else{
@@ -200,7 +198,18 @@
     getaddress();
 
 
-     let coin_id = window.location.search.substr(1).split('=')[1];
+    // coin_id
+    let coin_id;
+    let tr = window.location.search.substr(1);
+    let ary=tr.split('&');
+    let object={};
+    ary.forEach(item=>{
+         let [key,val]=  item.split('=');
+         object[key]=val;
+    });
+    coin_id = object.coin_id;
+
+
     // 虚拟币提现
     $('.promptly').on('click',function () {
         let count = $('.money').val(),
@@ -228,6 +237,13 @@
                 }
             }
         })
+    })
+
+ $('.money').on('change',function () {
+        let count = $('.money').val();
+        let service = $('.service').html();
+        let practical = $('.practical').html();
+        $('.practical').html(`${count-service<0?0:count-service}`)
     })
 
     //记录
