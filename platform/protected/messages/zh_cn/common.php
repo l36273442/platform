@@ -189,4 +189,9 @@ return array(
     'immediate_withdrawal'  => '立即提现',
     'update_time'           => '最后更新',
     'withdrawal_status'     => '提现状态',
+    'add'                   => '添加',
+    'address'               => '地址',
+    'remark'                => '备注',
+    'submit'                => '提交',
+    'cancel'                => '取消',
 );
