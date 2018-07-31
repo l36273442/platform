@@ -205,7 +205,7 @@ class CoinController extends Controller{
                 $arr[] = $r;
             }
         }
-        $this->renderJson(Yii::t('common','success'),$r);
+        $this->renderJson(Yii::t('common','success'),$arr);
     }
 
 }
