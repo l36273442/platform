@@ -188,4 +188,9 @@ return array(
     'immediate_withdrawal'  => 'Immediate withdrawal',
     'update_time'           => 'last update',
     'withdrawal_status'     => 'withdrawal status',
+    'add'                   => 'add',
+    'address'               => 'address',
+    'remark'                => 'remark',
+    'submit'                => 'submit',
+    'cancel'                => 'cancel',
 );

@@ -135,7 +135,7 @@
                     <!--<option value="0">11KSGQ2PTIXO89LYQKEGA1DBGXY7V316AGID</option>
                     <option value="1">3333333333333333333</option>-->
                 </select>
-                <span class="manage"><?php echo Yii::t('common','manage_address');?></span>
+                <span class="manage"><a class="manage" href="/address"><?php echo Yii::t('common','manage_address');?></a></span>
             </li>
             <li class="balance"><span><?php echo Yii::t('common','available_balance');?>:</span>&nbsp;&nbsp;<b><?php echo isset($uc['current_total'])?sprintf("%.8f",$uc['current_total']):0;?></b>&nbsp;<?php echo strtoupper($coin['name']);?></li>
             <li class="site"><?php echo Yii::t('common','withdrawal_amount');?></li>
