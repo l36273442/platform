@@ -21,7 +21,24 @@ class UserViewController extends Controller{
         }
         $this->redirect(Yii::app()->getBaseUrl().'/site/index');
     }
+    public function actionWithdraw(){
 
+        $id = Yii::app()->session['id']; 
+        $p = $this->getparams('REQUEST');
+        
+        if( !isset($p['coin_id']) || !is_numeric($p['coin_id']) || $p['coin_id'] <= 0 ){
+            $this->redirect(Yii::app()->getBaseUrl().'/site/error');
+        }
+        $c = CoinModel::model()->find('id=:id',array(':id'=>$p['coin_id']));
+        if(empty($c)){
+            $this->redirect(Yii::app()->getBaseUrl().'/site/error');
+        }
+        $uc = UserCoinModel::model()->find('uid=:uid and coin_id=:coin_id' ,array(':uid'=>$id , ':coin_id'=>$p['coin_id']));
+        $this->data['uc'] = empty($uc)?array():$uc->attributes;
+        $this->data['coin'] = $c->attributes;
+        $this->render('withdraw',$this->data);
+
+    }
     public function actionPanel(){
         //$id=1;
         $id = Yii::app()->session['id']; 

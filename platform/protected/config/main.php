@@ -49,6 +49,7 @@ return array(
                 'signup' => 'register/signup',
                 'logout' => 'userview/logout',
                 'invite' => 'userview/invite',
+                'withdraw' => 'userview/withdraw',
                 'about' => 'site/about',
                 'help' => 'site/help',
                 'mines' => 'mines/index',
