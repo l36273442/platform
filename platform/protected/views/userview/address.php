@@ -134,7 +134,7 @@
             border-radius: 4px;
             position: absolute;
             left: 30%;
-            top: 15%;
+            top: 5%;
             padding: 10px 60px 40px 0;
             display: none;
         }
