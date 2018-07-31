@@ -188,6 +188,9 @@
             color: #fff;
             cursor: pointer;
         }
+        .cancel{
+         background:rgb(221,221,221);
+        }
         .submit{
             background: #009dea;
         }
