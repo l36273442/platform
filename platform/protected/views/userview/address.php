@@ -285,7 +285,7 @@
                             <span>| </span>
                             <span class="add" coin_id=${obj.coin_id}> + </span>
                         </p>
-                        <p class="affixion">添加&nbsp;<b>${obj.str}</b>&nbsp;地址</p>
+                        <p class="affixion"><?php echo Yii::t('common','add');?>&nbsp;<b>${obj.str}</b>&nbsp;<?php echo Yii::t('common','address');?></p>
                     </div>
                     <div id="address">
 
@@ -303,12 +303,11 @@
             },
             dataType: 'json',
             success: function(data){
-                //console.log(data);
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             return `<div class="account">
-                        <p class="details">账户地址</p>
+                        <p class="details">&nbsp;${obj.str}&nbsp;<?php echo Yii::t('common','address');?></p>
                         <input type="text" class="location" value=${item.address}>
                          <button class="delete">删除</button>
                         </div>`
@@ -324,11 +323,11 @@
             }
         })
     }
-    render({coin_id:$('.very').attr('coin_id')});
+    render({str:$('.very').attr('str'),coin_id:$('.very').attr('coin_id')});
 
     element.on('tab(docDemoTabBrief)', function(data){
         appentHtml({str:$(this).attr('str'),coin_id:$(this).attr('coin_id')});
-        render({coin_id:$(this).attr('coin_id')});
+        render({str:$(this).attr('str'),coin_id:$(this).attr('coin_id')});
     });
 
     // 添加
