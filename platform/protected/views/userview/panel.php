@@ -169,7 +169,7 @@
             <span><?php echo Yii::t('power','freeze');?>&nbsp;|&nbsp;<b><?php echo $v['freeze_total'];?></b>&nbsp;<?php echo $v['name'];?></span>
                 <span>
                     <a href="/recharge"><?php echo Yii::t('common','recharge');?></a>
-                    <a href="/withdraw"><?php echo Yii::t('common','recharge');?></a>
+                    <a href="/withdraw?coin_id=<?php echo $v['id'];?>"><?php echo Yii::t('common','withdraw');?></a>
                 </span>
             </li>
         </ul>
