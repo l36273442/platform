@@ -49,10 +49,9 @@
             border: none;
         }
         .address{
-            width: 158px;
+            width: 153px;
             border: 1px solid #494758;
             padding: 98px 210px 57px;
-           /* margin-right: 40px;*/
             float: left;
         }
         .currency{
@@ -87,11 +86,11 @@
             font-weight: 500;
         }
         #address{
-            float: right;
-            width: 576px;
+           float: right;
+           width: 576px;
         }
         .account{
-            width: 454px;
+            width: 453px;
             border: 1px solid #494758;
             background: #252236;
             padding: 56px 60px;
@@ -102,7 +101,7 @@
             line-height: 36px;
             font-size: 18px;
             color: #fff;
-            margin-bottom: 44px;
+            margin-bottom: 45px;
         }
         .location{
             border: 1px solid #514e5e;
@@ -221,10 +220,12 @@
                 <?php 
                     if( $coin ){
                         $i=0;
+                        $len = count($coin)-1;
                         foreach($coin as $v ){
                 ?>
-                    <li <?php echo ($i==0)?'class="layui-this very"':'';?> coin_id="<?php echo $v['id'];?>" str="<?php echo strtoupper($v['name']);?>"><?php echo strtoupper($v['name']);?></li> |&nbsp;&nbsp;&nbsp;
+                    <li <?php echo ($i==0)?'class="layui-this very"':'';?> coin_id="<?php echo $v['id'];?>" str="<?php echo strtoupper($v['name']);?>"><?php echo strtoupper($v['name']);?></li><?php if($i!=$len) echo '&nbsp;&nbsp;|&nbsp;&nbsp;';?>
                 <?php
+                   $i++;
                     }
                 }
                 ?>
@@ -243,7 +244,7 @@
 
     <!-- 添加 -->
     <div class="mask">
-        <p class="add_title"><?php echo Yii::t('common','add');?>&nbsp;<b></b>&nbsp;<?php echo Yii::t('common','address');?></p>
+        <p class="add_title"><?php echo Yii::t('common','add');?><?php echo Yii::t('common','address');?></p>
         <ul class="accretion">
             <li class="add_list">
                 <span><?php echo Yii::t('common','address');?></span>
@@ -299,15 +300,12 @@
             },
             dataType: 'json',
             success: function(data){
-                console.log(data);
+                //console.log(data);
                 if(data.ret =='1') {  // 成功
                     if(Array.isArray(data.data)){
                         let html = data.data.map((item, index) => {
                             return `<div class="account">
-                        <p class="details">
-                            <img src="images/bc_logo_@2x.png" style="margin-right: 11px;">
-                            BTC账户
-                        </p>
+                        <p class="details">账户地址</p>
                         <input type="text" class="location" value=${item.address}>
                          <button class="delete">删除</button>
                         </div>`
