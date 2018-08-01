@@ -34,7 +34,7 @@
         .mill{
             float: left;
             width: 380px;
-            background: url("/images/背景@2x.png") no-repeat;
+            background: url("/images/背景bj@2x.png") no-repeat;
             background-size: 100% 100%;
             margin:0 30px 30px 0;
         }
