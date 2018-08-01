@@ -1,0 +1,397 @@
+2018/07/23 13:02:01 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:02:01 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:02:05 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?lang=zh
+---
+2018/07/23 13:02:07 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header?lang=zh_cn
+---
+2018/07/23 13:02:34 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header?lang=zh_cn
+---
+2018/07/23 13:02:39 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:02:39 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:02:42 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?lang=zh
+---
+2018/07/23 13:02:52 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:02:52 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:03:27 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:03:27 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:03:27 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:13:17 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:13:20 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:13:23 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?lang=en_us
+---
+2018/07/23 13:13:26 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header?lang=zh_cn
+---
+2018/07/23 13:13:29 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?lang=en_us
+---
+2018/07/23 13:13:43 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?a=111
+---
+2018/07/23 13:17:04 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:17:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:17:50 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:17:59 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1
+---
+2018/07/23 13:18:03 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?aa=1
+---
+2018/07/23 13:18:06 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn
+---
+2018/07/23 13:18:09 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn&lang=en_us
+---
+2018/07/23 13:18:11 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn
+---
+2018/07/23 13:18:15 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us&lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us
+---
+2018/07/23 13:18:18 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us&lang=zh_cn&lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us&lang=zh_cn
+---
+2018/07/23 13:18:19 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us&lang=zh_cn&lang=zh_cn&lang=en_us
+HTTP_REFERER=http://localhost:8888/header?aa=1&lang=zh_cn&lang=en_us&lang=zh_cn&lang=en_us&lang=zh_cn&lang=zh_cn
+---
+2018/07/23 13:18:44 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html
+---
+2018/07/23 13:18:48 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html
+---
+2018/07/23 13:18:52 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/heade.html
+---
+2018/07/23 13:18:57 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html?lang=zh_cn
+---
+2018/07/23 13:19:01 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html?lang=zh_cn&lang=en_us
+HTTP_REFERER=http://localhost:8888/heade.html?lang=zh_cn
+---
+2018/07/23 13:19:03 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "heade.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('heade.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/heade.html?lang=zh_cn&lang=en_us&lang=zh_cn
+HTTP_REFERER=http://localhost:8888/heade.html?lang=zh_cn&lang=en_us
+---
+2018/07/23 13:47:50 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header
+---
+2018/07/23 13:47:52 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=en_us
+HTTP_REFERER=http://localhost:8888/header
+---
+2018/07/23 13:47:54 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "header"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('header')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/header?lang=zh_cn
+HTTP_REFERER=http://localhost:8888/header?lang=en_us
+---
+2018/07/23 13:48:06 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help?lang=zh
+2018/07/23 13:48:18 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help
+2018/07/23 13:49:25 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help
+2018/07/23 14:02:24 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help

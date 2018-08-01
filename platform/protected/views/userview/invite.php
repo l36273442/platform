@@ -64,7 +64,7 @@
             border: none;
             font-size: 16px;
             color: #0092da;
-            width: 68%;
+            width: 67%;
         }
         .copy{
             display: inline-block;
@@ -75,6 +75,7 @@
             text-align: center;
             font-size: 16px;
             color: #fff;
+            float:right;
         }
         .section1_right{
             float: right;

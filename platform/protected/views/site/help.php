@@ -40,7 +40,7 @@
             background-size: 100% 100%;
         }
         .collapse{
-            margin-top: 46px;
+            margin: 46px 0  100px 0;
         }
         .colla-item{
             margin-bottom: 20px;

@@ -1,0 +1,27 @@
+2018/07/27 04:50:59 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "getusercoinaddres"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('getusercoinaddr...')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/getusercoinaddres
+HTTP_REFERER=http://localhost:8888/withdraw.html
+---
+2018/07/27 04:51:04 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "getusercoinaddres"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('getusercoinaddr...')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/getusercoinaddres
+HTTP_REFERER=http://localhost:8888/withdraw.html
+---
+2018/07/27 10:14:32 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost:8888/withdraw.html
+---

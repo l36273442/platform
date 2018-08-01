@@ -16,7 +16,6 @@
         .register{
             width: 380px;
             height: 360px;
-            background: #fff;
             overflow: auto;
             margin: auto;
             position: absolute;
@@ -52,22 +51,23 @@
         }
         .right{
             float: right;
-            width: 226px;
-            position: relative;
+            width: 250px;
+            height: 100%;
+            background: #fff;
         }
         .reg-title{
             font-weight: 600;
             font-size: 20px;
             color:#05a0e8;
             line-height: 86px;
-            margin-top: 8px;
+            margin: 8px 0 0 20px;
         }
         .reg-center{
             width: 180px;
             height: 33px;
             line-height: 33px;
             border-left: 4px solid #009de9;
-            margin-bottom: 10px;
+            margin: 0 0 10px 20px;
             box-shadow: 5px 10px 10px #efeff0;
             position: relative;
         }
@@ -87,7 +87,7 @@
         }
         .reg-center input{
             border: none;
-            /* height: 100%;*/
+            color: #9c9c9c;
             width: 120px;
             padding-left: 5px;
         }
@@ -95,6 +95,7 @@
             display: inline-block;
             width: 40px;
             height: 18px;
+            border: none;
             line-height: 18px;
             text-align: center;
             position: absolute;
@@ -117,7 +118,7 @@
             color: #009dea;
         }
         .up{
-            margin: 14px 0;
+            margin: 14px 0 14px 20px;
         }
         .login{
             width: 180px;
@@ -133,6 +134,7 @@
             position: absolute;
             color: #67b9ef;
             width: 180px;
+            margin-left: 20px;
             text-align: center;
             line-height: 20px;
         }
@@ -173,7 +175,7 @@
         </li>
         <li class="reg-center">
             <input type="text" class="code" placeholder="Verification code">
-            <span class="security">Send</span>
+            <button class="security">Send</button>
         </li>
         <li class="text"><a href="resetpassword.html">Forgot Password</a></li>
         <li class="up">
@@ -213,6 +215,23 @@
         obj.password = $(this).val();
     });
 
+    // 倒计时
+    function setNum(){
+        let  num=60;
+        //console.log("============",num);
+        clearInterval(Countdown);
+        //$('.security').html(num+'S');
+       var Countdown = setInterval(function () {
+            num--;
+           $('.security').html(num+'S');
+           if(num<=0){
+               clearInterval( Countdown);
+               $('.security').html('send');
+               $('.security').removeAttr('disabled');
+           }
+        },1000);
+    }
+
     // 发送验证码
     $('.security').on('click',function () {
         if(obj.phone && obj.password){
@@ -226,23 +245,51 @@
                 },
                 dataType: 'json',
                 success: function(data){
-                     console.log(data);
+                    // console.log(data);
                     if(data.ret =='1') {  // 成功
-                        $('.security').html('60秒');
-                        window.location.href = "index.html";
+                        layer.msg('验证码发送成功！');
+                        $('.security').attr('disabled','true');
+                        setNum();
                     }else{
                         layer.msg(data.msg);
                     }
                 }
             })
         }else{
-            layer.msg('接口调用失败！');
+            layer.msg('请先填写电话或者密码！');
             /* layer.open({
                  title: '',
                  content: '接口调用失败！'
              });*/
         }
     });
+
+    //logn in
+    $('.login').on('click',function () {
+        if(!obj.phone) return layer.msg('电话号码不能为空!');
+        if(!obj.code) return layer.msg('验证码不能为空！');
+        if(!obj.password) return layer.msg('密码不能为空！');
+        $.ajax({
+            type: 'POST',
+            url: '/login/dologin',
+            data:{
+                country_code: obj.country,
+                mobile: obj.phone,
+                password:obj.password,
+                sms_code:obj.code
+            },
+            dataType: 'json',
+            success: function(data){
+                //console.log(data);
+                if(data.ret =='1') {  // 成功
+                   // alert('登录成功！');
+                    window.location.href = "index.html";
+                }else{
+                    layer.msg(data.msg);
+                }
+            }
+        })
+    })
 
 </script>
 </body>

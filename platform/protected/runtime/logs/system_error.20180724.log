@@ -1,0 +1,247 @@
+2018/07/24 05:32:13 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "detail". in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('detail')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('detail')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('powercontractvi...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/powercontractview/detail?id=1
+HTTP_REFERER=http://localhost:8888/
+---
+2018/07/24 08:28:44 [error] [exception.CHttpException.404] CHttpException: æ— æ³•è§£æžè¯·æ±‚ "resetpassword.html"ã€‚ in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('resetpassword.h...')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/resetpassword.html
+HTTP_REFERER=http://localhost:8888/signin
+---
+2018/07/24 08:31:02 [error] [exception.CHttpException.404] CHttpException: æ— æ³•è§£æžè¯·æ±‚ "resetpassword.html"ã€‚ in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('resetpassword.h...')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/resetpassword.html
+---
+2018/07/24 08:44:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/ic...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/login/images/icon_close@2x.png
+HTTP_REFERER=http://localhost:8888/login/signin
+---
+2018/07/24 08:44:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/\xE5\xB7...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/login/images/%E5%B7%A6%E4%BE%A7%E8%83%8C%E6%99%AF@2x.png
+HTTP_REFERER=http://localhost:8888/login/signin
+---
+2018/07/24 08:44:26 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('register/images...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/register/images/icon_close@2x.png
+HTTP_REFERER=http://localhost:8888/register/signup
+---
+2018/07/24 08:44:56 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/\xE5\xB7...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/login/images/%E5%B7%A6%E4%BE%A7%E8%83%8C%E6%99%AF@2x.png
+HTTP_REFERER=http://localhost:8888/login/signin
+---
+2018/07/24 09:06:30 [error] [system_error] heyshy send sms to 8618610216540 message æ‚¨çš„éªŒè¯ç æ˜¯522671ï¼Œ10åˆ†é’Ÿå†…æœ‰æ•ˆã€‚è¯·å‹¿å‘Šè¯‰ä»–äººã€‚ fail Resolving timed out after 2516 milliseconds(28) 
+2018/07/24 09:24:53 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in D:\C\code\platform\platform\protected\views\site\help.php:107
+Stack trace:
+#0 D:\C\code\platform\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\C\\code\\platf...', Array, true)
+#1 D:\C\code\platform\framework\web\CController.php(872): CBaseController->renderFile('D:\\C\\code\\platf...', Array, true)
+#2 D:\C\code\platform\framework\web\CController.php(785): CController->renderPartial('help', Array, true)
+#3 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): CController->render('help', Array)
+#4 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#5 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\C\code\platform\platform\protected\components\CommonController.php(423): CController->runAction(Object(CInlineAction))
+#7 D:\C\code\platform\framework\web\CController.php(286): CommonController->runAction(Object(CInlineAction))
+#8 D:\C\code\platform\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('help')
+#10 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#11 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/help
+HTTP_REFERER=http://localhost:8888/
+---
+2018/07/24 09:24:57 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in D:\C\code\platform\platform\protected\views\site\help.php:107
+Stack trace:
+#0 D:\C\code\platform\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\C\\code\\platf...', Array, true)
+#1 D:\C\code\platform\framework\web\CController.php(872): CBaseController->renderFile('D:\\C\\code\\platf...', Array, true)
+#2 D:\C\code\platform\framework\web\CController.php(785): CController->renderPartial('help', Array, true)
+#3 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): CController->render('help', Array)
+#4 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#5 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\C\code\platform\platform\protected\components\CommonController.php(423): CController->runAction(Object(CInlineAction))
+#7 D:\C\code\platform\framework\web\CController.php(286): CommonController->runAction(Object(CInlineAction))
+#8 D:\C\code\platform\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('help')
+#10 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#11 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/help
+HTTP_REFERER=http://localhost:8888/help
+---
+2018/07/24 09:25:28 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in D:\C\code\platform\platform\protected\views\site\help.php:104
+Stack trace:
+#0 D:\C\code\platform\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\C\\code\\platf...', Array, true)
+#1 D:\C\code\platform\framework\web\CController.php(872): CBaseController->renderFile('D:\\C\\code\\platf...', Array, true)
+#2 D:\C\code\platform\framework\web\CController.php(785): CController->renderPartial('help', Array, true)
+#3 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): CController->render('help', Array)
+#4 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#5 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\C\code\platform\platform\protected\components\CommonController.php(423): CController->runAction(Object(CInlineAction))
+#7 D:\C\code\platform\framework\web\CController.php(286): CommonController->runAction(Object(CInlineAction))
+#8 D:\C\code\platform\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('help')
+#10 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#11 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/help
+HTTP_REFERER=http://localhost:8888/help
+---
+2018/07/24 09:25:30 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in D:\C\code\platform\platform\protected\views\site\help.php:104
+Stack trace:
+#0 D:\C\code\platform\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\C\\code\\platf...', Array, true)
+#1 D:\C\code\platform\framework\web\CController.php(872): CBaseController->renderFile('D:\\C\\code\\platf...', Array, true)
+#2 D:\C\code\platform\framework\web\CController.php(785): CController->renderPartial('help', Array, true)
+#3 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): CController->render('help', Array)
+#4 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#5 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\C\code\platform\platform\protected\components\CommonController.php(423): CController->runAction(Object(CInlineAction))
+#7 D:\C\code\platform\framework\web\CController.php(286): CommonController->runAction(Object(CInlineAction))
+#8 D:\C\code\platform\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('help')
+#10 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#11 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/help
+HTTP_REFERER=http://localhost:8888/help
+---
+2018/07/24 09:25:35 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in D:\C\code\platform\platform\protected\views\site\help.php:104
+Stack trace:
+#0 D:\C\code\platform\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\C\\code\\platf...', Array, true)
+#1 D:\C\code\platform\framework\web\CController.php(872): CBaseController->renderFile('D:\\C\\code\\platf...', Array, true)
+#2 D:\C\code\platform\framework\web\CController.php(785): CController->renderPartial('help', Array, true)
+#3 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): CController->render('help', Array)
+#4 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#5 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\C\code\platform\platform\protected\components\CommonController.php(423): CController->runAction(Object(CInlineAction))
+#7 D:\C\code\platform\framework\web\CController.php(286): CommonController->runAction(Object(CInlineAction))
+#8 D:\C\code\platform\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('help')
+#10 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#11 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/help
+HTTP_REFERER=http://localhost:8888/hashdetail?id=1
+---
+2018/07/24 13:07:40 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help
+2018/07/24 13:08:44 [error] [php] Undefined index: title_zh_cn (D:\C\code\platform\platform\protected\views\site\help.php:86)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(144): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionHelp()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/help
+2018/07/24 13:09:04 [error] [php] Undefined index: name_zh_cn (D:\C\code\platform\platform\protected\views\site\about.php:200)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(161): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionAbout()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/about
+2018/07/24 13:09:06 [error] [php] Undefined index: name_zh_cn (D:\C\code\platform\platform\protected\views\site\about.php:200)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): SiteController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): SiteController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\SiteController.php(161): SiteController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): SiteController->actionAbout()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): SiteController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/about
+2018/07/24 16:08:36 [error] [exception.CDbException] SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+2018/07/24 16:08:36 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection. in D:\C\code\platform\framework\db\CDbConnection.php:405
+Stack trace:
+#0 D:\C\code\platform\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 D:\C\code\platform\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 D:\C\code\platform\framework\base\CModule.php(394): CDbConnection->init()
+#3 D:\C\code\platform\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 D:\C\code\platform\framework\db\ar\CActiveRecord.php(639): CApplication->getDb()
+#5 D:\C\code\platform\framework\db\ar\CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 D:\C\code\platform\framework\db\ar\CActiveRecord.php(1477): CActiveRecord->getCommandBuilder()
+#7 D:\C\code\platform\platform\protected\components\WebController.php(23): CActiveRecord->findAll('status=:status', Array)
+#8 D:\C\code\platform\framework\web\CWebApplication.php(281): WebController->init()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('site/help')
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/help?lang=zh_cn
+---

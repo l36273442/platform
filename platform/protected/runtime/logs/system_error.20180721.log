@@ -1,0 +1,54 @@
+2018/07/21 08:49:21 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "error"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/error
+---
+2018/07/21 08:49:21 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost:8888/error
+---
+2018/07/21 08:50:09 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "error"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/error
+---
+2018/07/21 08:50:10 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "error"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/error?lang=zh
+HTTP_REFERER=http://localhost:8888/error
+---
+2018/07/21 08:51:49 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "error"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/error?lang=zh
+HTTP_REFERER=http://localhost:8888/error
+---
+2018/07/21 08:57:20 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "error"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/error?lang=en_us
+HTTP_REFERER=http://localhost:8888/error?lang=zh
+---
+2018/07/21 09:50:54 [error] [system_error] heyshy send sms to 8618610216540 message 您的验证码是107626，10分钟内有效。请勿告诉他人。 fail Failed to connect to api2.santo.cc port 80: Timed out(7) 
+2018/07/21 09:51:15 [error] [system_error] heyshy send sms to 8618610216540 message 您的验证码是419958，10分钟内有效。请勿告诉他人。 fail Failed to connect to api2.santo.cc port 80: Timed out(7) 

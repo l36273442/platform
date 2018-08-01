@@ -1,9 +1,9 @@
 <?php
 return array(
-            'connectionString' => 'mysql:host=192.168.1.106;dbname=platform',
+            'connectionString' => 'mysql:host=127.0.0.1;dbname=platform',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
             'charset' => 'utf8',
             //'tablePrefix' => 'tbl_',
         ); 

@@ -1,0 +1,105 @@
+2018/07/31 04:13:47 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost:8888/account.html
+---
+2018/07/31 04:18:22 [error] [system_error] heyshy send sms to 8618610216540 message 您的验证码是136828，10分钟内有效。请勿告诉他人。 fail Failed to connect to api2.santo.cc port 80: Timed out(7) 
+2018/07/31 04:19:03 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "getusercoinaddres" 动作. in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('getusercoinaddr...')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('getusercoinaddr...')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('coin/getusercoi...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/coin/getusercoinaddres
+HTTP_REFERER=http://localhost:8888/withdraw.html
+---
+2018/07/31 04:27:17 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "getusercoinaddres" 动作. in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('getusercoinaddr...')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('getusercoinaddr...')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('coin/getusercoi...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/coin/getusercoinaddres
+HTTP_REFERER=http://localhost:8888/account.html
+---
+2018/07/31 04:45:27 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "getusercoinaddres" 动作. in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('getusercoinaddr...')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('getusercoinaddr...')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('coin/getusercoi...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/coin/getusercoinaddres
+HTTP_REFERER=http://localhost:8888/account.html
+---
+2018/07/31 05:04:28 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "singin.html"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('singin.html')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/singin.html
+---
+2018/07/31 05:38:07 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "addaddresss" 动作. in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('addaddresss')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('addaddresss')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('coin/addaddress...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/coin/addaddresss
+HTTP_REFERER=http://localhost:8888/account.html
+---
+2018/07/31 05:39:23 [error] [exception.CHttpException.404] CHttpException: 系统无法找到请求的 "addaddresss" 动作. in D:\C\code\platform\framework\web\CController.php:486
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(270): CController->missingAction('addaddresss')
+#1 D:\C\code\platform\framework\web\CWebApplication.php(282): CController->run('addaddresss')
+#2 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('coin/addaddress...')
+#3 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/coin/addaddresss
+---
+2018/07/31 08:37:34 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "favicon.ico"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://localhost:8888/
+---
+2018/07/31 08:41:31 [error] [exception.CHttpException.404] CHttpException: 无法解析请求 "recharge"。 in D:\C\code\platform\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController('recharge')
+#1 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\C\code\platform\platform\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/recharge
+HTTP_REFERER=http://localhost:8888/userpanel
+---
+2018/07/31 09:23:24 [error] [php] Undefined variable: coins (D:\C\code\platform\platform\protected\views\userview\address.php:224)
+Stack trace:
+#0 D:\C\code\platform\framework\web\CController.php(872): UserViewController->renderFile()
+#1 D:\C\code\platform\framework\web\CController.php(785): UserViewController->renderPartial()
+#2 D:\C\code\platform\platform\protected\controllers\UserViewController.php(55): UserViewController->render()
+#3 D:\C\code\platform\framework\web\actions\CInlineAction.php(49): UserViewController->actionAddress()
+#4 D:\C\code\platform\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\C\code\platform\platform\protected\components\CommonController.php(423): UserViewController->runAction()
+#6 D:\C\code\platform\framework\web\CController.php(286): UserViewController->runAction()
+#7 D:\C\code\platform\framework\web\CController.php(265): UserViewController->runActionWithFilters()
+#8 D:\C\code\platform\framework\web\CWebApplication.php(282): UserViewController->run()
+#9 D:\C\code\platform\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\C\code\platform\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 D:\C\code\platform\platform\index.php(14): CWebApplication->run()
+REQUEST_URI=/address
